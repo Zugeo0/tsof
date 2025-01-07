@@ -28,6 +28,9 @@ func init(weapon_class: WeaponClass) -> void:
 	sprite.scale = _weapon_class.sprite_scale
 	attack_sfx.stream = _weapon_class.attack_sfx
 	crosshair.texture = _weapon_class.crosshair
+	
+	burst_timer.wait_time = _weapon_class.delay_between_burst_projectiles
+	attack_timer.wait_time = _weapon_class.attack_speed
 
 func set_target(target: Enemy) -> void:
 	_current_target = target

@@ -78,7 +78,7 @@ position = Vector2(0, -187)
 script = ExtResource("7_v1w4c")
 
 [node name="PointLight2D" type="PointLight2D" parent="PlayerFollow"]
-scale = Vector2(11.4687, 11.4687)
+scale = Vector2(1.9375, 1.9375)
 blend_mode = 2
 texture = ExtResource("8_bk1dy")
 metadata/_edit_lock_ = true

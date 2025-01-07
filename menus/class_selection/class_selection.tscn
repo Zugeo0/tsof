@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbsiioc3l5os6"]
+[gd_scene load_steps=6 format=3 uid="uid://bbsiioc3l5os6"]
 
 [ext_resource type="Script" path="res://menus/class_selection/class_selection.gd" id="1_n42yp"]
 [ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="2_i12rr"]
 [ext_resource type="Texture2D" uid="uid://ch4qb0d2leqr6" path="res://game/player/classes/01_shotgunner.png" id="3_5k8nl"]
+[ext_resource type="Resource" uid="uid://b1g1x7nhk8ln3" path="res://game/player/classes/02_gunner.tres" id="4_d8d3s"]
 
-[sub_resource type="Resource" id="Resource_ood6h"]
+[sub_resource type="Resource" id="Resource_5nav2"]
 resource_local_to_scene = true
 script = ExtResource("2_i12rr")
 player_class_name = "Shotgunner"
-player_class_description = ""
+player_class_description = "Start with a shotgun"
 player_class_icon = ExtResource("3_5k8nl")
 armor = 0
 health = 20
@@ -55,7 +56,7 @@ anchors_preset = 0
 offset_right = 336.0
 offset_bottom = 224.0
 script = ExtResource("1_n42yp")
-classes = Array[ExtResource("2_i12rr")]([SubResource("Resource_ood6h")])
+classes = Array[ExtResource("2_i12rr")]([SubResource("Resource_5nav2"), ExtResource("4_d8d3s")])
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1

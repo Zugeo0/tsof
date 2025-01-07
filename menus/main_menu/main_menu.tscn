@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b25rlnwqc6j8v"]
+[gd_scene load_steps=9 format=3 uid="uid://b25rlnwqc6j8v"]
 
 [ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="1_eoo32"]
 [ext_resource type="Texture2D" uid="uid://xm6v7e18cykl" path="res://menus/main_menu/main_menu.png" id="2_2tk48"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://ch4qb0d2leqr6" path="res://game/player/classes/01_shotgunner.png" id="4_s3ou3"]
 [ext_resource type="PackedScene" uid="uid://bbsiioc3l5os6" path="res://menus/class_selection/class_selection.tscn" id="4_x7xjy"]
 [ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="5_obl5g"]
+[ext_resource type="Resource" uid="uid://b1g1x7nhk8ln3" path="res://game/player/classes/02_gunner.tres" id="7_qvf87"]
 
-[sub_resource type="Resource" id="Resource_ood6h"]
+[sub_resource type="Resource" id="Resource_5nav2"]
 resource_local_to_scene = true
 script = ExtResource("5_obl5g")
 player_class_name = "Shotgunner"
-player_class_description = ""
+player_class_description = "Start with a shotgun"
 player_class_icon = ExtResource("4_s3ou3")
 armor = 0
 health = 20
@@ -95,7 +96,7 @@ offset_left = 60.0
 offset_top = 278.0
 offset_right = 395.0
 offset_bottom = 493.0
-classes = Array[ExtResource("5_obl5g")]([SubResource("Resource_ood6h")])
+classes = Array[ExtResource("5_obl5g")]([SubResource("Resource_5nav2"), ExtResource("7_qvf87")])
 
 [connection signal="pressed" from="MainButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainButtons/Options" to="." method="_on_options_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://so4juccw7j3a"]
+[gd_scene load_steps=16 format=3 uid="uid://so4juccw7j3a"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_55cx4"]
 [ext_resource type="PackedScene" uid="uid://0c1h7kryiqx8" path="res://game/levels/level_manager/level_manager.tscn" id="1_ab6rl"]
@@ -7,57 +7,12 @@
 [ext_resource type="Script" path="res://game/abilities/ability_manager/ability_info.gd" id="3_trare"]
 [ext_resource type="Resource" uid="uid://dsble0iw25ob2" path="res://game/abilities/01_shotgun/ability_shotgun.tres" id="4_fglb2"]
 [ext_resource type="Resource" uid="uid://bqy8bcqfjj8fl" path="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.tres" id="5_vulge"]
-[ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="6_xcyr0"]
 [ext_resource type="PackedScene" uid="uid://dglcbn5qhm7av" path="res://game/hud/boss_bar/boss_bar.tscn" id="8_8ebpq"]
 [ext_resource type="PackedScene" uid="uid://rlrweitqe4db" path="res://game/hud/status_display/status_display.tscn" id="9_8w32u"]
 [ext_resource type="PackedScene" uid="uid://jhy1l0kiejcw" path="res://game/abilities/ability_picker/ability_picker.tscn" id="10_1yhm2"]
 [ext_resource type="Script" path="res://game/abilities/ability_manager/ability_manager.gd" id="10_da6n6"]
 [ext_resource type="PackedScene" uid="uid://bduncirhdx3nb" path="res://game/pause_menu/pause_menu.tscn" id="11_01yx4"]
 [ext_resource type="Script" path="res://game/hud/hurt_overlay/hurt_overlay.gd" id="11_wq5sd"]
-
-[sub_resource type="Resource" id="Resource_5ylra"]
-resource_local_to_scene = true
-script = ExtResource("6_xcyr0")
-player_class_name = ""
-player_class_description = ""
-armor = 0
-health = 20
-max_health = 20
-max_health_mod = 1.0
-movement_speed = 5.0
-movement_speed_mod = 1.0
-invincibility_time = 0.1
-regen_amount_flat = 1
-regen_amount_percentile = 0.0
-dodge_chance = 0.0
-regen_speed_mod = 1.0
-regen_speed = 2.0
-can_regen = true
-crits_deal_damage = true
-experience_gain_mod = 1.0
-item_absorb_range = 55.0
-item_absorb_range_mod = 1.0
-attack_speed_mod = 1.0
-starting_weapons = Array[String](["shotgun"])
-added_melee_damage = 0
-added_melee_strikes = 0
-added_melee_knockback = 0
-melee_range_mod = 1.0
-melee_attack_speed_mod = 1.0
-melee_knockback_mod = 1.0
-added_gun_damage = 0
-extra_projectiles = 0
-extra_projectile_pierce = 0
-ranged_range_mod = 1.0
-ranged_spread_mod = 1.0
-ranged_attack_speed_mod = 1.0
-added_explosive_damage = 0
-added_explosive_radius = 0.0
-explosive_radius_mod = 1.0
-explosive_damage_mod = 1.0
-crit_chance = 0.0
-damage_mod = 1.0
-crit_multiplier = 2.0
 
 [sub_resource type="Gradient" id="Gradient_2564n"]
 offsets = PackedFloat32Array(0.428571, 1)
@@ -87,7 +42,6 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("1_mbr8t")]
 unique_name_in_owner = true
-stats = SubResource("Resource_5ylra")
 
 [node name="LevelManager" parent="." instance=ExtResource("1_ab6rl")]
 unique_name_in_owner = true

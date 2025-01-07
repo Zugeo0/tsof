@@ -21,5 +21,5 @@ func _process(delta: float) -> void:
 	progress_bar_diff.max_value = progress_bar_actual.max_value
 	progress_bar_diff.value = lerpf(progress_bar_diff.value, boss.health - 0.1, delta * DIFF_SPEED)
 	
-	boss_name.text = boss.name
+	boss_name.text = boss.enemy_name
 	health_percentage.text = "%d%%" % int((float(boss.health) / boss.max_health) * 100.0)

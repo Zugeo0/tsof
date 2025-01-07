@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://udfbeighyw02"]
+[gd_scene load_steps=6 format=3 uid="uid://udfbeighyw02"]
 
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_type.gd" id="2_man83"]
 [ext_resource type="Resource" uid="uid://r22jsdmog4h1" path="res://game/weapons/01_shotgun/shotgun.tres" id="3_rdsfx"]
+[ext_resource type="Resource" uid="uid://cfy65iebr2dxb" path="res://game/weapons/02_assault_rifle/assault_rifle.tres" id="4_bbtg1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a24m"]
 radius = 630.134
@@ -10,7 +11,7 @@ radius = 630.134
 [node name="WeaponManager" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iyymo")
-available_weapons = Array[ExtResource("2_man83")]([ExtResource("3_rdsfx")])
+available_weapons = Array[ExtResource("2_man83")]([ExtResource("3_rdsfx"), ExtResource("4_bbtg1")])
 
 [node name="TargetRange" type="Area2D" parent="."]
 visible = false

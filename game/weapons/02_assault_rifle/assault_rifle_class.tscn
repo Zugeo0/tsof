@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dseaxmcmbsvgw"]
+
+[ext_resource type="Script" path="res://game/weapons/weapon_class/weapon_class.gd" id="1_vpdpu"]
+[ext_resource type="Texture2D" uid="uid://cp2yi4oe71g6" path="res://game/weapons/02_assault_rifle/assault_rifle.png" id="2_u4gt7"]
+[ext_resource type="AudioStream" uid="uid://3g8d832n2v1f" path="res://game/weapons/02_assault_rifle/assault_rifle.wav" id="3_qiqad"]
+[ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="4_cylf1"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/crosshairs/R_Crosshair.png" id="5_1rx5v"]
+
+[sub_resource type="Curve" id="Curve_iu4fx"]
+max_value = 5.0
+_data = [Vector2(0, 0), 0.0, 5.0, 0, 1, Vector2(1, 5), 5.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="AssaultRifleClass" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_vpdpu")
+damage = 5
+damage_effectiveness = 0.8
+attack_speed = 1.4
+crit_chance = 0.05
+burst = true
+delay_between_burst_projectiles = 0.2
+projectile_speed = 700.0
+projectile_count = 3
+projectile_spread = SubResource("Curve_iu4fx")
+knockback = 0.3
+sprite = ExtResource("2_u4gt7")
+attack_sfx = ExtResource("3_qiqad")
+projectile = ExtResource("4_cylf1")
+crosshair = ExtResource("5_1rx5v")

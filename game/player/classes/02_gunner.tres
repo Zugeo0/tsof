@@ -1,14 +1,13 @@
-[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://jii7njaa8emi"]
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://b1g1x7nhk8ln3"]
 
-[ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="1_cmnqv"]
-[ext_resource type="Texture2D" uid="uid://ch4qb0d2leqr6" path="res://game/player/classes/01_shotgunner.png" id="1_ig5gw"]
+[ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="1_jiwoy"]
+[ext_resource type="Texture2D" uid="uid://bnc0fs63bl48w" path="res://game/player/classes/02_gunner.png" id="1_we5wx"]
 
 [resource]
-resource_local_to_scene = true
-script = ExtResource("1_cmnqv")
-player_class_name = "Shotgunner"
-player_class_description = "Start with a shotgun"
-player_class_icon = ExtResource("1_ig5gw")
+script = ExtResource("1_jiwoy")
+player_class_name = "Gunner"
+player_class_description = "Start with an assault rifle"
+player_class_icon = ExtResource("1_we5wx")
 armor = 0
 health = 20
 max_health = 20
@@ -27,7 +26,7 @@ experience_gain_mod = 1.0
 item_absorb_range = 55.0
 item_absorb_range_mod = 1.0
 attack_speed_mod = 1.0
-starting_weapons = Array[String](["shotgun"])
+starting_weapons = Array[String](["assault_rifle"])
 added_melee_damage = 0
 added_melee_strikes = 0
 added_melee_knockback = 0
