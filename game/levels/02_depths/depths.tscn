@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="3_t76if"]
 [ext_resource type="Resource" uid="uid://dfyw6qt1jc83k" path="res://game/levels/02_depths/02_spawn_regular.tres" id="4_aq8w3"]
 [ext_resource type="Texture2D" uid="uid://dfs8vnr01jiwe" path="res://game/levels/02_depths/depths_background.png" id="5_0738x"]
-[ext_resource type="PackedScene" uid="uid://brqniyn8yf1i7" path="res://game/levels/02_depths/staglatite/stalagtite.tscn" id="6_27yc0"]
+[ext_resource type="PackedScene" uid="uid://brqniyn8yf1i7" path="res://game/levels/02_depths/stalagmite/stalagmite.tscn" id="6_27yc0"]
 [ext_resource type="PackedScene" uid="uid://baohxl6tgtjfs" path="res://game/bosses/01_horror/horror_of_the_sea.tscn" id="6_jgexl"]
 [ext_resource type="Script" path="res://util/player_follow.gd" id="7_v1w4c"]
 [ext_resource type="Texture2D" uid="uid://baikluojr3aed" path="res://common/textures/glow.tres" id="8_bk1dy"]

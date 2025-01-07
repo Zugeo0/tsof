@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://brqniyn8yf1i7"]
 
-[ext_resource type="Texture2D" uid="uid://dmuui2po1f6mb" path="res://game/levels/02_depths/staglatite/stalagtite.png" id="1_j20ie"]
+[ext_resource type="Texture2D" uid="uid://dmuui2po1f6mb" path="res://game/levels/02_depths/stalagmite/stalagmite.png" id="1_j20ie"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmulm"]
 radius = 7.07107
 
-[node name="Stalagtite" type="StaticBody2D"]
+[node name="Stalagmite" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.936964, 0.767438, 0.479396, 1)

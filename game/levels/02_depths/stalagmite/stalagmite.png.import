@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmuui2po1f6mb"
-path="res://.godot/imported/stalagtite.png-36f9e781c9305460a699c2ec6a0337d3.ctex"
+path="res://.godot/imported/stalagmite.png-3b8351a1eecbc40ef8adfd87da06a2e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/levels/02_depths/staglatite/stalagtite.png"
-dest_files=["res://.godot/imported/stalagtite.png-36f9e781c9305460a699c2ec6a0337d3.ctex"]
+source_file="res://game/levels/02_depths/stalagmite/stalagmite.png"
+dest_files=["res://.godot/imported/stalagmite.png-3b8351a1eecbc40ef8adfd87da06a2e3.ctex"]
 
 [params]
 
