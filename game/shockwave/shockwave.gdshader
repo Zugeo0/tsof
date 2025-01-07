@@ -14,6 +14,6 @@ void fragment() {
 	} else {
 		COLOR = tex_color;
 	}
-	
+
 	COLOR = COLOR * modulate;
 }
