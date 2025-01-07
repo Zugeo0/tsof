@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelDetails" load_steps=4 format=3 uid="uid://cq7kx0yhre6dg"]
+
+[ext_resource type="AudioStream" uid="uid://brxmiebcy3ula" path="res://game/levels/01_underwater/rage-15292.mp3" id="1_l8jbc"]
+[ext_resource type="Script" path="res://game/levels/level_manager/level_details.gd" id="1_ntk77"]
+[ext_resource type="PackedScene" uid="uid://7bmr1g0nispq" path="res://game/levels/01_underwater/underwater.tscn" id="2_ushjh"]
+
+[resource]
+script = ExtResource("1_ntk77")
+title = "Underwater"
+duration = 180.0
+music = ExtResource("1_l8jbc")
+scene = ExtResource("2_ushjh")
+camera_zoom = 1.0

@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccmcclpskcvju"]
+
+[ext_resource type="Script" path="res://menus/class_selection/class_pick.gd" id="1_7sd11"]
+[ext_resource type="Texture2D" uid="uid://w3hdfcsd73gk" path="res://game/abilities/01_shotgun/ability_shotgun.png" id="1_tdpr8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_18i7y"]
+font_color = Color(0.784929, 0.547006, 0.90236, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n45ay"]
+font_size = 8
+font_color = Color(0.553499, 0.448359, 0.606506, 1)
+
+[node name="ClassPick" type="Button"]
+custom_minimum_size = Vector2(0, 75)
+offset_right = 311.0
+offset_bottom = 75.0
+script = ExtResource("1_7sd11")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -35.5
+offset_right = 73.0
+offset_bottom = 35.5
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IconBackdrop" type="ColorRect" parent="AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.32549)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/IconBackdrop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_tdpr8")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 2.0
+offset_right = 154.0
+offset_bottom = 20.0
+text = "Shotgunner"
+label_settings = SubResource("LabelSettings_18i7y")
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 21.0
+offset_right = 331.0
+offset_bottom = 71.0
+text = "Start with nothing but a shotgun"
+label_settings = SubResource("LabelSettings_n45ay")
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

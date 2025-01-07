@@ -1,0 +1,19 @@
+Attacks:
+- Bullet Hell     -- C'thulhu Exclusive
+- C'thulhu Slam   -- Introduced with Nyarlathotep
+- Tentacle Attach -- Introduced with Yog-Sothoth
+- Bullet Spray    -- Introduced with Hastur
+
+Bosses:
+- Yog-Sothoth / The Horror of the Sea
+- Nyarlathotep / The Crawling Chaos
+- Hastur / The Unspeakable
+- C'thulhu
+
+Extra Mechanics:
+- Yog-Sothoth
+  - Spawn reskinned tentacles
+- Hastur
+  - Laser attack
+- Nyarlathotep
+  - Radial slam

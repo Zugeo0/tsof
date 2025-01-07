@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwilos7xhxwys"]
+
+[ext_resource type="Script" path="res://game/abilities/ability_picker/ability_choice/ability_choice.gd" id="1_aqepj"]
+[ext_resource type="Texture2D" uid="uid://w3hdfcsd73gk" path="res://game/abilities/01_shotgun/ability_shotgun.png" id="1_cu30q"]
+[ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="2_u7b02"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhidb"]
+font = ExtResource("2_u7b02")
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_44qmn"]
+font = ExtResource("2_u7b02")
+font_size = 9
+font_color = Color(0.535421, 0.535421, 0.535421, 1)
+
+[node name="AbilityChoice" type="Button"]
+custom_minimum_size = Vector2(350, 100)
+offset_right = 350.0
+offset_bottom = 100.0
+script = ExtResource("1_aqepj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="IconBackdrop" type="ColorRect" parent="HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.32549)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/AspectRatioContainer/IconBackdrop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_cu30q")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="RarityTexture" type="TextureRect" parent="HBoxContainer/AspectRatioContainer/IconBackdrop"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -27.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 27.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="InfoPanelContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="InfoPanel" type="VBoxContainer" parent="HBoxContainer/InfoPanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="HBoxContainer/InfoPanelContainer/InfoPanel"]
+custom_minimum_size = Vector2(0, 15.85)
+layout_mode = 2
+text = "Shotgun"
+label_settings = SubResource("LabelSettings_mhidb")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/InfoPanelContainer/InfoPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/InfoPanelContainer/InfoPanel"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/InfoPanelContainer/InfoPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Description" type="Label" parent="HBoxContainer/InfoPanelContainer/InfoPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ol' Faithful"
+label_settings = SubResource("LabelSettings_44qmn")
+horizontal_alignment = 1
+vertical_alignment = 1

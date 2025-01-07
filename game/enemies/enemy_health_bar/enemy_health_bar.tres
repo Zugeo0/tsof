@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bfd1tsifvy6cg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjl7a"]
+bg_color = Color(0, 0, 0, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y33td"]
+bg_color = Color(0.775091, 0.556351, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kts6l"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq0wm"]
+bg_color = Color(0.942117, 0, 0.231846, 1)
+
+[resource]
+HealthBarDiff/base_type = &"ProgressBar"
+HealthBarDiff/styles/background = SubResource("StyleBoxFlat_vjl7a")
+HealthBarDiff/styles/fill = SubResource("StyleBoxFlat_y33td")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_kts6l")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_gq0wm")

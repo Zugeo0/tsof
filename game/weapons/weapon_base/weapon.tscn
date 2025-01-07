@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqwxaokmxupn"]
+
+[ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="1_nu718"]
+[ext_resource type="Script" path="res://game/weapons/weapon_base/weapon.gd" id="2_y5sl7"]
+
+[node name="Weapon" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("2_y5sl7")
+
+[node name="BurstTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+max_polyphony = 10
+bus = &"Effects"
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+top_level = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(50, 0)
+texture = ExtResource("1_nu718")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(78, 0)
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

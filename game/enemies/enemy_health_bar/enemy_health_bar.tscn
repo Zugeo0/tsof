@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://buyfgyypet0ff"]
+
+[ext_resource type="Theme" uid="uid://bfd1tsifvy6cg" path="res://game/enemies/enemy_health_bar/enemy_health_bar.tres" id="1_7m82r"]
+[ext_resource type="Script" path="res://game/enemies/enemy_health_bar/enemy_health_bar.gd" id="2_d2rej"]
+
+[node name="HealthBar" type="ProgressBar"]
+offset_left = -20.0
+offset_top = 15.0
+offset_right = 20.0
+offset_bottom = 18.0
+theme = ExtResource("1_7m82r")
+theme_type_variation = &"HealthBarDiff"
+value = 50.0
+show_percentage = false
+script = ExtResource("2_d2rej")
+
+[node name="HealthBarValue" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 40.0
+show_percentage = false

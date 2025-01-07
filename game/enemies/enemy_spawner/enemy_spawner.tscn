@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://pikeeyof8bhe"]
+
+[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawner.gd" id="1_wukh6"]
+[ext_resource type="Resource" uid="uid://copyfr7prhobg" path="res://game/levels/01_underwater/01_spawn_tutorial.tres" id="2_yudsm"]
+
+[node name="EnemySpawner" type="Node2D" groups=["Spawner"]]
+script = ExtResource("1_wukh6")
+enemy_spawn = ExtResource("2_yudsm")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+process_mode = 1
+
+[node name="StartTimer" type="Timer" parent="."]
+process_mode = 1
+
+[node name="SpawnDurationTimer" type="Timer" parent="."]
+process_mode = 1

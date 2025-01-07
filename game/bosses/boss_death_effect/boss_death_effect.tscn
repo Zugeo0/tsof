@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://miqkmd2h51cm"]
+
+[ext_resource type="Script" path="res://game/bosses/boss_death_effect/boss_death_effect.gd" id="1_ntme2"]
+[ext_resource type="AudioStream" uid="uid://dqmqo7v6b0kxm" path="res://game/enemies/enemy_death_effect/death.wav" id="2_6kqql"]
+
+[sub_resource type="Gradient" id="Gradient_j2jv0"]
+colors = PackedColorArray(0.685754, 0, 0, 1, 0.160784, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5416l"]
+gradient = SubResource("Gradient_j2jv0")
+
+[sub_resource type="Curve" id="Curve_v3tt4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_v2qsv"]
+curve = SubResource("Curve_v3tt4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6dbs7"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 77.05
+initial_velocity_max = 182.58
+gravity = Vector3(0, 0, 0)
+scale_min = 9.38
+scale_max = 11.05
+scale_curve = SubResource("CurveTexture_v2qsv")
+color_ramp = SubResource("GradientTexture1D_5416l")
+turbulence_enabled = true
+
+[node name="BossDeathEffect" type="Node2D"]
+script = ExtResource("1_ntme2")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6kqql")
+autoplay = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_6dbs7")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="timeout" from="DespawnTimer" to="." method="queue_free"]

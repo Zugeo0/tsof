@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dip13cxogx0yd"]
+
+[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_4lfev"]
+[ext_resource type="Texture2D" uid="uid://b6f5vdl4teees" path="res://game/projectiles/02_ghost_pellet/ghost_pellet.png" id="2_rl4hx"]
+
+[sub_resource type="Gradient" id="Gradient_g18ut"]
+offsets = PackedFloat32Array(0, 0.56553)
+colors = PackedColorArray(0, 0.627451, 0.992157, 0.623529, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sll6i"]
+gradient = SubResource("Gradient_g18ut")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
+radius = 6.0
+
+[node name="Pellet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4lfev")
+speed = 6.0
+unlimited_pierce = true
+
+[node name="Glow" type="Sprite2D" parent="."]
+modulate = Color(0.45098, 0.721569, 0.933333, 0.356863)
+texture = SubResource("GradientTexture2D_sll6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.655699, 0.847142, 0.897477, 0.752941)
+texture = ExtResource("2_rl4hx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_bdf7d")

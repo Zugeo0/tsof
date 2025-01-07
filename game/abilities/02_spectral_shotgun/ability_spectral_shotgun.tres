@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="AbilityInfo" load_steps=4 format=3 uid="uid://bqy8bcqfjj8fl"]
+
+[ext_resource type="Script" path="res://game/abilities/ability_manager/ability_info.gd" id="1_ki525"]
+[ext_resource type="Script" path="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.gd" id="1_rwn86"]
+[ext_resource type="Texture2D" uid="uid://ce58ajv63arhp" path="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.png" id="2_pjm8a"]
+
+[resource]
+script = ExtResource("1_ki525")
+ability_name = "Spectral Shotgun"
+ability_description = "Pfft, they're not fooling me. Ghosts hate glowsticks"
+ability_script = ExtResource("1_rwn86")
+positive_effects = Array[String](["Unlimited Pierce"])
+negative_effects = Array[String](["1 Base Projectile Damage"])
+type = 0
+max_amount = 1
+rarity = 0
+guaranteed_at = 0
+required_level = 0
+incompatabilities = Array[ExtResource("1_ki525")]([])
+requirements = Array[ExtResource("1_ki525")]([])
+icon = ExtResource("2_pjm8a")

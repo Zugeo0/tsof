@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://8dh0p35bidda"]
+
+[ext_resource type="Script" path="res://game/levels/level_manager/level.gd" id="1_d6niu"]
+[ext_resource type="PackedScene" uid="uid://dfhcd32jrkgjs" path="res://game/enemies/enemy_manager/enemy_manager.tscn" id="3_56ggs"]
+[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="3_t76if"]
+[ext_resource type="Resource" uid="uid://dfyw6qt1jc83k" path="res://game/levels/02_depths/02_spawn_regular.tres" id="4_aq8w3"]
+[ext_resource type="Texture2D" uid="uid://dfs8vnr01jiwe" path="res://game/levels/02_depths/depths_background.png" id="5_0738x"]
+[ext_resource type="PackedScene" uid="uid://brqniyn8yf1i7" path="res://game/levels/02_depths/staglatite/stalagtite.tscn" id="6_27yc0"]
+[ext_resource type="PackedScene" uid="uid://baohxl6tgtjfs" path="res://game/bosses/01_horror/horror_of_the_sea.tscn" id="6_jgexl"]
+[ext_resource type="Script" path="res://util/player_follow.gd" id="7_v1w4c"]
+[ext_resource type="Texture2D" uid="uid://baikluojr3aed" path="res://common/textures/glow.tres" id="8_bk1dy"]
+[ext_resource type="Script" path="res://util/object_scatter.gd" id="10_lrswx"]
+
+[sub_resource type="Gradient" id="Gradient_b7csq"]
+colors = PackedColorArray(0, 0, 0, 0, 0.19672, 0.188182, 0.561371, 0.254902)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_whrob"]
+noise_type = 2
+fractal_type = 0
+fractal_weighted_strength = 0.14
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bkbw4"]
+width = 1024
+height = 1024
+seamless = true
+color_ramp = SubResource("Gradient_b7csq")
+noise = SubResource("FastNoiseLite_whrob")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2c3a"]
+frequency = 0.0027
+
+[node name="Depths" type="Node2D" node_paths=PackedStringArray("enemy_manager")]
+y_sort_enabled = true
+script = ExtResource("1_d6niu")
+enemy_manager = NodePath("EnemyManager")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.276065, 0.276065, 0.276065, 1)
+
+[node name="EnemyManager" parent="." instance=ExtResource("3_56ggs")]
+unique_name_in_owner = true
+spawn_settings = Array[ExtResource("3_t76if")]([ExtResource("4_aq8w3")])
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Ground" type="Parallax2D" parent="Visuals"]
+z_index = -2
+scroll_offset = Vector2(-128, -128)
+repeat_size = Vector2(256, 256)
+repeat_times = 19
+
+[node name="Ground" type="Sprite2D" parent="Visuals/Ground"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(128, 128)
+texture = ExtResource("5_0738x")
+metadata/_edit_lock_ = true
+
+[node name="Caustics" type="Parallax2D" parent="Visuals"]
+z_index = -2
+y_sort_enabled = true
+repeat_size = Vector2(1024, 1024)
+autoscroll = Vector2(20, 20)
+repeat_times = 4
+
+[node name="Caustics" type="Sprite2D" parent="Visuals/Caustics"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(128, 128)
+texture = SubResource("NoiseTexture2D_bkbw4")
+metadata/_edit_lock_ = true
+
+[node name="HorrorOfTheSea" parent="." instance=ExtResource("6_jgexl")]
+y_sort_enabled = false
+position = Vector2(0, -187)
+
+[node name="PlayerFollow" type="Node2D" parent="."]
+script = ExtResource("7_v1w4c")
+
+[node name="PointLight2D" type="PointLight2D" parent="PlayerFollow"]
+scale = Vector2(11.4687, 11.4687)
+blend_mode = 2
+texture = ExtResource("8_bk1dy")
+metadata/_edit_lock_ = true
+
+[node name="ObjectScatter" type="Node2D" parent="PlayerFollow" node_paths=PackedStringArray("scatter_container")]
+y_sort_enabled = true
+script = ExtResource("10_lrswx")
+object = ExtResource("6_27yc0")
+cell_count_x = 20
+cell_count_y = 16
+spawn_range = Vector2i(2000, 1600)
+noise = SubResource("FastNoiseLite_h2c3a")
+spawn_threshold = 0.75
+scatter_container = NodePath("../../ScatterContainer")
+
+[node name="ScatterContainer" type="Node2D" parent="."]
+y_sort_enabled = true

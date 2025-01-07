@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelDetails" load_steps=4 format=3 uid="uid://cmv85t8ydb5se"]
+
+[ext_resource type="Script" path="res://game/levels/level_manager/level_details.gd" id="1_7dnni"]
+[ext_resource type="AudioStream" uid="uid://cpvt84op2m221" path="res://game/levels/04_nest/fury-253300.mp3" id="1_48p4i"]
+[ext_resource type="PackedScene" uid="uid://6iasngwre5sv" path="res://game/levels/04_nest/nest.tscn" id="2_7pa5m"]
+
+[resource]
+script = ExtResource("1_7dnni")
+title = "Nest"
+duration = 180.0
+music = ExtResource("1_48p4i")
+scene = ExtResource("2_7pa5m")
+camera_zoom = 0.6

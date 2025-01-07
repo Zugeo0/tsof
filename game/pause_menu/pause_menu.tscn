@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bduncirhdx3nb"]
+
+[ext_resource type="Texture2D" uid="uid://de8as882p6xgx" path="res://game/pause_menu/pause_menu_base.png" id="1_4dvos"]
+[ext_resource type="Script" path="res://game/pause_menu/pause_menu.gd" id="1_oep3s"]
+[ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="3_gtl1w"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_oep3s")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4dvos")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = -217.0
+offset_right = 344.0
+offset_bottom = -51.0
+grow_vertical = 0
+theme = ExtResource("3_gtl1w")
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+metadata/_edit_lock_ = true
+
+[node name="ResetRun" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Reset run"
+metadata/_edit_lock_ = true
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+metadata/_edit_lock_ = true
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+metadata/_edit_lock_ = true
+
+[node name="QuitToMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit to menu"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResetRun" to="." method="_on_reset_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]

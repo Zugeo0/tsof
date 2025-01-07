@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b36cm8qwjiiso"]
+
+[ext_resource type="Texture2D" uid="uid://crju8lwm1dwrl" path="res://menus/loading_screen/loading_screen.png" id="1_h3ris"]
+[ext_resource type="Script" path="res://menus/loading_screen/scene_loader.gd" id="2_l2sil"]
+
+[node name="LoadingScreen" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h3ris")
+script = ExtResource("2_l2sil")

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemySpawnSettings" load_steps=4 format=3 uid="uid://dfyw6qt1jc83k"]
+
+[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="1_1h4uj"]
+[ext_resource type="PackedScene" uid="uid://blv665ljq5yg4" path="res://game/enemies/01_cultist/cultist.tscn" id="1_we62m"]
+
+[sub_resource type="Curve" id="Curve_ie2tx"]
+_data = [Vector2(0, 1), 0.0, -0.503105, 0, 1, Vector2(1, 0.496895), -0.503105, 0.0, 1, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_1h4uj")
+enemy = ExtResource("1_we62m")
+spawn_rate = SubResource("Curve_ie2tx")
+start_time = 0.0
+spawn_duration = 0.0
+min_group_size = 2
+max_group_size = 4
+max_spawns = 0
+min_spawn_range = 1000.0
+max_spawn_range = 2000.0

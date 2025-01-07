@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="AbilityInfo" load_steps=4 format=3 uid="uid://dsble0iw25ob2"]
+
+[ext_resource type="Script" path="res://game/abilities/01_shotgun/ability_shotgun.gd" id="1_ye8vq"]
+[ext_resource type="Texture2D" uid="uid://w3hdfcsd73gk" path="res://game/abilities/01_shotgun/ability_shotgun.png" id="2_ts2x4"]
+[ext_resource type="Script" path="res://game/abilities/ability_manager/ability_info.gd" id="3_cji65"]
+
+[resource]
+script = ExtResource("3_cji65")
+ability_name = "Shotgun"
+ability_description = "Ol' Faithful"
+ability_script = ExtResource("1_ye8vq")
+positive_effects = Array[String](["+1 Shotgun"])
+negative_effects = Array[String]([])
+type = 2
+max_amount = 0
+rarity = 0
+guaranteed_at = 0
+required_level = 0
+incompatabilities = Array[ExtResource("3_cji65")]([])
+requirements = Array[ExtResource("3_cji65")]([])
+icon = ExtResource("2_ts2x4")

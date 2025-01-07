@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://jhy1l0kiejcw"]
+
+[ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_4sstg"]
+[ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="1_07ksl"]
+[ext_resource type="Script" path="res://game/abilities/ability_picker/ability_picker.gd" id="1_53h7p"]
+[ext_resource type="PackedScene" uid="uid://bwilos7xhxwys" path="res://game/abilities/ability_picker/ability_choice/ability_choice.tscn" id="3_jo083"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ymbpp"]
+font = ExtResource("1_4sstg")
+font_size = 27
+font_color = Color(0.813035, 0.688862, 0.897329, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="AbilityPicker" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_53h7p")
+
+[node name="Dimout" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="AbilityListContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 73.0
+offset_top = 108.0
+offset_right = -397.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_07ksl")
+
+[node name="AbilityChoice1" parent="AbilityListContainer" instance=ExtResource("3_jo083")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="AbilityChoice2" parent="AbilityListContainer" instance=ExtResource("3_jo083")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="AbilityChoice3" parent="AbilityListContainer" instance=ExtResource("3_jo083")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SkipButton" type="Button" parent="AbilityListContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Skip (+512 XP)"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 50.0
+offset_right = 412.0
+offset_bottom = 74.0
+text = "Pick Ability"
+label_settings = SubResource("LabelSettings_ymbpp")

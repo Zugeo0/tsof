@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://3siu54c76tf6"]
+
+[ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_c0uy3"]
+
+[resource]
+font = ExtResource("1_c0uy3")
+font_size = 9
+font_color = Color(0, 0.811765, 0.52549, 1)

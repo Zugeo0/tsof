@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcdpvv7s1s3si"]
+
+[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_p6333"]
+[ext_resource type="Texture2D" uid="uid://ccubl2aoqkve8" path="res://game/projectiles/01_pellet/pellet.png" id="2_mdvxk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
+radius = 6.0
+
+[node name="Pellet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_p6333")
+damage = 2
+speed = 6.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mdvxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bdf7d")

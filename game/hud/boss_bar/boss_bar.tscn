@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://dglcbn5qhm7av"]
+
+[ext_resource type="Theme" uid="uid://bggrx162b6v88" path="res://game/hud/boss_bar/boss_bar_theme.tres" id="1_lpein"]
+[ext_resource type="Texture2D" uid="uid://dtr1imna2ag0p" path="res://game/hud/boss_base.png" id="1_x0ejk"]
+[ext_resource type="Script" path="res://game/hud/boss_bar/boss_bar.gd" id="2_b67tm"]
+[ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="4_fxaa6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lyt3e"]
+font = ExtResource("4_fxaa6")
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_1qew8"]
+font = ExtResource("4_fxaa6")
+font_size = 9
+font_color = Color(0.957144, 0.823336, 1, 1)
+outline_size = 8
+outline_color = Color(0.738915, 0.344127, 0.802295, 0.168627)
+
+[node name="BossBar" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lpein")
+texture = ExtResource("1_x0ejk")
+script = ExtResource("2_b67tm")
+metadata/_edit_lock_ = true
+
+[node name="ProgressBarDiff" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = -36.0
+offset_right = 897.0
+offset_bottom = -24.0
+grow_vertical = 0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBarActual" type="ProgressBar" parent="ProgressBarDiff"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_right = 831.0
+grow_vertical = 0
+theme_type_variation = &"BossBarHealth"
+value = 40.0
+show_percentage = false
+
+[node name="HealthPercentage" type="Label" parent="ProgressBarDiff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "45%"
+label_settings = SubResource("LabelSettings_lyt3e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 78.0
+offset_top = -65.0
+offset_right = 296.0
+offset_bottom = -50.0
+grow_vertical = 0
+text = "Horror of the Sea"
+label_settings = SubResource("LabelSettings_1qew8")

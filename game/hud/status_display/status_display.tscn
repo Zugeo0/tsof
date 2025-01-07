@@ -1,0 +1,204 @@
+[gd_scene load_steps=14 format=3 uid="uid://rlrweitqe4db"]
+
+[ext_resource type="Texture2D" uid="uid://dojf8w5sqdg6m" path="res://game/hud/hud_base.png" id="1_o7otf"]
+[ext_resource type="Script" path="res://game/hud/status_display/status_display.gd" id="2_llh06"]
+[ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="3_k6fqm"]
+[ext_resource type="Theme" uid="uid://ktk1krg71yc7" path="res://game/hud/status_display/status_bar_theme.tres" id="4_nlvit"]
+[ext_resource type="Script" path="res://game/hud/status_display/health_bar.gd" id="5_vllul"]
+[ext_resource type="Script" path="res://game/hud/status_display/experience_bar.gd" id="6_ovm5q"]
+[ext_resource type="Script" path="res://game/hud/status_display/level_clock.gd" id="7_to3xn"]
+[ext_resource type="FontFile" uid="uid://ojgiiuipy7q5" path="res://common/fonts/fonts-DSEG_v046/DSEG7Classic-Bold.ttf" id="8_i317r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bijug"]
+font = ExtResource("3_k6fqm")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_cean2"]
+font = ExtResource("3_k6fqm")
+font_size = 9
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxs74"]
+font = ExtResource("3_k6fqm")
+font_size = 9
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5oxg"]
+font = ExtResource("8_i317r")
+font_size = 21
+font_color = Color(0.964706, 0, 0.419608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lommt"]
+font = ExtResource("8_i317r")
+font_size = 21
+font_color = Color(0.964706, 0, 0.419608, 1)
+outline_color = Color(0.713726, 0, 0.301961, 0.235294)
+
+[node name="StatusDisplay" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o7otf")
+script = ExtResource("2_llh06")
+metadata/_edit_lock_ = true
+
+[node name="LevelCounter" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 83.0
+offset_bottom = 72.0
+text = "99"
+label_settings = SubResource("LabelSettings_bijug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 31.0
+offset_right = 291.0
+offset_bottom = 43.0
+theme = ExtResource("4_nlvit")
+theme_type_variation = &"HealthBar"
+step = 1.0
+value = 50.0
+show_percentage = false
+script = ExtResource("5_vllul")
+
+[node name="InfoContainer" type="HBoxContainer" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_nlvit")
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Health" type="Label" parent="HealthBar/InfoContainer"]
+layout_mode = 2
+text = "20/20"
+label_settings = SubResource("LabelSettings_cean2")
+
+[node name="Multiplier" type="Label" parent="HealthBar/InfoContainer"]
+layout_mode = 2
+text = "(+50%)"
+label_settings = SubResource("LabelSettings_pxs74")
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.12549, 0.203922, 1)
+
+[node name="DifferenceVisual" type="ProgressBar" parent="HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"DifferenceBar"
+value = 80.0
+show_percentage = false
+
+[node name="ExperienceBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 46.0
+offset_right = 291.0
+offset_bottom = 58.0
+theme = ExtResource("4_nlvit")
+theme_type_variation = &"ExperienceBar"
+step = 1.0
+value = 50.0
+show_percentage = false
+script = ExtResource("6_ovm5q")
+
+[node name="Experience" type="Label" parent="ExperienceBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5/10"
+label_settings = SubResource("LabelSettings_cean2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="ExperienceBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.12549, 0.203922, 1)
+
+[node name="LevelClock" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_to3xn")
+
+[node name="MinutesBackdrop" type="Label" parent="LevelClock"]
+modulate = Color(0.588235, 0.588235, 0.588235, 0.4)
+layout_mode = 0
+offset_left = 824.0
+offset_top = 26.0
+offset_right = 864.0
+offset_bottom = 49.0
+scale = Vector2(1.3, 1.3)
+text = "88"
+label_settings = SubResource("LabelSettings_l5oxg")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SecondsBackdrop" type="Label" parent="LevelClock"]
+modulate = Color(0.588235, 0.588235, 0.588235, 0.4)
+layout_mode = 0
+offset_left = 887.0
+offset_top = 26.0
+offset_right = 927.0
+offset_bottom = 49.0
+scale = Vector2(1.3, 1.3)
+text = "88"
+label_settings = SubResource("LabelSettings_l5oxg")
+vertical_alignment = 1
+
+[node name="Minutes" type="Label" parent="LevelClock"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 26.0
+offset_right = 864.0
+offset_bottom = 49.0
+scale = Vector2(1.3, 1.3)
+text = "01"
+label_settings = SubResource("LabelSettings_lommt")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Seconds" type="Label" parent="LevelClock"]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 26.0
+offset_right = 927.0
+offset_bottom = 49.0
+scale = Vector2(1.3, 1.3)
+text = "30"
+label_settings = SubResource("LabelSettings_lommt")
+vertical_alignment = 1

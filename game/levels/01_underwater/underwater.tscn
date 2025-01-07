@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://7bmr1g0nispq"]
+
+[ext_resource type="Texture2D" uid="uid://csif15v3361dn" path="res://game/levels/01_underwater/underwater_background.png" id="1_di285"]
+[ext_resource type="Script" path="res://game/levels/level_manager/level.gd" id="1_h2bvv"]
+[ext_resource type="PackedScene" uid="uid://dfhcd32jrkgjs" path="res://game/enemies/enemy_manager/enemy_manager.tscn" id="2_ylucu"]
+[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="4_gwutn"]
+[ext_resource type="Resource" uid="uid://copyfr7prhobg" path="res://game/levels/01_underwater/01_spawn_tutorial.tres" id="5_qi78a"]
+[ext_resource type="Resource" uid="uid://bsssv7l0ndf8q" path="res://game/levels/01_underwater/01_spawn_regular.tres" id="7_lcbg2"]
+
+[sub_resource type="Gradient" id="Gradient_7pvyr"]
+colors = PackedColorArray(0, 0, 0, 0, 0.337255, 0.619608, 1, 0.407843)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n5m5f"]
+noise_type = 2
+fractal_type = 0
+fractal_weighted_strength = 0.14
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2jkkl"]
+width = 1024
+height = 1024
+seamless = true
+color_ramp = SubResource("Gradient_7pvyr")
+noise = SubResource("FastNoiseLite_n5m5f")
+
+[node name="Underwater" type="Node2D" node_paths=PackedStringArray("enemy_manager")]
+y_sort_enabled = true
+script = ExtResource("1_h2bvv")
+enemy_manager = NodePath("EnemyManager")
+
+[node name="Visuals" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Ground" type="Parallax2D" parent="Visuals"]
+scroll_offset = Vector2(-128, -128)
+repeat_size = Vector2(256, 256)
+repeat_times = 19
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="Sprite2D" parent="Visuals/Ground"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(128, 128)
+texture = ExtResource("1_di285")
+
+[node name="Caustics" type="Parallax2D" parent="Visuals"]
+y_sort_enabled = true
+repeat_size = Vector2(1024, 1024)
+autoscroll = Vector2(10, 10)
+repeat_times = 4
+
+[node name="Caustics" type="Sprite2D" parent="Visuals/Caustics"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(128, 128)
+texture = SubResource("NoiseTexture2D_2jkkl")
+
+[node name="EnemyManager" parent="." instance=ExtResource("2_ylucu")]
+unique_name_in_owner = true
+spawn_settings = Array[ExtResource("4_gwutn")]([ExtResource("5_qi78a"), ExtResource("7_lcbg2")])
