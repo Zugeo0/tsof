@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpbfpj6dqwxvu"
-path="res://.godot/imported/R_Crosshair.png-42f24cb14214bf0807d6789c1cff3946.ctex"
+uid="uid://dssgxeygyfbwh"
+path="res://.godot/imported/weapon_type.svg-aeb354e5a212114fac990d8b0116bc87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/weapons/crosshairs/R_Crosshair.png"
-dest_files=["res://.godot/imported/R_Crosshair.png-42f24cb14214bf0807d6789c1cff3946.ctex"]
+source_file="res://game/weapons/weapon_type/weapon_type.svg"
+dest_files=["res://.godot/imported/weapon_type.svg-aeb354e5a212114fac990d8b0116bc87.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

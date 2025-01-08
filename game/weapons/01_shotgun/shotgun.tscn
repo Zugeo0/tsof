@@ -1,19 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7aoph768ryi7"]
+[gd_scene load_steps=8 format=3 uid="uid://b7aoph768ryi7"]
 
-[ext_resource type="Script" path="res://game/weapons/weapon_class/weapon_class.gd" id="1_q602u"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/weapon_type.gd" id="1_q602u"]
 [ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="2_b4tg3"]
+[ext_resource type="PackedScene" uid="uid://bqwxaokmxupn" path="res://game/weapons/weapon_base/ranged/ranged_weapon_base.tscn" id="2_xn8ax"]
 [ext_resource type="AudioStream" uid="uid://bg4h2b4j8ypno" path="res://game/weapons/01_shotgun/shotgun.wav" id="3_wnytl"]
 [ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="4_biffx"]
-[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/crosshairs/R_Crosshair.png" id="5_lqruw"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="5_lqruw"]
 
 [sub_resource type="Curve" id="Curve_iu4fx"]
 max_value = 40.0
 _data = [Vector2(0, 0), 0.0, 20.1329, 0, 1, Vector2(0.566737, 11.41), 45.4869, 45.4869, 0, 0, Vector2(1, 40), 65.9876, 0.0, 1, 0]
 point_count = 3
 
-[node name="ShotgunClass" type="Node2D"]
+[node name="Shotgun" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_q602u")
+weapon_name = "Shotgun"
+weapon_id = "shotgun"
+weapon_category = 1
+weapon_base = ExtResource("2_xn8ax")
 burst = true
 projectile_count = 5
 projectile_spread = SubResource("Curve_iu4fx")

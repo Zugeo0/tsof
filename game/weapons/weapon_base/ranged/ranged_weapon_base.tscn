@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqwxaokmxupn"]
 
-[ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="1_nu718"]
-[ext_resource type="Script" path="res://game/weapons/weapon_base/weapon.gd" id="2_y5sl7"]
+[ext_resource type="Script" path="res://game/weapons/weapon_base/ranged/ranged_weapon_base.gd" id="1_k0ig1"]
+[ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="2_ngsda"]
 
-[node name="Weapon" type="Node2D"]
+[node name="RangedWeaponBase" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("2_y5sl7")
+script = ExtResource("1_k0ig1")
 
 [node name="BurstTimer" type="Timer" parent="."]
 autostart = true
@@ -23,7 +23,7 @@ top_level = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(50, 0)
-texture = ExtResource("1_nu718")
+texture = ExtResource("2_ngsda")
 
 [node name="BulletSpawnPosition" type="Marker2D" parent="."]
 position = Vector2(78, 0)

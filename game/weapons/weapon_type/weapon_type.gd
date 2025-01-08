@@ -1,7 +1,5 @@
 @icon("res://game/weapons/weapon_class/weapon_class.svg")
-class_name WeaponClass extends Node2D
-
-const WEAPON = preload("res://game/weapons/weapon_base/weapon.tscn")
+class_name WeaponType extends Node2D
 
 enum TargetPriority {
 	CLOSEST,
@@ -9,6 +7,23 @@ enum TargetPriority {
 	STRONGEST,
 	WEAKEST,
 }
+
+enum WeaponCategory {
+	ALL,
+	RANGED,
+	THROWING,
+	MELEE,
+}
+
+@export_group("Info")
+
+@export var weapon_name: String
+
+@export var weapon_id: String
+
+@export var weapon_category: WeaponCategory
+
+@export var weapon_base: PackedScene
 
 @export_group("Primary Stats")
 
@@ -114,6 +129,6 @@ func set_manager(weapon_manager: WeaponManager) -> void:
 	_weapon_manager = weapon_manager
 
 func add_weapon() -> void:
-	var weapon = WEAPON.instantiate()
+	var weapon = weapon_base.instantiate()
 	add_child(weapon)
 	weapon.init(self)

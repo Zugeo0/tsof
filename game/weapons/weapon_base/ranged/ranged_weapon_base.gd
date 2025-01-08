@@ -1,6 +1,6 @@
-class_name Weapon extends Node2D
+class_name Weapon extends WeaponBase
 
-var _weapon_class: WeaponClass
+var _weapon_type: WeaponType
 var _current_target: Enemy
 
 @onready var burst_timer: Timer = $BurstTimer
@@ -22,15 +22,15 @@ func _process(_delta: float) -> void:
 		crosshair.global_position = _current_target.global_position
 		look_at(_current_target.global_position)
 
-func init(weapon_class: WeaponClass) -> void:
-	_weapon_class = weapon_class
-	sprite.texture = _weapon_class.sprite
-	sprite.scale = _weapon_class.sprite_scale
-	attack_sfx.stream = _weapon_class.attack_sfx
-	crosshair.texture = _weapon_class.crosshair
+func init(weapon_type: WeaponType) -> void:
+	_weapon_type = weapon_type
+	sprite.texture = _weapon_type.sprite
+	sprite.scale = _weapon_type.sprite_scale
+	attack_sfx.stream = _weapon_type.attack_sfx
+	crosshair.texture = _weapon_type.crosshair
 	
-	burst_timer.wait_time = _weapon_class.delay_between_burst_projectiles
-	attack_timer.wait_time = _weapon_class.attack_speed
+	burst_timer.wait_time = _weapon_type.delay_between_burst_projectiles
+	attack_timer.wait_time = _weapon_type.attack_speed
 
 func set_target(target: Enemy) -> void:
 	_current_target = target
@@ -39,13 +39,13 @@ func _on_attack_timer_timeout() -> void:
 	fire()
 
 func fire() -> void:
-	if _weapon_class.burst:
+	if _weapon_type.burst:
 		_burst_attack()
 	else:
 		_fire_bullet()
 
 func _fire_bullet() -> void:
-	var projectile: Projectile = _weapon_class.projectile.instantiate()
+	var projectile: Projectile = _weapon_type.projectile.instantiate()
 	var direction = _calculate_spread_vector()
 	projectile.init(direction, Game.get_player(), _current_target if is_instance_valid(_current_target) else null)
 	projectile.top_level = true
@@ -54,7 +54,7 @@ func _fire_bullet() -> void:
 	_play_attack_sfx()
 
 func _calculate_spread_vector() -> Vector2:
-	var degrees = _weapon_class.projectile_spread.sample(randf()) / 2
+	var degrees = _weapon_type.projectile_spread.sample(randf()) / 2
 	
 	# Give the projectile a 50% chance of having the angle inverted
 	var sign_multiplier = [-1, 1].pick_random()
@@ -65,13 +65,13 @@ func _calculate_spread_vector() -> Vector2:
 	return angle
 
 func _burst_attack() -> void:
-	if _weapon_class.delay_between_burst_projectiles > 0:
-		burst_timer.wait_time = _weapon_class.delay_between_burst_projectiles
+	if _weapon_type.delay_between_burst_projectiles > 0:
+		burst_timer.wait_time = _weapon_type.delay_between_burst_projectiles
 	
-	for i in range(_weapon_class.projectile_count):
+	for i in range(_weapon_type.projectile_count):
 		_fire_bullet()
 		
-		if _weapon_class.delay_between_burst_projectiles > 0:
+		if _weapon_type.delay_between_burst_projectiles > 0:
 			burst_timer.start()
 			await burst_timer.timeout
 

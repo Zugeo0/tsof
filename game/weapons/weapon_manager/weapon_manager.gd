@@ -1,40 +1,38 @@
 @icon("res://game/weapons/weapon_manager/weapon_manager.svg")
 class_name WeaponManager extends Node2D
 
-@onready var equipped_weapons: Node2D = $EquippedWeapons
+@onready var weapons: Node2D = $Weapons
 @onready var target_range: Area2D = $TargetRange
 
-@export var available_weapons: Array[WeaponType]
-
-var _weapons_classes: Dictionary = {}
+var _weapons_types: Dictionary = {}
 
 func _ready() -> void:
-	for weapon_type in available_weapons:
-		var weapon_scene: WeaponClass = weapon_type.weapon_class.instantiate()
-		_weapons_classes[weapon_type.weapon_id] = weapon_scene
-		weapon_scene.set_manager(self)
+	for weapon_type: WeaponType in weapons.get_children():
+		weapon_type.set_manager(self)
+		_weapons_types[weapon_type.weapon_id] = weapon_type
 
 func add_weapon(id: String) -> void:
-	if id not in _weapons_classes:
+	if id not in _weapons_types:
 		push_error("Attempting to add invalid weapon: %s" % id)
 		return
 	
-	var weapon_class: WeaponClass = _weapons_classes[id]
-	if weapon_class not in equipped_weapons.get_children():
-		equipped_weapons.add_child(weapon_class)
-	
-	weapon_class.add_weapon()
+	var weapon_type: WeaponType = _weapons_types[id]
+	weapon_type.add_weapon()
 
-func get_weapon_class(id: String) -> WeaponClass:
-	if id not in _weapons_classes:
+func get_weapon_type(id: String) -> WeaponType:
+	if id not in _weapons_types:
 		push_error("Attempting to add invalid weapon: %s" % id)
 		return
 	
-	return _weapons_classes[id]
+	return _weapons_types[id]
 
 func set_weapon_projectile(weapon_id: String, projectile: PackedScene) -> void:
-	var weapon_class = get_weapon_class(weapon_id)
-	weapon_class.projectile = projectile
+	var weapon_type = get_weapon_type(weapon_id)
+	
+	if weapon_type == null:
+		return
+	
+	weapon_type.projectile = projectile
 
 func get_closest_enemies() -> Array[Enemy]:
 	var enemies: Array[Enemy]
