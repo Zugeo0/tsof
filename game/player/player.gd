@@ -13,7 +13,9 @@ signal levelup
 @onready var camera: Camera2D = $Camera
 @onready var weapon_manager: WeaponManager = $WeaponManager
 
-@export var stats: PlayerStats
+@export var player_stats: PlayerStats
+
+var health: int = 0
 
 var current_experience: int = 0
 var current_level: int = 0
@@ -24,12 +26,15 @@ signal frozen
 signal unfrozen
 
 func _ready() -> void:
-	var current_class = RunSettings.get_current_player_class()
+	var current_class: PlayerClass = RunSettings.get_current_player_class()
 	if current_class != null:
-		stats = current_class.duplicate()
+		if current_class.player_stats != null:
+			player_stats = current_class.player_stats.duplicate()
+		
+		for weapon in current_class.starting_weapons:
+			weapon_manager.add_weapon(weapon)
 	
-	for weapon in stats.starting_weapons:
-		weapon_manager.add_weapon(weapon)
+	health = floor(player_stats.max_health * player_stats.max_health_multiplier)
 
 func _physics_process(_delta: float) -> void:
 	if _freeze:
@@ -52,18 +57,17 @@ func _physics_process(_delta: float) -> void:
 
 func take_damage(_source: Enemy, amt: int, pierce: int) -> int:
 	if invincibility_timer.time_left > 0:
-		return pierce - stats.armor - 1
+		return pierce - player_stats.armor - 1
 	
-	invincibility_timer.wait_time = stats.invincibility_time
 	invincibility_timer.start()
 	
-	stats.health = max(stats.health - amt, 0)
+	health = max(health - amt, 0)
 	damage_taken.emit(amt)
 	
 	_flash_sprite.call_deferred()
 	hurt_sfx.play()
 	
-	return pierce - stats.armor - 1
+	return pierce - player_stats.armor - 1
 
 func _flash_sprite() -> void:
 	var sprite_material: ShaderMaterial = sprite.material
@@ -85,6 +89,7 @@ func add_xp(amt: int) -> void:
 		
 		required_for_levelup = get_xp_requirement(current_level)
 		levelup.emit()
+
 
 ## Calculates how much xp is needed to reach the level after the one provided
 func get_xp_requirement(level: int) -> int:

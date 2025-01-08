@@ -1,6 +1,7 @@
-class_name Weapon extends WeaponBase
+class_name RangedWeaponBase extends WeaponBase
 
-var _weapon_type: WeaponType
+var _weapon_type: RangedWeapon
+var _weapon_manager: WeaponManager
 var _current_target: Enemy
 
 @onready var burst_timer: Timer = $BurstTimer
@@ -22,15 +23,14 @@ func _process(_delta: float) -> void:
 		crosshair.global_position = _current_target.global_position
 		look_at(_current_target.global_position)
 
-func init(weapon_type: WeaponType) -> void:
+func init(weapon_manager: WeaponManager, weapon_type: WeaponType) -> void:
 	_weapon_type = weapon_type
+	_weapon_manager = weapon_manager
+	
 	sprite.texture = _weapon_type.sprite
-	sprite.scale = _weapon_type.sprite_scale
 	attack_sfx.stream = _weapon_type.attack_sfx
 	crosshair.texture = _weapon_type.crosshair
-	
-	burst_timer.wait_time = _weapon_type.delay_between_burst_projectiles
-	attack_timer.wait_time = _weapon_type.attack_speed
+	attack_timer.wait_time = _weapon_type.delay_between_attacks
 
 func set_target(target: Enemy) -> void:
 	_current_target = target
@@ -39,7 +39,12 @@ func _on_attack_timer_timeout() -> void:
 	fire()
 
 func fire() -> void:
-	if _weapon_type.burst:
+	var delay = _weapon_type.delay_between_attacks
+	delay *= _weapon_manager.ranged_weapon_stats.attack_speed_mod
+	delay *= Game.get_player().player_stats.attack_speed
+	attack_timer.start(delay)
+	
+	if _weapon_type.enable_burst:
 		_burst_attack()
 	else:
 		_fire_bullet()
@@ -47,7 +52,8 @@ func fire() -> void:
 func _fire_bullet() -> void:
 	var projectile: Projectile = _weapon_type.projectile.instantiate()
 	var direction = _calculate_spread_vector()
-	projectile.init(direction, Game.get_player(), _current_target if is_instance_valid(_current_target) else null)
+	var target = _current_target if is_instance_valid(_current_target) else null
+	projectile.init(direction, Game.get_player(), target, [_weapon_type.stats, _weapon_manager.ranged_weapon_stats])
 	projectile.top_level = true
 	projectile.global_position = bullet_spawn_position.global_position
 	add_child(projectile)

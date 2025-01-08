@@ -4,6 +4,11 @@ class_name WeaponManager extends Node2D
 @onready var weapons: Node2D = $Weapons
 @onready var target_range: Area2D = $TargetRange
 
+@export_group("Global Stats")
+@export var ranged_weapon_stats: RangedWeaponStats
+@export var explosive_weapon_stats: ExplosiveWeaponStats
+@export var melee_weapon_stats: MeleeWeaponStats
+
 var _weapons_types: Dictionary = {}
 
 func _ready() -> void:

@@ -1,57 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b25rlnwqc6j8v"]
+[gd_scene load_steps=5 format=3 uid="uid://b25rlnwqc6j8v"]
 
 [ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="1_eoo32"]
 [ext_resource type="Texture2D" uid="uid://xm6v7e18cykl" path="res://menus/main_menu/main_menu.png" id="2_2tk48"]
 [ext_resource type="Script" path="res://menus/main_menu/main_menu.gd" id="3_2c6nf"]
-[ext_resource type="Texture2D" uid="uid://ch4qb0d2leqr6" path="res://game/player/classes/01_shotgunner.png" id="4_s3ou3"]
 [ext_resource type="PackedScene" uid="uid://bbsiioc3l5os6" path="res://menus/class_selection/class_selection.tscn" id="4_x7xjy"]
-[ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="5_obl5g"]
-[ext_resource type="Resource" uid="uid://b1g1x7nhk8ln3" path="res://game/player/classes/02_gunner.tres" id="7_qvf87"]
-
-[sub_resource type="Resource" id="Resource_5nav2"]
-resource_local_to_scene = true
-script = ExtResource("5_obl5g")
-player_class_name = "Shotgunner"
-player_class_description = "Start with a shotgun"
-player_class_icon = ExtResource("4_s3ou3")
-armor = 0
-health = 20
-max_health = 20
-max_health_mod = 1.0
-movement_speed = 5.0
-movement_speed_mod = 1.0
-invincibility_time = 0.1
-regen_amount_flat = 1
-regen_amount_percentile = 0.0
-dodge_chance = 0.0
-regen_speed_mod = 1.0
-regen_speed = 2.0
-can_regen = true
-crits_deal_damage = true
-experience_gain_mod = 1.0
-item_absorb_range = 55.0
-item_absorb_range_mod = 1.0
-attack_speed_mod = 1.0
-starting_weapons = Array[String](["shotgun"])
-added_melee_damage = 0
-added_melee_strikes = 0
-added_melee_knockback = 0
-melee_range_mod = 1.0
-melee_attack_speed_mod = 1.0
-melee_knockback_mod = 1.0
-added_gun_damage = 0
-extra_projectiles = 0
-extra_projectile_pierce = 0
-ranged_range_mod = 1.0
-ranged_spread_mod = 1.0
-ranged_attack_speed_mod = 1.0
-added_explosive_damage = 0
-added_explosive_radius = 0.0
-explosive_radius_mod = 1.0
-explosive_damage_mod = 1.0
-crit_chance = 0.0
-damage_mod = 1.0
-crit_multiplier = 2.0
 
 [node name="MainMenu" type="TextureRect"]
 anchors_preset = 15
@@ -96,7 +48,6 @@ offset_left = 60.0
 offset_top = 278.0
 offset_right = 395.0
 offset_bottom = 493.0
-classes = Array[ExtResource("5_obl5g")]([SubResource("Resource_5nav2"), ExtResource("7_qvf87")])
 
 [connection signal="pressed" from="MainButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainButtons/Options" to="." method="_on_options_pressed"]

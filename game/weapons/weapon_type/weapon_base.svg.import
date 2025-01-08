@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnc0fs63bl48w"
-path="res://.godot/imported/02_gunner.png-4aacc4200c1fcd1c2d3857355e47dfc5.ctex"
+uid="uid://dx6oy0v0vwgq4"
+path="res://.godot/imported/weapon_base.svg-9ba840a3688673694ca6d3de8cb8bbdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/player/classes/02_gunner.png"
-dest_files=["res://.godot/imported/02_gunner.png-4aacc4200c1fcd1c2d3857355e47dfc5.ctex"]
+source_file="res://game/weapons/weapon_type/weapon_base.svg"
+dest_files=["res://.godot/imported/weapon_base.svg-9ba840a3688673694ca6d3de8cb8bbdb.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

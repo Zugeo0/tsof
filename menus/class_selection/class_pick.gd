@@ -4,9 +4,9 @@ class_name PlayerClassPick extends Button
 @onready var player_class_description: Label = $Description
 @onready var player_class_icon: TextureRect = $AspectRatioContainer/IconBackdrop/TextureRect
 
-var _player_class: PlayerStats
+var _player_class: PlayerClass
 
-func set_class(player_class: PlayerStats) -> void:
+func set_class(player_class: PlayerClass) -> void:
 	player_class_name.text = player_class.player_class_name
 	player_class_description.text = player_class.player_class_description
 	player_class_icon.texture = player_class.player_class_icon

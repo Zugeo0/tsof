@@ -1,54 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbsiioc3l5os6"]
+[gd_scene load_steps=5 format=3 uid="uid://bbsiioc3l5os6"]
 
 [ext_resource type="Script" path="res://menus/class_selection/class_selection.gd" id="1_n42yp"]
-[ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="2_i12rr"]
-[ext_resource type="Texture2D" uid="uid://ch4qb0d2leqr6" path="res://game/player/classes/01_shotgunner.png" id="3_5k8nl"]
-[ext_resource type="Resource" uid="uid://b1g1x7nhk8ln3" path="res://game/player/classes/02_gunner.tres" id="4_d8d3s"]
-
-[sub_resource type="Resource" id="Resource_5nav2"]
-resource_local_to_scene = true
-script = ExtResource("2_i12rr")
-player_class_name = "Shotgunner"
-player_class_description = "Start with a shotgun"
-player_class_icon = ExtResource("3_5k8nl")
-armor = 0
-health = 20
-max_health = 20
-max_health_mod = 1.0
-movement_speed = 5.0
-movement_speed_mod = 1.0
-invincibility_time = 0.1
-regen_amount_flat = 1
-regen_amount_percentile = 0.0
-dodge_chance = 0.0
-regen_speed_mod = 1.0
-regen_speed = 2.0
-can_regen = true
-crits_deal_damage = true
-experience_gain_mod = 1.0
-item_absorb_range = 55.0
-item_absorb_range_mod = 1.0
-attack_speed_mod = 1.0
-starting_weapons = Array[String](["shotgun"])
-added_melee_damage = 0
-added_melee_strikes = 0
-added_melee_knockback = 0
-melee_range_mod = 1.0
-melee_attack_speed_mod = 1.0
-melee_knockback_mod = 1.0
-added_gun_damage = 0
-extra_projectiles = 0
-extra_projectile_pierce = 0
-ranged_range_mod = 1.0
-ranged_spread_mod = 1.0
-ranged_attack_speed_mod = 1.0
-added_explosive_damage = 0
-added_explosive_radius = 0.0
-explosive_radius_mod = 1.0
-explosive_damage_mod = 1.0
-crit_chance = 0.0
-damage_mod = 1.0
-crit_multiplier = 2.0
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_3v5ir"]
+[ext_resource type="Resource" uid="uid://clpoubrrc5lsn" path="res://game/player/classes/01_shotgunner/01_shotgunner.tres" id="3_iptwg"]
+[ext_resource type="Resource" uid="uid://bkkq4b7oqxsqk" path="res://game/player/classes/02_gunner/02_gunner.tres" id="4_abi4m"]
 
 [node name="ClassSelection" type="Control"]
 layout_mode = 3
@@ -56,7 +11,7 @@ anchors_preset = 0
 offset_right = 336.0
 offset_bottom = 224.0
 script = ExtResource("1_n42yp")
-classes = Array[ExtResource("2_i12rr")]([SubResource("Resource_5nav2"), ExtResource("4_d8d3s")])
+classes = Array[ExtResource("2_3v5ir")]([ExtResource("3_iptwg"), ExtResource("4_abi4m")])
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1

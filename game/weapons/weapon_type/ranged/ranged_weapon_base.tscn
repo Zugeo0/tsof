@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqwxaokmxupn"]
 
-[ext_resource type="Script" path="res://game/weapons/weapon_base/ranged/ranged_weapon_base.gd" id="1_k0ig1"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon_base.gd" id="1_k0ig1"]
 [ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="2_ngsda"]
 
 [node name="RangedWeaponBase" type="Node2D"]
@@ -8,9 +8,11 @@ y_sort_enabled = true
 script = ExtResource("1_k0ig1")
 
 [node name="BurstTimer" type="Timer" parent="."]
+one_shot = true
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
 autostart = true
 
 [node name="AttackSFX" type="AudioStreamPlayer" parent="."]

@@ -1,24 +1,63 @@
-[gd_scene load_steps=13 format=3 uid="uid://udfbeighyw02"]
+[gd_scene load_steps=21 format=3 uid="uid://udfbeighyw02"]
 
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
-[ext_resource type="Script" path="res://game/weapons/weapon_type/weapon_type.gd" id="2_xk726"]
-[ext_resource type="PackedScene" uid="uid://bqwxaokmxupn" path="res://game/weapons/weapon_base/ranged/ranged_weapon_base.tscn" id="3_0n1hf"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon.gd" id="2_nfmam"]
+[ext_resource type="PackedScene" uid="uid://bqwxaokmxupn" path="res://game/weapons/weapon_type/ranged/ranged_weapon_base.tscn" id="3_0n1hf"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon_stats.gd" id="3_6sn8x"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/explosive/exposive_weapon_stats.gd" id="3_ce3jm"]
 [ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="4_0tjbq"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/melee/melee_weapon_stats.gd" id="4_5mhyx"]
 [ext_resource type="AudioStream" uid="uid://bg4h2b4j8ypno" path="res://game/weapons/01_shotgun/shotgun.wav" id="5_2fuvc"]
 [ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="6_qhcqw"]
 [ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="7_vbjpy"]
-[ext_resource type="Texture2D" uid="uid://cp2yi4oe71g6" path="res://game/weapons/02_assault_rifle/assault_rifle.png" id="8_u8pia"]
-[ext_resource type="AudioStream" uid="uid://3g8d832n2v1f" path="res://game/weapons/02_assault_rifle/assault_rifle.wav" id="9_ldyuh"]
+[ext_resource type="Texture2D" uid="uid://cp2yi4oe71g6" path="res://game/weapons/02_assault_rifle/assault_rifle.png" id="11_nivw1"]
+[ext_resource type="AudioStream" uid="uid://3g8d832n2v1f" path="res://game/weapons/02_assault_rifle/assault_rifle.wav" id="12_hjv6m"]
+
+[sub_resource type="Resource" id="Resource_sh7wi"]
+script = ExtResource("3_6sn8x")
+added_projectile_damage = 0
+projectile_damage_multiplier = 1.0
+projectile_speed_multiplier = 1.0
+extra_projectiles = 0
+added_pierce = 0
+attack_speed_mod = 1.0
+
+[sub_resource type="Resource" id="Resource_0la66"]
+script = ExtResource("3_ce3jm")
+explosion_range_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_tp3q3"]
+script = ExtResource("4_5mhyx")
+added_melee_strike_count = 0
+melee_strike_delay_multiplier = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a24m"]
 radius = 630.134
 
-[sub_resource type="Curve" id="Curve_iu4fx"]
-max_value = 40.0
-_data = [Vector2(0, 0), 0.0, 20.1329, 0, 1, Vector2(0.566737, 11.41), 45.4869, 45.4869, 0, 0, Vector2(1, 40), 65.9876, 0.0, 1, 0]
-point_count = 3
+[sub_resource type="Resource" id="Resource_ilec5"]
+script = ExtResource("3_6sn8x")
+added_projectile_damage = 0
+projectile_damage_multiplier = 1.0
+projectile_speed_multiplier = 1.0
+extra_projectiles = 0
+added_pierce = 0
+attack_speed_mod = 1.0
 
-[sub_resource type="Curve" id="Curve_5hckl"]
+[sub_resource type="Curve" id="Curve_dmf3w"]
+max_value = 45.0
+_data = [Vector2(0.247533, 0), 0.0, 0.413491, 0, 0, Vector2(1, 45), 158.29, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_hxlnk"]
+script = ExtResource("3_6sn8x")
+added_projectile_damage = 0
+projectile_damage_multiplier = 1.0
+projectile_speed_multiplier = 1.0
+extra_projectiles = 0
+added_pierce = 0
+attack_speed_mod = 1.0
+
+[sub_resource type="Curve" id="Curve_cvvwc"]
 max_value = 5.0
 _data = [Vector2(0, 0), 0.0, 5.0, 0, 1, Vector2(1, 5), 5.0, 0.0, 1, 0]
 point_count = 2
@@ -26,6 +65,9 @@ point_count = 2
 [node name="WeaponManager" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iyymo")
+ranged_weapon_stats = SubResource("Resource_sh7wi")
+explosive_weapon_stats = SubResource("Resource_0la66")
+melee_weapon_stats = SubResource("Resource_tp3q3")
 
 [node name="TargetRange" type="Area2D" parent="."]
 visible = false
@@ -39,39 +81,31 @@ shape = SubResource("CircleShape2D_4a24m")
 y_sort_enabled = true
 
 [node name="Shotgun" type="Node2D" parent="Weapons"]
-y_sort_enabled = true
-position = Vector2(33.2888, -35.8147)
-script = ExtResource("2_xk726")
+script = ExtResource("2_nfmam")
+stats = SubResource("Resource_ilec5")
+enable_burst = true
+projectile_count = 5
+projectile_spread = SubResource("Curve_dmf3w")
+projectile = ExtResource("6_qhcqw")
+crosshair = ExtResource("7_vbjpy")
 weapon_name = "Shotgun"
 weapon_id = "shotgun"
-weapon_category = 1
 weapon_base = ExtResource("3_0n1hf")
-burst = true
-projectile_count = 5
-projectile_spread = SubResource("Curve_iu4fx")
 sprite = ExtResource("4_0tjbq")
 attack_sfx = ExtResource("5_2fuvc")
-projectile = ExtResource("6_qhcqw")
-crosshair = ExtResource("7_vbjpy")
 
 [node name="AssaultRifle" type="Node2D" parent="Weapons"]
-y_sort_enabled = true
-script = ExtResource("2_xk726")
-weapon_name = "Assault Rifle"
-weapon_id = "assault_rifle"
-weapon_category = 1
-weapon_base = ExtResource("3_0n1hf")
-damage = 5
-damage_effectiveness = 0.8
-attack_speed = 1.4
-crit_chance = 0.05
-burst = true
+script = ExtResource("2_nfmam")
+stats = SubResource("Resource_hxlnk")
+delay_between_attacks = 1.4
+enable_burst = true
 delay_between_burst_projectiles = 0.2
-projectile_speed = 700.0
 projectile_count = 3
-projectile_spread = SubResource("Curve_5hckl")
-knockback = 0.3
-sprite = ExtResource("8_u8pia")
-attack_sfx = ExtResource("9_ldyuh")
+projectile_spread = SubResource("Curve_cvvwc")
 projectile = ExtResource("6_qhcqw")
 crosshair = ExtResource("7_vbjpy")
+weapon_name = "Assault Rifle"
+weapon_id = "assault_rifle"
+weapon_base = ExtResource("3_0n1hf")
+sprite = ExtResource("11_nivw1")
+attack_sfx = ExtResource("12_hjv6m")

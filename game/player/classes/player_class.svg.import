@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx6oy0v0vwgq4"
-path="res://.godot/imported/weapon_base.svg-68e5882f29be00fd1622d9ca3303bd29.ctex"
+uid="uid://cgma451csrwwr"
+path="res://.godot/imported/player_class.svg-69af18a8bcab9615f838872def5426b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/weapons/weapon_base/weapon_base.svg"
-dest_files=["res://.godot/imported/weapon_base.svg-68e5882f29be00fd1622d9ca3303bd29.ctex"]
+source_file="res://game/player/classes/player_class.svg"
+dest_files=["res://.godot/imported/player_class.svg-69af18a8bcab9615f838872def5426b5.ctex"]
 
 [params]
 

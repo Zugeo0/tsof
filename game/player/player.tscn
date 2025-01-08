@@ -1,12 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmmp5s70l5jk1"]
+[gd_scene load_steps=13 format=3 uid="uid://cmmp5s70l5jk1"]
 
 [ext_resource type="PackedScene" uid="uid://udfbeighyw02" path="res://game/weapons/weapon_manager/weapon_manager.tscn" id="1_74sb1"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_lijdu"]
-[ext_resource type="Resource" uid="uid://jii7njaa8emi" path="res://game/player/classes/01_shotgunner.tres" id="2_2xxr3"]
+[ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="2_4hmi3"]
 [ext_resource type="Texture2D" uid="uid://d3g85xp75huh7" path="res://game/player/player.png" id="2_oobxn"]
 [ext_resource type="Material" uid="uid://c0175ljwq3nwg" path="res://common/materials/entity_material.tres" id="4_0yqo5"]
 [ext_resource type="AudioStream" uid="uid://vu5xqfjx4ary" path="res://game/pickups/experience/xp.wav" id="6_cbvat"]
 [ext_resource type="AudioStream" uid="uid://cjfdn66g8j23e" path="res://game/player/hurt.wav" id="7_k7285"]
+
+[sub_resource type="Resource" id="Resource_s1xno"]
+script = ExtResource("2_4hmi3")
+max_health = 100
+max_health_multiplier = 1.0
+armor = 1
+regen_speed = 1.0
+crit_chance = 0.05
+movement_speed = 1.0
+absorb_range = 1.0
+attack_speed = 1.0
+attack_damage_multiplier = 1.0
+can_regen = true
+knockback_multiplier = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x8vvb"]
 
@@ -28,7 +42,7 @@ radius = 92.0489
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_lijdu")
-stats = ExtResource("2_2xxr3")
+player_stats = SubResource("Resource_s1xno")
 
 [node name="WeaponManager" parent="." instance=ExtResource("1_74sb1")]
 position = Vector2(0, -26)
@@ -55,6 +69,7 @@ position = Vector2(-2.00842e-12, -1.78639e-12)
 position_smoothing_enabled = true
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
+wait_time = 0.1
 one_shot = true
 
 [node name="ExperiencePickupSFX" type="AudioStreamPlayer" parent="."]

@@ -1,6 +1,6 @@
 class_name PlayerClassSelection extends Control
 
-@export var classes: Array[PlayerStats]
+@export var classes: Array[PlayerClass]
 
 @onready var class_list: VBoxContainer = $ScrollContainer/ClassList
 
