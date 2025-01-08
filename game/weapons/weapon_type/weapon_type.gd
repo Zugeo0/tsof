@@ -1,4 +1,4 @@
-@icon("res://game/weapons/weapon_class/weapon_class.svg")
+@icon("res://game/weapons/weapon_type/weapon_type.svg")
 class_name WeaponType extends Node2D
 
 enum TargetPriority {

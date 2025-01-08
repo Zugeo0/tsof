@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://game/levels/level_manager/level_details.gd" id="2_bpuib"]
 [ext_resource type="Resource" uid="uid://b7w1q8vqgup0i" path="res://game/levels/02_depths/02_depths.tres" id="4_g1bku"]
 [ext_resource type="Resource" uid="uid://be3ui4kmfows8" path="res://game/levels/03_crust/03_crust.tres" id="5_8841u"]
-[ext_resource type="PackedScene" uid="uid://8dh0p35bidda" path="res://game/levels/02_depths/depths.tscn" id="5_cavjo"]
 [ext_resource type="Resource" uid="uid://cmv85t8ydb5se" path="res://game/levels/04_nest/04_nest.tres" id="6_opx5l"]
 [ext_resource type="Resource" uid="uid://ce45fvr44q4gl" path="res://game/levels/05_hallowed/05_hallowed.tres" id="7_yhmnq"]
+[ext_resource type="PackedScene" uid="uid://7bmr1g0nispq" path="res://game/levels/01_underwater/underwater.tscn" id="8_ad812"]
 
 [sub_resource type="Animation" id="Animation_xdrnu"]
 length = 0.001
@@ -70,7 +70,7 @@ levels = Array[ExtResource("2_bpuib")]([ExtResource("2_4272c"), ExtResource("4_g
 [node name="ActiveLevel" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Depths" parent="ActiveLevel" instance=ExtResource("5_cavjo")]
+[node name="Underwater" parent="ActiveLevel" instance=ExtResource("8_ad812")]
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
