@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b25rlnwqc6j8v"]
+[gd_scene load_steps=6 format=3 uid="uid://b25rlnwqc6j8v"]
 
 [ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="1_eoo32"]
 [ext_resource type="Texture2D" uid="uid://xm6v7e18cykl" path="res://menus/main_menu/main_menu.png" id="2_2tk48"]
 [ext_resource type="Script" path="res://menus/main_menu/main_menu.gd" id="3_2c6nf"]
 [ext_resource type="PackedScene" uid="uid://bbsiioc3l5os6" path="res://menus/class_selection/class_selection.tscn" id="4_x7xjy"]
+[ext_resource type="PackedScene" uid="uid://cwg5stvmsacin" path="res://menus/options_menu/options_menu.tscn" id="5_qktbg"]
 
 [node name="MainMenu" type="TextureRect"]
 anchors_preset = 15
@@ -49,8 +50,17 @@ offset_top = 278.0
 offset_right = 395.0
 offset_bottom = 493.0
 
+[node name="OptionsMenu" parent="." instance=ExtResource("5_qktbg")]
+visible = false
+layout_mode = 1
+offset_left = 60.0
+offset_top = 278.0
+offset_right = 395.0
+offset_bottom = 470.0
+
 [connection signal="pressed" from="MainButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainButtons/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MainButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="back_pressed" from="ClassSelection" to="." method="_on_class_selection_back_pressed"]
+[connection signal="closed" from="OptionsMenu" to="." method="_on_options_menu_closed"]

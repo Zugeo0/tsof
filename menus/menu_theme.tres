@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://up11cs5tn8xo"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://up11cs5tn8xo"]
 
 [ext_resource type="FontFile" uid="uid://d172mktcyvhia" path="res://common/fonts/Tiny5/Tiny5-Regular.ttf" id="1_nqtjx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl6qb"]
+content_margin_left = 10.0
 content_margin_top = 4.0
+content_margin_right = 10.0
 content_margin_bottom = 4.0
 bg_color = Color(0.27451, 0.203922, 0.494118, 0.678431)
 border_width_left = 1
@@ -13,7 +15,9 @@ border_width_bottom = 1
 border_color = Color(0.414058, 0.326395, 0.706673, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phe5h"]
+content_margin_left = 10.0
 content_margin_top = 4.0
+content_margin_right = 10.0
 content_margin_bottom = 4.0
 bg_color = Color(0.27451, 0.203922, 0.494118, 1)
 border_width_left = 1
@@ -23,7 +27,9 @@ border_width_bottom = 1
 border_color = Color(0.447183, 0.360483, 0.748233, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1kiu"]
+content_margin_left = 10.0
 content_margin_top = 4.0
+content_margin_right = 10.0
 content_margin_bottom = 4.0
 bg_color = Color(0.321569, 0.243137, 0.568627, 0.384314)
 border_width_left = 1
@@ -35,8 +41,42 @@ border_color = Color(0.27451, 0.203922, 0.494118, 1)
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qo7dv"]
 color = Color(0, 0, 0, 0.207843)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abp04"]
+bg_color = Color(0.474065, 0.175338, 0.742253, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w843g"]
+bg_color = Color(0.603273, 0.304606, 0.903465, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vl1b"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.321569)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76jq4"]
 bg_color = Color(0.321569, 0.243137, 0.568627, 0.384314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.739942, 0.453304, 0.932006, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acwvt"]
+bg_color = Color(0.321569, 0.243137, 0.568627, 0.384314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.701548, 0.245553, 0.932225, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35qdt"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.321569, 0.243137, 0.568627, 0.384314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.701548, 0.245553, 0.932225, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8mfd"]
 bg_color = Color(0.574728, 0.383323, 0.81278, 1)
@@ -61,7 +101,13 @@ Button/styles/focus = SubResource("StyleBoxFlat_vl6qb")
 Button/styles/hover = SubResource("StyleBoxFlat_phe5h")
 Button/styles/normal = SubResource("StyleBoxFlat_s1kiu")
 HSeparator/styles/separator = SubResource("StyleBoxLine_qo7dv")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_abp04")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w843g")
+HSlider/styles/slider = SubResource("StyleBoxFlat_7vl1b")
 Panel/styles/panel = SubResource("StyleBoxFlat_76jq4")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_acwvt")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_35qdt")
+TabContainer/styles/tab_unselected = null
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_r8mfd")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ch8f1")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_d4ncf")

@@ -21,6 +21,7 @@ MusicManager="*res://autoloads/music_manager.gd"
 Shaker="*res://addons/shaker/src/Shaker.gd"
 PauseManager="*res://autoloads/pause_manager.gd"
 RunSettings="*res://autoloads/run_settings.gd"
+SaveManager="*res://autoloads/save_manager.gd"
 
 [debug]
 
