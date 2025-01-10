@@ -5,11 +5,6 @@ const ABILITY_CHOICE = preload("res://game/abilities/ability_picker/ability_choi
 @onready var ability_list_container: VBoxContainer = $AbilityListContainer
 @onready var ability_manager: AbilityManager = %AbilityManager
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_G:
-		var abilities = ability_manager.get_random_abilities()
-		open(abilities)
-
 func open(abilities: Array[AbilityInfo]) -> void:
 	PauseManager.pause(self)
 	visible = true

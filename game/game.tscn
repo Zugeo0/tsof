@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://so4juccw7j3a"]
+[gd_scene load_steps=18 format=3 uid="uid://so4juccw7j3a"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_55cx4"]
 [ext_resource type="PackedScene" uid="uid://0c1h7kryiqx8" path="res://game/levels/level_manager/level_manager.tscn" id="1_ab6rl"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" path="res://game/abilities/ability_manager/ability_manager.gd" id="10_da6n6"]
 [ext_resource type="PackedScene" uid="uid://bduncirhdx3nb" path="res://game/pause_menu/pause_menu.tscn" id="11_01yx4"]
 [ext_resource type="Script" path="res://game/hud/hurt_overlay/hurt_overlay.gd" id="11_wq5sd"]
+[ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="12_lj6g6"]
+[ext_resource type="Script" path="res://game/hud/level_up_prompt/level_up_prompt.gd" id="13_aq8eo"]
 
 [sub_resource type="Gradient" id="Gradient_2564n"]
 offsets = PackedFloat32Array(0.428571, 1)
@@ -63,8 +65,40 @@ texture = SubResource("GradientTexture2D_w7pqu")
 script = ExtResource("11_wq5sd")
 metadata/_edit_lock_ = true
 
+[node name="LevelUpPrompt" type="Button" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -115.0
+offset_right = 108.5
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_lj6g6")
+script = ExtResource("13_aq8eo")
+
+[node name="Label" type="Label" parent="HUD/LevelUpPrompt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5 level up(s) available"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
 [node name="AbilityPicker" parent="." instance=ExtResource("10_1yhm2")]
+unique_name_in_owner = true
 visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("11_01yx4")]
+unique_name_in_owner = true
 visible = false
+
+[connection signal="levelup" from="Player" to="AbilityManager" method="_on_player_levelup"]
+[connection signal="pressed" from="HUD/LevelUpPrompt" to="HUD/LevelUpPrompt" method="_on_pressed"]
