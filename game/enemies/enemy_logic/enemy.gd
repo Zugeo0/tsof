@@ -45,7 +45,7 @@ func take_damage(attack: Attack) -> void:
 	damage_sfx.pitch_scale = randf_range(0.8, 1.2)
 	damage_sfx.play()
 	
-	attack.pierce -= armor - 1
+	attack.pierce -= armor + 1
 
 func _physics_process(_delta: float) -> void:
 	var player_pos = Game.get_player().global_position
