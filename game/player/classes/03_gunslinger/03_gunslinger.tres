@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://cf31etu4q7y4v"]
+
+[ext_resource type="Texture2D" uid="uid://d30tujdo0am0k" path="res://game/weapons/03_pistol/pistol.png" id="1_h7ekl"]
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_055ot"]
+
+[resource]
+script = ExtResource("2_055ot")
+player_class_name = "Gunslinger"
+player_class_description = "Start with a pistol"
+player_class_icon = ExtResource("1_h7ekl")
+starting_weapons = Array[String](["pistol"])
