@@ -36,18 +36,11 @@ func set_target(target: Enemy) -> void:
 	_current_target = target
 
 func _on_attack_timer_timeout() -> void:
-	fire()
-
-func fire() -> void:
 	var delay = _weapon_type.delay_between_attacks
 	delay *= _weapon_manager.ranged_weapon_stats.attack_speed_mod
 	delay *= Game.get_player().player_stats.attack_speed
 	attack_timer.start(delay)
-	
-	if _weapon_type.enable_burst:
-		_burst_attack()
-	else:
-		_fire_bullet()
+	_burst_attack()
 
 func _fire_bullet() -> void:
 	var projectile: Projectile = _weapon_type.projectile.instantiate()
