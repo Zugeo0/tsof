@@ -8,17 +8,13 @@ var stats: RangedWeaponStats
 @export_range(0.05, 10.0, 0.01, "or_greater", "suffix:seconds")
 var delay_between_attacks: float = 1.0
 
-## Whether the weapon is able to fire in bursts
-@export
-var enable_burst: bool = false
-
 ## The delay between each projectile spawning when burst is enabled
 @export_range(0.0, 10.0, 0.01, "or_greater", "suffix:seconds")
 var delay_between_burst_projectiles: float = 0.0
 
 ## Number of projectiles fired by the weapon
 @export_range(1, 25, 1, "or_greater", "suffix:projectiles")
-var projectile_count: int
+var projectile_count: int = 1
 
 ## The min/max angle of which the projectile is curved when the weapon attacks
 @export

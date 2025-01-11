@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cbxmvmkxh2fsk"
-path="res://.godot/imported/rifle.wav-d673398722becb09c5915875cb2f68d3.sample"
+path="res://.godot/imported/rifle.wav-69b1ba94254e3594b0ef4b116c635774.sample"
 
 [deps]
 
-source_file="res://previous_assets/weapons/rifle.wav"
-dest_files=["res://.godot/imported/rifle.wav-d673398722becb09c5915875cb2f68d3.sample"]
+source_file="res://game/weapons/04_rifle/rifle.wav"
+dest_files=["res://.godot/imported/rifle.wav-69b1ba94254e3594b0ef4b116c635774.sample"]
 
 [params]
 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://byo25awpmaqob"]
+
+[ext_resource type="Texture2D" uid="uid://ckyfmyocqhhd4" path="res://game/weapons/04_rifle/rifle.png" id="1_kmeov"]
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_tmr8x"]
+
+[resource]
+script = ExtResource("2_tmr8x")
+player_class_name = "Deadeye"
+player_class_description = "Start with a bolt-action rifle"
+player_class_icon = ExtResource("1_kmeov")
+starting_weapons = Array[String](["rifle"])
