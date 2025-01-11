@@ -56,6 +56,7 @@ folder_colors={
 "res://game/player/": "blue",
 "res://game/projectiles/": "pink",
 "res://game/run_info/": "gray",
+"res://game/systems/": "orange",
 "res://game/weapons/": "red",
 "res://menus/": "gray",
 "res://previous_assets/": "pink",

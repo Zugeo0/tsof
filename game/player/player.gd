@@ -2,7 +2,6 @@ class_name Player extends CharacterBody2D
 
 const SPEED: float = 8.0
 
-signal damage_taken(dealt: int)
 signal levelup
 
 @onready var sprite: Sprite2D = $Visuals/Sprite
@@ -55,19 +54,19 @@ func _physics_process(_delta: float) -> void:
 		if obj is Pickup:
 			obj.track_object(self)
 
-func take_damage(_source: Enemy, amt: int, pierce: int) -> int:
+func take_damage(attack: Attack) -> void:
 	if invincibility_timer.time_left > 0:
-		return pierce - player_stats.armor - 1
+		attack.pierce -= player_stats.armor + 1
+		return
 	
 	invincibility_timer.start()
 	
-	health = max(health - amt, 0)
-	damage_taken.emit(amt)
+	health = max(health - attack.damage, 0)
 	
 	_flash_sprite.call_deferred()
 	hurt_sfx.play()
 	
-	return pierce - player_stats.armor - 1
+	attack.pierce -= player_stats.armor + 1
 
 func _flash_sprite() -> void:
 	var sprite_material: ShaderMaterial = sprite.material

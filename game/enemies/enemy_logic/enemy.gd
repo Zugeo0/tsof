@@ -31,11 +31,11 @@ var _dead: bool = false
 
 const MAX_DIST_FROM_PLAYER: float = 3000.0
 
-func take_damage(_source: Player, amt: int, pierce: int) -> int:
+func take_damage(attack: Attack) -> void:
 	if _dead:
-		return pierce
+		return
 	
-	health -= amt
+	health -= attack.damage
 	
 	if health <= 0:
 		kill()
@@ -45,7 +45,7 @@ func take_damage(_source: Player, amt: int, pierce: int) -> int:
 	damage_sfx.pitch_scale = randf_range(0.8, 1.2)
 	damage_sfx.play()
 	
-	return pierce - armor - 1
+	attack.pierce -= armor - 1
 
 func _physics_process(_delta: float) -> void:
 	var player_pos = Game.get_player().global_position

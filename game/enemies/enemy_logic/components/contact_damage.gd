@@ -27,7 +27,12 @@ func physics_process(_delta: float) -> void:
 	for body in hitbox.get_overlapping_bodies():
 		if body.has_method("take_damage"):
 			start_cooldown = true
-			body.take_damage(enemy, contact_damage, 0)
+			
+			var attack := Attack.new()
+			attack.damage = contact_damage
+			attack.attacker = enemy
+			attack.pierce = 0
+			body.take_damage(attack)
 			
 			if kill_self_on_contact:
 				enemy.kill(false)
