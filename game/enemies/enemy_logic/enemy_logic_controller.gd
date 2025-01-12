@@ -15,6 +15,10 @@ func _process(delta: float) -> void:
 	
 	for child in get_children():
 		if child is EnemyLogic:
+			child._evaluate_process()
+	
+	for child in get_children():
+		if child is EnemyLogic:
 			child._logic_process(delta)
 
 func _physics_process(delta: float) -> void:

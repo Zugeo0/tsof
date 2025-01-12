@@ -1,0 +1,104 @@
+[gd_scene load_steps=18 format=3 uid="uid://cj0pt6qowfcr2"]
+
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/enemy.gd" id="1_yn2pm"]
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/enemy_drop.gd" id="2_gi5fc"]
+[ext_resource type="PackedScene" uid="uid://b4356iy4ua03x" path="res://game/pickups/experience/experience.tscn" id="3_k2e5j"]
+[ext_resource type="PackedScene" uid="uid://db7ap4yxqbpew" path="res://game/enemies/enemy_death_effect/enemy_death_effect.tscn" id="4_4lqk6"]
+[ext_resource type="Material" uid="uid://c0175ljwq3nwg" path="res://common/materials/entity_material.tres" id="5_gfor7"]
+[ext_resource type="Texture2D" uid="uid://dfy0kd65xlslv" path="res://game/enemies/03_tentacle/tentacle.png" id="6_qipu4"]
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/enemy_logic_controller.gd" id="7_t6e7f"]
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/contact_damage.gd" id="10_fqp0u"]
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/look_at_player.gd" id="10_j83ox"]
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/condition.gd" id="11_d315x"]
+[ext_resource type="AudioStream" uid="uid://dxh44hbo07u5" path="res://game/enemies/03_tentacle/hit.wav" id="11_kcer8"]
+[ext_resource type="PackedScene" uid="uid://buyfgyypet0ff" path="res://game/enemies/enemy_health_bar/enemy_health_bar.tscn" id="12_8git4"]
+[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/node_enable.gd" id="12_uursw"]
+[ext_resource type="PackedScene" uid="uid://eu0hw0cd0bbp" path="res://game/shared/attacks/slam/slam_attack.tscn" id="13_wrg4b"]
+
+[sub_resource type="Resource" id="Resource_d1io7"]
+script = ExtResource("2_gi5fc")
+scene = ExtResource("3_k2e5j")
+value = 10
+chance = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imxn6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r26q2"]
+radius = 30.0
+
+[node name="Tentacle" type="RigidBody2D" node_paths=PackedStringArray("sprite", "damage_sfx")]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 3
+mass = 80.0
+lock_rotation = true
+freeze = true
+linear_damp = 8.0
+script = ExtResource("1_yn2pm")
+enemy_name = "Tentacle"
+drops = Array[ExtResource("2_gi5fc")]([SubResource("Resource_d1io7")])
+sprite = NodePath("Visuals/Sprite")
+damage_sfx = NodePath("DamageSFX")
+death_effect = ExtResource("4_4lqk6")
+armor = 5
+max_health = 100
+health = 100
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Visuals"]
+material = ExtResource("5_gfor7")
+position = Vector2(-2, -73)
+scale = Vector2(3, 3)
+texture = ExtResource("6_qipu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_imxn6")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_r26q2")
+
+[node name="SlamAttack" parent="." instance=ExtResource("13_wrg4b")]
+z_index = -1
+cutoff_distance = 0.151
+attack_time = 2.0
+size = 250.0
+wave_color_1 = Color(0.600146, 0.000309096, 0.613, 1)
+wave_color_2 = Color(0.35077, 0.00251589, 0.284764, 1)
+
+[node name="EnemyLogicController" type="Node" parent="." node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_t6e7f")
+enemy = NodePath("..")
+
+[node name="ContactDamage" type="Node" parent="EnemyLogicController" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("10_fqp0u")
+contact_damage = 6
+hitbox = NodePath("../../HitBox")
+
+[node name="SlamLookAtPlayer" type="Node" parent="EnemyLogicController" node_paths=PackedStringArray("object")]
+script = ExtResource("10_j83ox")
+object = NodePath("../../SlamAttack")
+instant = false
+
+[node name="PlayerProximity" type="Node" parent="EnemyLogicController"]
+script = ExtResource("11_d315x")
+condition = "enemy.global_position.distance_to(Game.get_player().global_position) < 250.0"
+
+[node name="EnableDisableSlam" type="Node" parent="EnemyLogicController/PlayerProximity" node_paths=PackedStringArray("object")]
+script = ExtResource("12_uursw")
+object = NodePath("../../../SlamAttack")
+
+[node name="DamageSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_kcer8")
+bus = &"Effects"
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("12_8git4")]
+offset_top = 26.0
+offset_bottom = 29.0
+enemy = NodePath("..")
+
+[connection signal="disable" from="EnemyLogicController/PlayerProximity/EnableDisableSlam" to="SlamAttack" method="stop"]
+[connection signal="enable" from="EnemyLogicController/PlayerProximity/EnableDisableSlam" to="SlamAttack" method="start"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfy0kd65xlslv"
-path="res://.godot/imported/tentacle.png-60087bb1b125d68f13a59d792615c5f2.ctex"
+path="res://.godot/imported/tentacle.png-3e8ed937633c2cd12e0ae3e98dacc5ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/enemies/tentacle.png"
-dest_files=["res://.godot/imported/tentacle.png-60087bb1b125d68f13a59d792615c5f2.ctex"]
+source_file="res://game/enemies/03_tentacle/tentacle.png"
+dest_files=["res://.godot/imported/tentacle.png-3e8ed937633c2cd12e0ae3e98dacc5ab.ctex"]
 
 [params]
 

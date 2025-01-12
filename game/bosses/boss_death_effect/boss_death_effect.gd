@@ -2,7 +2,7 @@ class_name BossDeathEffect extends Node2D
 
 @onready var gpu_particles: GPUParticles2D = $GPUParticles2D
 
-const SHOCKWAVE = preload("res://game/shockwave/shockwave.tscn")
+const SHOCKWAVE = preload("res://game/shared/attacks/shockwave/shockwave.tscn")
 
 func _ready() -> void:
 	gpu_particles.emitting = true

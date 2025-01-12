@@ -88,6 +88,10 @@ size_flags_vertical = 10
 layout_mode = 2
 text = "Back"
 
+[node name="ApplyAndExitButton" type="Button" parent="VBoxContainer/ControlButtons"]
+layout_mode = 2
+text = "Apply & Back"
+
 [node name="ApplyButton" type="Button" parent="VBoxContainer/ControlButtons"]
 layout_mode = 2
 text = "Apply"
@@ -96,4 +100,5 @@ text = "Apply"
 [connection signal="value_changed" from="VBoxContainer/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/ControlButtons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ControlButtons/ApplyAndExitButton" to="." method="_on_apply_and_exit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ControlButtons/ApplyButton" to="." method="_on_apply_button_pressed"]

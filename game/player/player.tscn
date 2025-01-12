@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmmp5s70l5jk1"]
+[gd_scene load_steps=14 format=3 uid="uid://cmmp5s70l5jk1"]
 
 [ext_resource type="PackedScene" uid="uid://udfbeighyw02" path="res://game/weapons/weapon_manager/weapon_manager.tscn" id="1_74sb1"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_lijdu"]
 [ext_resource type="Script" path="res://game/player/player_stats/player_stats.gd" id="2_4hmi3"]
 [ext_resource type="Texture2D" uid="uid://d3g85xp75huh7" path="res://game/player/player.png" id="2_oobxn"]
+[ext_resource type="Script" path="res://game/shared/components/health/health_component.gd" id="3_fhwbb"]
 [ext_resource type="Material" uid="uid://c0175ljwq3nwg" path="res://common/materials/entity_material.tres" id="4_0yqo5"]
 [ext_resource type="AudioStream" uid="uid://vu5xqfjx4ary" path="res://game/pickups/experience/xp.wav" id="6_cbvat"]
 [ext_resource type="AudioStream" uid="uid://cjfdn66g8j23e" path="res://game/player/hurt.wav" id="7_k7285"]
@@ -43,6 +44,9 @@ radius = 92.0489
 motion_mode = 1
 script = ExtResource("1_lijdu")
 player_stats = SubResource("Resource_s1xno")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_fhwbb")
 
 [node name="WeaponManager" parent="." instance=ExtResource("1_74sb1")]
 position = Vector2(0, -26)

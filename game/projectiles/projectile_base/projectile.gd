@@ -30,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(_attack)
 	
-	if not unlimited_pierce and _attack.pierce <= 0:
+	if not unlimited_pierce and _attack.pierce_count >= _attack.pierce:
 		queue_free()
 
 func _physics_process(delta: float) -> void:

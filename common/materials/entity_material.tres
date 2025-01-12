@@ -6,4 +6,3 @@
 resource_local_to_scene = true
 shader = ExtResource("1_m7krl")
 shader_parameter/flash = false
-shader_parameter/modulate = Color(1, 1, 1, 1)

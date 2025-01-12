@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bo06ksnfkgxvs"
-path="res://.godot/imported/shockwave.wav-ff7dc707a6d582d74ce74279a9d22597.sample"
+uid="uid://dxh44hbo07u5"
+path="res://.godot/imported/hit.wav-2c98a8489ad0da9c0033da2c1e931378.sample"
 
 [deps]
 
-source_file="res://game/shockwave/shockwave.wav"
-dest_files=["res://.godot/imported/shockwave.wav-ff7dc707a6d582d74ce74279a9d22597.sample"]
+source_file="res://game/enemies/03_tentacle/hit.wav"
+dest_files=["res://.godot/imported/hit.wav-2c98a8489ad0da9c0033da2c1e931378.sample"]
 
 [params]
 

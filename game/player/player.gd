@@ -66,7 +66,7 @@ func take_damage(attack: Attack) -> void:
 	_flash_sprite.call_deferred()
 	hurt_sfx.play()
 	
-	attack.pierce -= player_stats.armor + 1
+	attack.pierce_count += player_stats.armor + 1
 
 func _flash_sprite() -> void:
 	var sprite_material: ShaderMaterial = sprite.material

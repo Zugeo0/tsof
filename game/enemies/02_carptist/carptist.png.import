@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vfpi3jm1fdcu"
-path="res://.godot/imported/carptist.png-bfd1821e1e3d09e098314c3d7bf84699.ctex"
+path="res://.godot/imported/carptist.png-f2b24f8f30bad57abfde9847526107b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/enemies/carptist.png"
-dest_files=["res://.godot/imported/carptist.png-bfd1821e1e3d09e098314c3d7bf84699.ctex"]
+source_file="res://game/enemies/02_carptist/carptist.png"
+dest_files=["res://.godot/imported/carptist.png-f2b24f8f30bad57abfde9847526107b7.ctex"]
 
 [params]
 

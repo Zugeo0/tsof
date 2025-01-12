@@ -19,9 +19,6 @@ class_name Enemy extends RigidBody2D
 ## The entity's current health
 @export var health: int
 
-## The entity's attack speed modifier.
-@export var attack_speed_mod: float = 1.0
-
 ## A multiplier to all knockback received by this entity. Higher values cause in higher knockback received.
 @export_range(0.0, 2.0, 0.01) var self_knockback_mod: float = 1.0
 
@@ -45,7 +42,7 @@ func take_damage(attack: Attack) -> void:
 	damage_sfx.pitch_scale = randf_range(0.8, 1.2)
 	damage_sfx.play()
 	
-	attack.pierce -= armor + 1
+	attack.pierce_count += armor + 1
 
 func _physics_process(_delta: float) -> void:
 	var player_pos = Game.get_player().global_position
