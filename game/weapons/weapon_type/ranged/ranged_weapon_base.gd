@@ -1,7 +1,6 @@
 class_name RangedWeaponBase extends WeaponBase
 
 var _weapon_type: RangedWeapon
-var _weapon_manager: WeaponManager
 var _current_target: Enemy
 
 @onready var burst_timer: Timer = $BurstTimer
@@ -43,13 +42,13 @@ func _on_attack_timer_timeout() -> void:
 	_burst_attack()
 
 func _fire_bullet() -> void:
-	var projectile: Projectile = _weapon_type.projectile.instantiate()
-	var direction = _calculate_spread_vector()
-	var target = _current_target if is_instance_valid(_current_target) else null
-	projectile.init(direction, Game.get_player(), target, [_weapon_type.stats, _weapon_manager.ranged_weapon_stats])
-	projectile.top_level = true
-	projectile.global_position = bullet_spawn_position.global_position
-	add_child(projectile)
+	#var projectile: Projectile = _weapon_type.projectile.instantiate()
+	#var direction = _calculate_spread_vector()
+	#var target = _current_target if is_instance_valid(_current_target) else null
+	#projectile.init(direction, Game.get_player(), target, [_weapon_type.stats, _weapon_manager.ranged_weapon_stats])
+	#projectile.top_level = true
+	#projectile.global_position = bullet_spawn_position.global_position
+	#add_child(projectile)
 	_play_attack_sfx()
 
 func _calculate_spread_vector() -> Vector2:

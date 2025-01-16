@@ -12,9 +12,9 @@ class_name WeaponManager extends Node2D
 var _weapons_types: Dictionary = {}
 
 func _ready() -> void:
-	for weapon_type: WeaponType in weapons.get_children():
-		weapon_type.set_manager(self)
-		_weapons_types[weapon_type.weapon_id] = weapon_type
+	for weapon: WeaponBase in weapons.get_children():
+		weapon.set_manager(self)
+		_weapons_types[weapon.weapon_id] = weapon
 
 func add_weapon(id: String) -> void:
 	if id not in _weapons_types:

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://308gnb3avrh"]
+
+[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_pn2dr"]
+[ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="2_76fri"]
+[ext_resource type="Script" path="res://game/weapons/gun_attack_node.gd" id="2_hrpcd"]
+[ext_resource type="Texture2D" uid="uid://d30tujdo0am0k" path="res://game/weapons/03_pistol/pistol.png" id="2_o4hgm"]
+[ext_resource type="AudioStream" uid="uid://fcur87xq24sp" path="res://game/weapons/03_pistol/pistol.wav" id="4_gaqhv"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_m8g58"]
+
+[sub_resource type="Curve" id="Curve_sm33e"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_pn2dr")
+projectile_spread = SubResource("Curve_sm33e")
+projectile_type = ExtResource("2_76fri")
+weapon_id = "pistol"
+weapon_name = "Pistol"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_o4hgm")
+offset = Vector2(65, 0)
+
+[node name="GunProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource("2_hrpcd")
+
+[node name="AttackTimer" type="Timer" parent="GunProjectileSpawner"]
+one_shot = true
+autostart = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
+stream = ExtResource("4_gaqhv")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
+position = Vector2(78, 0)
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+top_level = true
+texture = ExtResource("6_m8g58")

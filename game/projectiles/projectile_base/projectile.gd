@@ -2,25 +2,24 @@
 class_name Projectile extends Area2D
 
 @export var damage: int = 1
+@export var added_damage_effectiveness: float = 1.0
 @export var pierce: int = 0
 @export var speed: float = 1.0
 @export var unlimited_pierce: bool = false
 
 var _direction: Vector2 = Vector2.ZERO
 var _target: Node = null
-var _stats: Array[RangedWeaponStats] = []
+var _gun_base: GunBase = null
 
 var _attack: Attack
 
-func init(direction: Vector2, attacker: Node, target: Node, ranged_stats: Array[RangedWeaponStats] = []) -> void:
+func init(direction: Vector2, attacker: Node, target: Node, gun_base: GunBase = null) -> void:
 	_direction = direction
 	_target = target
-	_stats = ranged_stats
+	_gun_base = gun_base
 	_attack = _calculate_attack(attacker)
-	
-	if _stats != null:
-		for stats in _stats:
-			speed *= stats.projectile_speed_multiplier
+	if _gun_base != null:
+		speed *= _gun_base.projectile_velocity_mod
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -29,7 +28,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(_attack)
-	
+
 	if not unlimited_pierce and _attack.pierce_count >= _attack.pierce:
 		queue_free()
 
@@ -41,18 +40,14 @@ func _calculate_attack(attacker: Node2D) -> Attack:
 	attack.damage = damage
 	attack.pierce = pierce
 	attack.attacker = attacker
-	
-	if _stats != null:
-		for stats in _stats:
-			attack.damage += stats.added_projectile_damage
-			attack.pierce += stats.added_pierce
-		
-		for stats in _stats:
-			attack.damage = floor(float(attack.damage) * stats.projectile_damage_multiplier)
-	
+
+	if _gun_base:
+		attack.pierce += _gun_base.added_pierce
+		attack.damage = roundi(damage + (_gun_base.added_damage * added_damage_effectiveness) * _gun_base.damage_mod)
+
 	if attacker is Player:
 		attack.damage *= attacker.player_stats.attack_damage_multiplier
-	
+
 	return attack
 
 func _create_despawn_timer() -> void:
