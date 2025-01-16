@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://gjg3p6e850qv"]
+
+[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_pn27a"]
+[ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="2_mmu1t"]
+[ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="3_ky6u4"]
+[ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_nya4u"]
+[ext_resource type="AudioStream" uid="uid://bg4h2b4j8ypno" path="res://game/weapons/01_shotgun/shotgun.wav" id="5_nqc6e"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_mkanc"]
+
+[sub_resource type="Curve" id="Curve_sm33e"]
+max_value = 45.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 45), 63.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_pn27a")
+projectile_spread = SubResource("Curve_sm33e")
+projectile_type = ExtResource("2_mmu1t")
+weapon_id = "shotgun"
+weapon_name = "Shotgun"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_ky6u4")
+offset = Vector2(45, 0)
+
+[node name="GunProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource("4_nya4u")
+
+[node name="AttackTimer" type="Timer" parent="GunProjectileSpawner"]
+one_shot = true
+autostart = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
+stream = ExtResource("5_nqc6e")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
+position = Vector2(78, 0)
+
+[node name="AttackCycleTimer" type="Timer" parent="GunProjectileSpawner"]
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+texture = ExtResource("6_mkanc")

@@ -1,6 +1,7 @@
 class_name GunProjectileSpawner extends Node2D
 
 @onready var attack_timer: Timer = $AttackTimer
+@onready var attack_cycle_timer: Timer = $AttackCycleTimer
 @onready var gun_base: GunBase = $".."
 @onready var bullet_spawn_position: Marker2D = $BulletSpawnPosition
 @onready var attack_sfx: AudioStreamPlayer2D = $AttackSFX
@@ -8,6 +9,7 @@ class_name GunProjectileSpawner extends Node2D
 var _can_attack: bool = false
 
 func _ready() -> void:
+	attack_cycle_timer.wait_time = gun_base.delay_between_attacks
 	attack_timer.timeout.connect(func(): _can_attack = true)
 	Game.get_player().frozen.connect(func(): attack_timer.paused = true)
 	Game.get_player().unfrozen.connect(func(): attack_timer.paused = false)
@@ -22,18 +24,20 @@ func _reset_attack_timer() -> void:
 
 func _attack() -> void:
 	var target = gun_base.get_target()
-	if true or target != null:
+	if target != null:
 		_can_attack = false
-		for attack in gun_base.attacks_per_cycle:
-			for projectile in gun_base.total_projectiles():
+		for i in gun_base.attacks_per_cycle:
+			for j in gun_base.total_projectiles():
 				var proj: Projectile = gun_base.projectile_type.instantiate()
 				var dir = gun_base.calculate_spread_vector()
-				proj.init(dir, Game.get_player(), target, gun_base)
+				proj.init(dir, Game.get_player(), gun_base)
 				proj.top_level = true
 				proj.global_position = bullet_spawn_position.global_position
 				add_child(proj)
-				_play_attack_sfx()
-		print("Attacked!")
+			_play_attack_sfx()
+			if i != gun_base.attacks_per_cycle:
+				attack_cycle_timer.start()
+				await attack_cycle_timer.timeout
 		attack_timer.start()
 
 func _play_attack_sfx() -> void:

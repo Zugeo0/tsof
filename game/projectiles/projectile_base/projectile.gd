@@ -5,17 +5,16 @@ class_name Projectile extends Area2D
 @export var added_damage_effectiveness: float = 1.0
 @export var pierce: int = 0
 @export var speed: float = 1.0
+@export var projectile_count: int = 1
 @export var unlimited_pierce: bool = false
 
 var _direction: Vector2 = Vector2.ZERO
-var _target: Node = null
 var _gun_base: GunBase = null
 
 var _attack: Attack
 
-func init(direction: Vector2, attacker: Node, target: Node, gun_base: GunBase = null) -> void:
+func init(direction: Vector2, attacker: Node, gun_base: GunBase = null) -> void:
 	_direction = direction
-	_target = target
 	_gun_base = gun_base
 	_attack = _calculate_attack(attacker)
 	if _gun_base != null:

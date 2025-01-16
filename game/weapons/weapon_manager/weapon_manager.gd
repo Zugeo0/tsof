@@ -1,6 +1,8 @@
 @icon("res://game/weapons/weapon_manager/weapon_manager.svg")
 class_name WeaponManager extends Node2D
 
+@export var weapon_pool: Array[PackedScene] = []
+
 @onready var weapons: Node2D = $Weapons
 @onready var target_range: Area2D = $TargetRange
 
@@ -12,19 +14,20 @@ class_name WeaponManager extends Node2D
 var _weapons_types: Dictionary = {}
 
 func _ready() -> void:
-	for weapon: WeaponBase in weapons.get_children():
-		weapon.set_manager(self)
-		_weapons_types[weapon.weapon_id] = weapon
+	for weapon: PackedScene in weapon_pool:
+		_weapons_types[weapon.instantiate().weapon_id] = weapon
 
 func add_weapon(id: String) -> void:
 	if id not in _weapons_types:
 		push_error("Attempting to add invalid weapon: %s" % id)
 		return
 	
-	var weapon_type: WeaponType = _weapons_types[id]
-	weapon_type.add_weapon()
+	var weapon_type: WeaponBase = _weapons_types[id].instantiate()
+	weapon_type.set_manager(self)
+	weapons.add_child(weapon_type)
+	#weapon_type.add_weapon(self)
 
-func get_weapon_type(id: String) -> WeaponType:
+func get_weapon_type(id: String) -> WeaponBase:
 	if id not in _weapons_types:
 		push_error("Attempting to add invalid weapon: %s" % id)
 		return
