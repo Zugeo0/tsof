@@ -8,4 +8,4 @@ script = ExtResource("2_tmr8x")
 player_class_name = "Deadeye"
 player_class_description = "Start with a bolt-action rifle"
 player_class_icon = ExtResource("1_kmeov")
-starting_weapons = Array[String](["rifle"])
+starting_weapons = Array[String](["rifle_bolt"])

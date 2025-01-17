@@ -34,6 +34,7 @@ fill_to = Vector2(1, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_imxn6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r26q2"]
+radius = 15.0
 
 [node name="Cultist" type="RigidBody2D" node_paths=PackedStringArray("sprite", "damage_sfx")]
 y_sort_enabled = true
@@ -48,8 +49,8 @@ drops = Array[ExtResource("2_tn804")]([SubResource("Resource_d1io7")])
 sprite = NodePath("Visuals/Sprite")
 damage_sfx = NodePath("DamageSFX")
 death_effect = ExtResource("4_26aw0")
-max_health = 5
-health = 5
+max_health = 10
+health = 10
 
 [node name="Visuals" type="Node2D" parent="."]
 

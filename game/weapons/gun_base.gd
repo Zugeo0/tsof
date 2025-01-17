@@ -7,7 +7,7 @@ class_name GunBase extends WeaponBase
 ## A multiplier to damage dealt by this weapon.
 @export var damage_mod: float = 1.0
 ## A multiplier to this weapon's attack speed.
-@export var attack_rate: float = 1.0
+@export var attack_speed_mod: float = 1.0
 ## A flat amount of added pierce for this weapon.
 @export var added_pierce: int = 0
 ## Extra projectiles per attack.

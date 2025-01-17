@@ -9,16 +9,15 @@ class_name Projectile extends Area2D
 @export var unlimited_pierce: bool = false
 
 var _direction: Vector2 = Vector2.ZERO
-var _gun_base: GunBase = null
+var _data: ProjectileData = null
 
 var _attack: Attack
 
-func init(direction: Vector2, attacker: Node, gun_base: GunBase = null) -> void:
+func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 	_direction = direction
-	_gun_base = gun_base
+	_data = data
 	_attack = _calculate_attack(attacker)
-	if _gun_base != null:
-		speed *= _gun_base.projectile_velocity_mod
+	speed *= data.projectile_velocity_mod
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -35,17 +34,14 @@ func _physics_process(delta: float) -> void:
 	global_position += _direction * speed * delta * 100.0
 
 func _calculate_attack(attacker: Node2D) -> Attack:
-	var attack := Attack.new()
-	attack.damage = damage
-	attack.pierce = pierce
-	attack.attacker = attacker
-
-	if _gun_base:
-		attack.pierce += _gun_base.added_pierce
-		attack.damage = roundi(damage + (_gun_base.added_damage * added_damage_effectiveness) * _gun_base.damage_mod)
-
-	if attacker is Player:
-		attack.damage *= attacker.player_stats.attack_damage_multiplier
+	var attack_pierce = pierce + _data.pierce
+	var attack_damage = roundi(
+		damage
+		+ (_data.added_damage * added_damage_effectiveness)
+		* _data.damage_mod
+		* _data.total_damage_mod
+	)
+	var attack := Attack.new(attacker, attack_damage, attack_pierce)
 
 	return attack
 

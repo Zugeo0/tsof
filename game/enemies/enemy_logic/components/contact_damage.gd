@@ -28,10 +28,7 @@ func physics_process(_delta: float) -> void:
 		if body.has_method("take_damage"):
 			start_cooldown = true
 			
-			var attack := Attack.new()
-			attack.damage = contact_damage
-			attack.attacker = enemy
-			attack.pierce = 0
+			var attack := Attack.new(enemy, contact_damage, 0)
 			body.take_damage(attack)
 			
 			if kill_self_on_contact:

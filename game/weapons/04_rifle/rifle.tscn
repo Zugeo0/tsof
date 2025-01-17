@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfcam3k02yyg"]
+
+[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_j3pgj"]
+[ext_resource type="PackedScene" uid="uid://bvmngvyyyb0cc" path="res://game/projectiles/03_hollowpoint/hollowpoint.tscn" id="2_scxc8"]
+[ext_resource type="Texture2D" uid="uid://ckyfmyocqhhd4" path="res://game/weapons/04_rifle/rifle.png" id="3_cwcwq"]
+[ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_ams41"]
+[ext_resource type="AudioStream" uid="uid://cbxmvmkxh2fsk" path="res://game/weapons/04_rifle/rifle.wav" id="5_mjigw"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_tqnsh"]
+
+[sub_resource type="Curve" id="Curve_sm33e"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_j3pgj")
+damage_mod = 1.2
+added_pierce = 2
+projectile_velocity_mod = 1.4
+projectile_spread = SubResource("Curve_sm33e")
+projectile_type = ExtResource("2_scxc8")
+weapon_id = "rifle_bolt"
+weapon_name = "Bolt-Action Rifle"
+attack_speed = 1.65
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_cwcwq")
+offset = Vector2(45, 0)
+
+[node name="GunProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource("4_ams41")
+
+[node name="AttackTimer" type="Timer" parent="GunProjectileSpawner"]
+one_shot = true
+autostart = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
+stream = ExtResource("5_mjigw")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
+position = Vector2(78, 0)
+
+[node name="AttackCycleTimer" type="Timer" parent="GunProjectileSpawner"]
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+texture = ExtResource("6_tqnsh")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhsxt5yp8ref6"]
+
+[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_5nawk"]
+[ext_resource type="PackedScene" uid="uid://bvmngvyyyb0cc" path="res://game/projectiles/03_hollowpoint/hollowpoint.tscn" id="2_1ply7"]
+[ext_resource type="Texture2D" uid="uid://cp2yi4oe71g6" path="res://game/weapons/02_assault_rifle/assault_rifle.png" id="3_5uvdw"]
+[ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_0wm1r"]
+[ext_resource type="AudioStream" uid="uid://3g8d832n2v1f" path="res://game/weapons/02_assault_rifle/assault_rifle.wav" id="5_p0c8a"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_3miey"]
+
+[sub_resource type="Curve" id="Curve_sm33e"]
+max_value = 15.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 15), 21.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_5nawk")
+attacks_per_cycle = 3
+projectile_spread = SubResource("Curve_sm33e")
+projectile_type = ExtResource("2_1ply7")
+weapon_id = "rifle_assault"
+weapon_name = "Assault Rifle"
+attack_speed = 1.2
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_5uvdw")
+offset = Vector2(45, 0)
+
+[node name="GunProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource("4_0wm1r")
+
+[node name="AttackTimer" type="Timer" parent="GunProjectileSpawner"]
+one_shot = true
+autostart = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
+stream = ExtResource("5_p0c8a")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
+position = Vector2(78, 0)
+
+[node name="AttackCycleTimer" type="Timer" parent="GunProjectileSpawner"]
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+texture = ExtResource("6_3miey")

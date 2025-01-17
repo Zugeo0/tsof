@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://udfbeighyw02"]
+[gd_scene load_steps=13 format=3 uid="uid://udfbeighyw02"]
 
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
-[ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/shotgun.tscn" id="3_0pde6"]
+[ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="3_0pde6"]
 [ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon_stats.gd" id="3_6sn8x"]
 [ext_resource type="Script" path="res://game/weapons/weapon_type/explosive/exposive_weapon_stats.gd" id="3_ce3jm"]
 [ext_resource type="Script" path="res://game/weapons/weapon_type/melee/melee_weapon_stats.gd" id="4_5mhyx"]
-[ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/pistol.tscn" id="17_d00o8"]
+[ext_resource type="PackedScene" uid="uid://bhsxt5yp8ref6" path="res://game/weapons/02_assault_rifle/assault_rifle.tscn" id="4_m4kxo"]
+[ext_resource type="PackedScene" uid="uid://dfcam3k02yyg" path="res://game/weapons/04_rifle/rifle.tscn" id="5_51s3a"]
+[ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="17_d00o8"]
 
 [sub_resource type="Resource" id="Resource_sh7wi"]
 script = ExtResource("3_6sn8x")
@@ -31,7 +33,7 @@ radius = 630.134
 [node name="WeaponManager" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iyymo")
-weapon_pool = Array[PackedScene]([ExtResource("17_d00o8"), ExtResource("3_0pde6")])
+weapon_pool = Array[PackedScene]([ExtResource("17_d00o8"), ExtResource("3_0pde6"), ExtResource("4_m4kxo"), ExtResource("5_51s3a")])
 ranged_weapon_stats = SubResource("Resource_sh7wi")
 explosive_weapon_stats = SubResource("Resource_0la66")
 melee_weapon_stats = SubResource("Resource_tp3q3")

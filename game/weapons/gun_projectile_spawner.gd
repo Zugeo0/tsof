@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 		_attack()
 
 func _reset_attack_timer() -> void:
-	attack_timer.wait_time = gun_base.attack_rate
+	attack_timer.wait_time = gun_base.attack_speed / gun_base.attack_speed_mod
 	attack_timer.start()
 
 func _attack() -> void:
@@ -30,7 +30,14 @@ func _attack() -> void:
 			for j in gun_base.total_projectiles():
 				var proj: Projectile = gun_base.projectile_type.instantiate()
 				var dir = gun_base.calculate_spread_vector()
-				proj.init(dir, Game.get_player(), gun_base)
+				var data = ProjectileData.new(
+					gun_base.added_damage,
+					gun_base.damage_mod,
+					gun_base.added_pierce,
+					gun_base.projectile_velocity_mod,
+					Game.get_player().player_stats.attack_damage_multiplier,
+				)
+				proj.init(dir, Game.get_player(), data)
 				proj.top_level = true
 				proj.global_position = bullet_spawn_position.global_position
 				add_child(proj)

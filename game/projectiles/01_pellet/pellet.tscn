@@ -11,7 +11,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_p6333")
 damage = 2
-speed = 6.0
+speed = 5.0
 projectile_count = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
