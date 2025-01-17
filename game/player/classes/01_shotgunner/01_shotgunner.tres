@@ -8,4 +8,4 @@ script = ExtResource("1_3mmnt")
 player_class_name = "Shotgunner"
 player_class_description = "Start with only your trusty shotgun"
 player_class_icon = ExtResource("1_m3qix")
-starting_weapons = Array[String](["shotgun"])
+starting_weapons = Array[String](["shotgun_pump"])

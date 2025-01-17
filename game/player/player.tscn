@@ -50,6 +50,7 @@ script = ExtResource("3_fhwbb")
 
 [node name="WeaponManager" parent="." instance=ExtResource("1_74sb1")]
 position = Vector2(0, -26)
+max_weapons = 5
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x8vvb")

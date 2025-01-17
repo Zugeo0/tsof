@@ -1,4 +1,4 @@
-@icon("res://game/weapons/weapon_type/weapon_type.svg")
+@icon("res://game/weapons/weapon_base.svg")
 class_name GunBase extends WeaponBase
 
 @export_category("Weapon Stats")

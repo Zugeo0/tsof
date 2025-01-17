@@ -1,3 +1,4 @@
+@icon("res://game/weapons/weapon_base.svg")
 class_name WeaponBase extends Node2D
 
 enum WeaponType {

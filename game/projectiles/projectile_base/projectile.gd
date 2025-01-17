@@ -41,7 +41,10 @@ func _calculate_attack(attacker: Node2D) -> Attack:
 		* _data.damage_mod
 		* _data.total_damage_mod
 	)
-	var attack := Attack.new(attacker, attack_damage, attack_pierce)
+	var attack := Attack.new()
+	attack.attacker = attacker
+	attack.damage = attack_damage
+	attack.pierce = attack_pierce
 
 	return attack
 

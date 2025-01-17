@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbsiioc3l5os6"]
+[gd_scene load_steps=7 format=3 uid="uid://bbsiioc3l5os6"]
 
 [ext_resource type="Script" path="res://menus/class_selection/class_selection.gd" id="1_n42yp"]
 [ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_3v5ir"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://bkkq4b7oqxsqk" path="res://game/player/classes/02_gunner/02_gunner.tres" id="4_abi4m"]
 [ext_resource type="Resource" uid="uid://cf31etu4q7y4v" path="res://game/player/classes/03_gunslinger/03_gunslinger.tres" id="5_l44w5"]
 [ext_resource type="Resource" uid="uid://byo25awpmaqob" path="res://game/player/classes/04_deadeye/04_deadeye.tres" id="6_fjgik"]
-[ext_resource type="Resource" uid="uid://dm4getho4xh1" path="res://game/player/classes/05_commando/05_commando.tres" id="7_iu7bm"]
 
 [node name="ClassSelection" type="Control"]
 layout_mode = 3
@@ -14,7 +13,7 @@ anchors_preset = 0
 offset_right = 336.0
 offset_bottom = 224.0
 script = ExtResource("1_n42yp")
-classes = Array[ExtResource("2_3v5ir")]([ExtResource("3_iptwg"), ExtResource("4_abi4m"), ExtResource("5_l44w5"), ExtResource("6_fjgik"), ExtResource("7_iu7bm")])
+classes = Array[ExtResource("2_3v5ir")]([ExtResource("3_iptwg"), ExtResource("4_abi4m"), ExtResource("5_l44w5"), ExtResource("6_fjgik")])
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1

@@ -8,4 +8,4 @@ script = ExtResource("1_jl6x6")
 player_class_name = "Gunner"
 player_class_description = "Start with an assault rifle"
 player_class_icon = ExtResource("1_mra0y")
-starting_weapons = Array[String](["assault_rifle"])
+starting_weapons = Array[String](["rifle_assault"])

@@ -1,38 +1,44 @@
 @icon("res://game/weapons/weapon_manager/weapon_manager.svg")
 class_name WeaponManager extends Node2D
 
-@export var weapon_pool: Array[PackedScene] = []
-
-@onready var weapons: Node2D = $Weapons
-@onready var target_range: Area2D = $TargetRange
+## The weapons that are available to the player.
+## Key = the internal string id of the weapon.
+## Value = the PackedScene that instantiates to said weapon.
+@export var weapon_pool: Dictionary
 
 @export_group("Global Stats")
 @export var ranged_weapon_stats: RangedWeaponStats
 @export var explosive_weapon_stats: ExplosiveWeaponStats
 @export var melee_weapon_stats: MeleeWeaponStats
 
-var _weapons_types: Dictionary = {}
+@export_group("Config")
+@export var max_weapons: int
 
-func _ready() -> void:
-	for weapon: PackedScene in weapon_pool:
-		_weapons_types[weapon.instantiate().weapon_id] = weapon
+@onready var weapons: Node2D = $Weapons
+@onready var target_range: Area2D = $TargetRange
 
 func add_weapon(id: String) -> void:
-	if id not in _weapons_types:
+	if id not in weapon_pool.keys():
 		push_error("Attempting to add invalid weapon: %s" % id)
 		return
+
+	if !can_add_weapon():
+		push_error("Attempting to exceed the weapon cap with weapon: %s" % id)
+		return
 	
-	var weapon_type: WeaponBase = _weapons_types[id].instantiate()
+	var weapon_type: WeaponBase = weapon_pool[id].instantiate()
 	weapon_type.set_manager(self)
 	weapons.add_child(weapon_type)
-	#weapon_type.add_weapon(self)
+	
+func can_add_weapon() -> bool:
+	return weapons.get_child_count() < max_weapons
 
 func get_weapon_type(id: String) -> WeaponBase:
-	if id not in _weapons_types:
+	if id not in weapon_pool.keys():
 		push_error("Attempting to add invalid weapon: %s" % id)
 		return
 	
-	return _weapons_types[id]
+	return weapon_pool[id]
 
 func set_weapon_projectile(weapon_id: String, projectile: PackedScene) -> void:
 	var weapon_type = get_weapon_type(weapon_id)
