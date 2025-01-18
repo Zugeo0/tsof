@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwilos7xhxwys"]
+[gd_scene load_steps=5 format=3 uid="uid://bwilos7xhxwys"]
 
 [ext_resource type="Script" path="res://game/abilities/ability_picker/ability_choice/ability_choice.gd" id="1_aqepj"]
-[ext_resource type="Texture2D" uid="uid://w3hdfcsd73gk" path="res://game/abilities/01_shotgun/ability_shotgun.png" id="1_cu30q"]
 [ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="2_u7b02"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhidb"]
@@ -54,7 +53,6 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("1_cu30q")
 expand_mode = 1
 metadata/_edit_lock_ = true
 

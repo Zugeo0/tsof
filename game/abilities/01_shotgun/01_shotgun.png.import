@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce58ajv63arhp"
-path="res://.godot/imported/ability_spectral_shotgun.png-d09df10b5249a119acb598e6e204ba01.ctex"
+uid="uid://bujrf88h0hyqx"
+path="res://.godot/imported/01_shotgun.png-47a4f9a46496e7e326be949379b2e0fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.png"
-dest_files=["res://.godot/imported/ability_spectral_shotgun.png-d09df10b5249a119acb598e6e204ba01.ctex"]
+source_file="res://game/abilities/01_shotgun/01_shotgun.png"
+dest_files=["res://.godot/imported/01_shotgun.png-47a4f9a46496e7e326be949379b2e0fa.ctex"]
 
 [params]
 

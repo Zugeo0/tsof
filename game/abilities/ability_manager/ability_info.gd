@@ -14,18 +14,17 @@ enum AbilityType {
 	WEAPON,
 }
 
-@export_group("Info")
-
 @export var ability_name: String
 @export var ability_description: String
-@export var ability_script: Script
-
-@export var positive_effects: Array[String]
-@export var negative_effects: Array[String]
+@export var ability_effects: Array[AbilityEffect]
 
 @export var type: AbilityType
 @export var max_amount: int
 @export var rarity: Rarity = Rarity.COMMON
+
+@export var icon: Texture2D
+
+@export_group("Unlock Conditions")
 
 ## If above 0, then this ability will always be present at the selected level
 @export var guaranteed_at: int = 0
@@ -35,5 +34,3 @@ enum AbilityType {
 
 @export var incompatabilities: Array[AbilityInfo]
 @export var requirements: Array[AbilityInfo]
-
-@export var icon: Texture2D

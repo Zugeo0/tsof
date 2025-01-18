@@ -16,8 +16,8 @@ var max_health_multiplier: float = 1.0
 var armor: int = 1
 
 ## How quickly the player regains health measured in seconds
-@export_range(0.0, 10.0, 0.05, "or_greater", "hide_slider", "suffix:seconds")
-var regen_speed: float = 1.0
+@export_range(0, 10, 1, "or_greater", "suffix:health")
+var regen_amt: int = 1
 
 ## The chance of a critical hit occurring. Measured in percentage
 @export_range(0.0, 1.0, 0.01, "suffix:x")

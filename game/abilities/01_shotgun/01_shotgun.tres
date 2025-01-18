@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="AbilityInfo" load_steps=10 format=3 uid="uid://crnjvs8x3jpha"]
+
+[ext_resource type="Script" path="res://game/abilities/ability_effect/ability_effect.gd" id="1_a6obq"]
+[ext_resource type="Script" path="res://game/abilities/ability_effect/ability_effect_give_weapon.gd" id="2_4h61b"]
+[ext_resource type="Script" path="res://game/abilities/ability_effect/ability_effect_stat_change.gd" id="3_ieepm"]
+[ext_resource type="Script" path="res://game/abilities/ability_effect/ability_effect_float_value.gd" id="4_npogb"]
+[ext_resource type="Texture2D" uid="uid://bujrf88h0hyqx" path="res://game/abilities/01_shotgun/01_shotgun.png" id="5_s42nm"]
+[ext_resource type="Script" path="res://game/abilities/ability_manager/ability_info.gd" id="6_xdvos"]
+
+[sub_resource type="Resource" id="Resource_swdrl"]
+script = ExtResource("2_4h61b")
+weapon_id = "shotgun"
+
+[sub_resource type="Resource" id="Resource_x27mu"]
+script = ExtResource("4_npogb")
+value_change = -0.1
+
+[sub_resource type="Resource" id="Resource_ur4de"]
+script = ExtResource("3_ieepm")
+stat = 4
+value_change = SubResource("Resource_x27mu")
+
+[resource]
+script = ExtResource("6_xdvos")
+ability_name = "Shotgun"
+ability_description = "Wooo..."
+ability_effects = Array[ExtResource("1_a6obq")]([SubResource("Resource_swdrl"), SubResource("Resource_ur4de")])
+type = 0
+max_amount = 0
+rarity = 0
+icon = ExtResource("5_s42nm")
+guaranteed_at = 0
+required_level = 0
+incompatabilities = Array[ExtResource("6_xdvos")]([])
+requirements = Array[ExtResource("6_xdvos")]([])
