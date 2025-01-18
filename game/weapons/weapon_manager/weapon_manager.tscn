@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://udfbeighyw02"]
+[gd_scene load_steps=14 format=3 uid="uid://udfbeighyw02"]
 
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
 [ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="3_0pde6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon_stats.gd" id="6_nybtt"]
 [ext_resource type="Script" path="res://game/weapons/weapon_type/explosive/explosive_weapon_stats.gd" id="7_g80rb"]
 [ext_resource type="Script" path="res://game/weapons/weapon_type/melee/melee_weapon_stats.gd" id="8_i5jfj"]
+[ext_resource type="Script" path="res://game/weapons/weapon_manager/targeting_logic.gd" id="9_hru3q"]
 [ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="17_d00o8"]
 
 [sub_resource type="Resource" id="Resource_13co1"]
@@ -51,5 +52,15 @@ collision_mask = 2
 [node name="TargetShape" type="CollisionShape2D" parent="TargetRange"]
 shape = SubResource("CircleShape2D_4a24m")
 
-[node name="Weapons" type="Node2D" parent="."]
+[node name="TargetClosest" type="Node2D" parent="." node_paths=PackedStringArray("target_range", "weapon_manager")]
 y_sort_enabled = true
+script = ExtResource("9_hru3q")
+target_range = NodePath("../TargetRange")
+weapon_manager = NodePath("..")
+sort_function = "a.global_position.distance_to(player.global_position) < b.global_position.distance_to(player.global_position)"
+
+[node name="TargetFarthest" type="Node2D" parent="." node_paths=PackedStringArray("target_range", "weapon_manager")]
+script = ExtResource("9_hru3q")
+target_range = NodePath("../TargetRange")
+weapon_manager = NodePath("..")
+sort_function = "a.global_position.distance_to(weapon_manager.global_position) > b.global_position.distance_to(weapon_manager.global_position)"

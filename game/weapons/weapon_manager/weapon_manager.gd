@@ -14,8 +14,11 @@ class_name WeaponManager extends Node2D
 @export_group("Config")
 @export var max_weapons: int
 
-@onready var weapons: Node2D = $Weapons
+var _weapons: Array[WeaponBase]
+
 @onready var target_range: Area2D = $TargetRange
+@onready var target_closest: Node2D = $TargetClosest
+@onready var target_farthest: Node2D = $TargetFarthest
 
 func add_weapon(id: String) -> void:
 	if id not in weapon_pool.keys():
@@ -28,10 +31,15 @@ func add_weapon(id: String) -> void:
 	
 	var weapon_type: WeaponBase = weapon_pool[id].instantiate()
 	weapon_type.set_manager(self)
-	weapons.add_child(weapon_type)
+	_weapons.push_back(weapon_type)
+	match weapon_type.target_priority:
+		WeaponBase.TargetPriority.CLOSEST:
+			target_closest.add_child(weapon_type)
+		WeaponBase.TargetPriority.FARTHEST:
+			target_farthest.add_child(weapon_type)
 	
 func can_add_weapon() -> bool:
-	return weapons.get_child_count() < max_weapons
+	return len(_weapons) < max_weapons
 
 func get_weapon_type(id: String) -> WeaponBase:
 	if id not in weapon_pool.keys():
@@ -47,14 +55,3 @@ func set_weapon_projectile(weapon_id: String, projectile: PackedScene) -> void:
 		return
 	
 	weapon_type.projectile = projectile
-
-func get_closest_enemies() -> Array[Enemy]:
-	var enemies: Array[Enemy]
-	enemies.assign(target_range.get_overlapping_bodies())
-	enemies.sort_custom(_sort_closest)
-	return enemies
-
-func _sort_closest(a: Enemy, b: Enemy) -> bool:
-	var dist_a = a.global_position.distance_to(global_position)
-	var dist_b = b.global_position.distance_to(global_position)
-	return dist_a < dist_b

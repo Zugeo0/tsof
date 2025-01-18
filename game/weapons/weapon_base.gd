@@ -7,10 +7,18 @@ enum WeaponType {
 	MELEE,
 }
 
+enum TargetPriority {
+	CLOSEST,
+	FARTHEST,
+	WEAKEST,
+	STRONGEST,
+}
+
 @export_category("Config")
 @export var weapon_id: String
 @export var weapon_name: String
 @export var weapon_type: WeaponType
+@export var target_priority: TargetPriority
 
 @export_category("Stats")
 @export var attack_speed: float = 1.0

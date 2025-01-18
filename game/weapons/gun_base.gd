@@ -34,7 +34,6 @@ func set_projectile_type(proj_type: ProjectileType) -> void:
 	projectile_type = proj_type
 
 func _process(_delta: float) -> void:
-	_reevaluate_target()
 	sprite.flip_v = global_transform.x.x < 0
 	crosshair.visible = _current_target != null
 	
@@ -50,7 +49,3 @@ func get_target() -> Enemy:
 
 func total_projectiles() -> int:
 	return projectile_type.projectile_count + extra_projectiles
-
-func _reevaluate_target() -> void:
-	var enemies = _weapon_manager.get_closest_enemies()
-	_current_target = enemies[0] if len(enemies) > 0 else null
