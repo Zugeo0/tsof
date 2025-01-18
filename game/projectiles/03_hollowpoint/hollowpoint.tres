@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://cidk78lg4s5c6"]
+
+[ext_resource type="PackedScene" uid="uid://bvmngvyyyb0cc" path="res://game/projectiles/03_hollowpoint/hollowpoint.tscn" id="1_51hpd"]
+[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="1_kmfly"]
+
+[resource]
+script = ExtResource("1_kmfly")
+projectile_scene = ExtResource("1_51hpd")
+projectile_count = 1

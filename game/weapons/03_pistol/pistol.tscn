@@ -1,20 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://308gnb3avrh"]
+[gd_scene load_steps=7 format=3 uid="uid://308gnb3avrh"]
 
 [ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_h5rwh"]
-[ext_resource type="PackedScene" uid="uid://bvmngvyyyb0cc" path="res://game/projectiles/03_hollowpoint/hollowpoint.tscn" id="2_u4bqm"]
+[ext_resource type="Resource" uid="uid://cidk78lg4s5c6" path="res://game/projectiles/03_hollowpoint/hollowpoint.tres" id="2_8q4h5"]
 [ext_resource type="Texture2D" uid="uid://d30tujdo0am0k" path="res://game/weapons/03_pistol/pistol.png" id="3_t0rj0"]
 [ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_lgmyi"]
 [ext_resource type="AudioStream" uid="uid://fcur87xq24sp" path="res://game/weapons/03_pistol/pistol.wav" id="5_ja0rc"]
 [ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_2i0k7"]
 
-[sub_resource type="Curve" id="Curve_sm33e"]
-_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
-point_count = 2
-
 [node name="GunBase" type="Node2D"]
 script = ExtResource("1_h5rwh")
-projectile_spread = SubResource("Curve_sm33e")
-projectile_type = ExtResource("2_u4bqm")
+projectile_spread = 0.261799
+projectile_type = ExtResource("2_8q4h5")
 weapon_id = "pistol"
 weapon_name = "Pistol"
 

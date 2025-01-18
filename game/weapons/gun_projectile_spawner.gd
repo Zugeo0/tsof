@@ -65,6 +65,9 @@ func _play_attack_sfx() -> void:
 ## angle -> The angle of the gun's spread.
 ## n -> When iterating, n is the value of the iterator (nth projectile fired).
 func _calculate_projectile_direction(total_projectiles: int, angle: float, n: int) -> Vector2:
-	var point_angle := -angle / 2.0 + n * (angle / (total_projectiles - 1))
+	## NOTE: If projectiles start acting funky when spawned, check if it's dividing by 0.
+	var point_angle: float = 0.0
+	if total_projectiles > 1:
+		point_angle = -angle / 2.0 + n * (angle / max(total_projectiles - 1, 1))
 	var dir := Vector2(cos(point_angle), sin(point_angle))
 	return dir.rotated(gun_base.rotation)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://oixg4x24q1pd"]
+
+[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="1_2ve52"]
+[ext_resource type="PackedScene" uid="uid://dip13cxogx0yd" path="res://game/projectiles/02_ghost_pellet/ghost_pellet.tscn" id="1_40n4t"]
+
+[resource]
+script = ExtResource("1_2ve52")
+projectile_scene = ExtResource("1_40n4t")
+projectile_count = 7

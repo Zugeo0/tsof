@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfcam3k02yyg"]
 
 [ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_j3pgj"]
-[ext_resource type="PackedScene" uid="uid://bvmngvyyyb0cc" path="res://game/projectiles/03_hollowpoint/hollowpoint.tscn" id="2_scxc8"]
+[ext_resource type="Resource" uid="uid://davg3slu5ssnd" path="res://game/projectiles/04_full_metal_jacket/full_metal_jacket.tres" id="2_q3slg"]
 [ext_resource type="Texture2D" uid="uid://ckyfmyocqhhd4" path="res://game/weapons/04_rifle/rifle.png" id="3_cwcwq"]
 [ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_ams41"]
 [ext_resource type="AudioStream" uid="uid://cbxmvmkxh2fsk" path="res://game/weapons/04_rifle/rifle.wav" id="5_mjigw"]
@@ -12,7 +12,8 @@ script = ExtResource("1_j3pgj")
 damage_mod = 1.2
 added_pierce = 2
 projectile_velocity_mod = 1.4
-projectile_type = ExtResource("2_scxc8")
+projectile_spread = 0.610865
+projectile_type = ExtResource("2_q3slg")
 weapon_id = "rifle_bolt"
 weapon_name = "Bolt-Action Rifle"
 attack_speed = 1.65
