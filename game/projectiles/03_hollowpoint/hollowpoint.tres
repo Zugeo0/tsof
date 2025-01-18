@@ -7,3 +7,4 @@
 script = ExtResource("1_kmfly")
 projectile_scene = ExtResource("1_51hpd")
 projectile_count = 1
+compatible_weapons = Array[String](["pistol", "rifle_assault"])

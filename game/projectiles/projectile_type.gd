@@ -4,3 +4,4 @@ class_name ProjectileType extends Resource
 
 @export var projectile_scene: PackedScene
 @export var projectile_count: int = 1
+@export var compatible_weapons: Array[String]

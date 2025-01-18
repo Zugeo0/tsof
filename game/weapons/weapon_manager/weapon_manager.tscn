@@ -4,38 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="3_0pde6"]
 [ext_resource type="PackedScene" uid="uid://bhsxt5yp8ref6" path="res://game/weapons/02_assault_rifle/assault_rifle.tscn" id="4_m4kxo"]
 [ext_resource type="PackedScene" uid="uid://dfcam3k02yyg" path="res://game/weapons/04_rifle/rifle.tscn" id="5_51s3a"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon_stats.gd" id="6_nybtt"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/explosive/explosive_weapon_stats.gd" id="7_g80rb"]
+[ext_resource type="Script" path="res://game/weapons/weapon_type/melee/melee_weapon_stats.gd" id="8_i5jfj"]
 [ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="17_d00o8"]
 
-[sub_resource type="GDScript" id="GDScript_s1tti"]
-script/source = "class_name RangedWeaponStats extends Resource
-
-## A flat amount of bonus damage to all projectiles fired by ranged weapons.
-@export_range(0, 10, 1, \"or_greater\")
-var added_projectile_damage: int = 0
-
-## A multiplier to the amount of damage the projectile does
-@export_range(0.0, 1.0, 0.01, \"or_greater\", \"suffix:x\")
-var projectile_damage_multiplier: float = 1.0
-
-## A multiplier to the projectile speed
-@export_range(0.0, 1.0, 0.01, \"or_greater\", \"suffix:x\")
-var projectile_speed_multiplier: float = 1.0
-
-## A flat bonus to the number of projectiles fired by the player's ranged weapons.
-@export_range(0, 2, 1, \"or_greater\")
-var extra_projectiles: int = 0
-
-## A flat bonus to the projectile's pierce stat
-@export_range(0, 3, 1, \"or_greater\")
-var added_pierce: int = 0
-
-## A multiplier to the attack speed of all ranged weapons.
-@export_range(0.5, 3.0, 0.01, \"or_greater\")
-var attack_speed_mod: float = 1.0
-"
-
-[sub_resource type="Resource" id="Resource_sh7wi"]
-script = SubResource("GDScript_s1tti")
+[sub_resource type="Resource" id="Resource_13co1"]
+script = ExtResource("6_nybtt")
 added_projectile_damage = 0
 projectile_damage_multiplier = 1.0
 projectile_speed_multiplier = 1.0
@@ -43,31 +18,12 @@ extra_projectiles = 0
 added_pierce = 0
 attack_speed_mod = 1.0
 
-[sub_resource type="GDScript" id="GDScript_y6vgb"]
-script/source = "class_name ExplosiveWeaponStats extends Resource
-
-@export_range(0.0, 1.0, 0.01, \"or_greater\")
-var explosion_range_multiplier: float = 1.0
-"
-
-[sub_resource type="Resource" id="Resource_0la66"]
-script = SubResource("GDScript_y6vgb")
+[sub_resource type="Resource" id="Resource_bhr2f"]
+script = ExtResource("7_g80rb")
 explosion_range_multiplier = 1.0
 
-[sub_resource type="GDScript" id="GDScript_61y6x"]
-script/source = "class_name MeleeWeaponStats extends Resource
-
-## The number of times that the weapon inherently attacks
-@export
-var added_melee_strike_count: int = 0
-
-## The delay between each additional strike of a single attack for a melee weapon
-@export_range(0.0, 1.0, 0.01, \"or_greater\")
-var melee_strike_delay_multiplier: float = 1.0
-"
-
-[sub_resource type="Resource" id="Resource_tp3q3"]
-script = SubResource("GDScript_61y6x")
+[sub_resource type="Resource" id="Resource_m2x3t"]
+script = ExtResource("8_i5jfj")
 added_melee_strike_count = 0
 melee_strike_delay_multiplier = 1.0
 
@@ -83,9 +39,9 @@ weapon_pool = {
 "rifle_bolt": ExtResource("5_51s3a"),
 "shotgun_pump": ExtResource("3_0pde6")
 }
-ranged_weapon_stats = SubResource("Resource_sh7wi")
-explosive_weapon_stats = SubResource("Resource_0la66")
-melee_weapon_stats = SubResource("Resource_tp3q3")
+ranged_weapon_stats = SubResource("Resource_13co1")
+explosive_weapon_stats = SubResource("Resource_bhr2f")
+melee_weapon_stats = SubResource("Resource_m2x3t")
 
 [node name="TargetRange" type="Area2D" parent="."]
 visible = false
