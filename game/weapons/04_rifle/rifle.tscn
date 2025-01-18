@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfcam3k02yyg"]
+[gd_scene load_steps=7 format=3 uid="uid://dfcam3k02yyg"]
 
 [ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_j3pgj"]
 [ext_resource type="PackedScene" uid="uid://bvmngvyyyb0cc" path="res://game/projectiles/03_hollowpoint/hollowpoint.tscn" id="2_scxc8"]
@@ -7,16 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://cbxmvmkxh2fsk" path="res://game/weapons/04_rifle/rifle.wav" id="5_mjigw"]
 [ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_tqnsh"]
 
-[sub_resource type="Curve" id="Curve_sm33e"]
-_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
-point_count = 2
-
 [node name="GunBase" type="Node2D"]
 script = ExtResource("1_j3pgj")
 damage_mod = 1.2
 added_pierce = 2
 projectile_velocity_mod = 1.4
-projectile_spread = SubResource("Curve_sm33e")
 projectile_type = ExtResource("2_scxc8")
 weapon_id = "rifle_bolt"
 weapon_name = "Bolt-Action Rifle"

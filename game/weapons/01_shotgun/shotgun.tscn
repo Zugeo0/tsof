@@ -1,21 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://gjg3p6e850qv"]
+[gd_scene load_steps=7 format=3 uid="uid://gjg3p6e850qv"]
 
 [ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_hfxs0"]
-[ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="2_w5j1t"]
+[ext_resource type="Resource" uid="uid://cf65ejukc6sh8" path="res://game/projectiles/01_pellet/pellet.tres" id="2_1aoq7"]
 [ext_resource type="Texture2D" uid="uid://dnywnltyudngn" path="res://game/weapons/01_shotgun/shotgun.png" id="3_1uie4"]
 [ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_ho3po"]
 [ext_resource type="AudioStream" uid="uid://bg4h2b4j8ypno" path="res://game/weapons/01_shotgun/shotgun.wav" id="5_ybkad"]
 [ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_5tuok"]
 
-[sub_resource type="Curve" id="Curve_sm33e"]
-max_value = 45.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 45), 63.0, 0.0, 0, 0]
-point_count = 2
-
 [node name="GunBase" type="Node2D"]
 script = ExtResource("1_hfxs0")
-projectile_spread = SubResource("Curve_sm33e")
-projectile_type = ExtResource("2_w5j1t")
+projectile_spread = 0.410152
+projectile_type = ExtResource("2_1aoq7")
 weapon_id = "shotgun"
 weapon_name = "Shotgun"
 

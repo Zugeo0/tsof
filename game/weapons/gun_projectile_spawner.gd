@@ -27,27 +27,44 @@ func _attack() -> void:
 	if target != null:
 		_can_attack = false
 		for i in gun_base.attacks_per_cycle:
-			for j in gun_base.total_projectiles():
-				var proj: Projectile = gun_base.projectile_type.instantiate()
-				var dir = gun_base.calculate_spread_vector()
-				var data = ProjectileData.new(
-					gun_base.added_damage,
-					gun_base.damage_mod,
-					gun_base.added_pierce,
-					gun_base.projectile_velocity_mod,
-					Game.get_player().player_stats.attack_damage_multiplier,
-				)
-				proj.init(dir, Game.get_player(), data)
-				proj.top_level = true
-				proj.global_position = bullet_spawn_position.global_position
-				add_child(proj)
-			_play_attack_sfx()
+			_fire_gun()
 			if i != gun_base.attacks_per_cycle:
 				attack_cycle_timer.start()
 				await attack_cycle_timer.timeout
 		attack_timer.start()
 
+func _fire_gun() -> void:
+	var projectile_count: int = gun_base.total_projectiles()
+	for j in projectile_count:
+		var dir: Vector2 = _calculate_projectile_direction(
+			projectile_count,
+			gun_base.projectile_spread,
+			j,
+		)
+		var proj: Projectile = gun_base.projectile_type.projectile_scene.instantiate()
+		var data = ProjectileData.new(
+			gun_base.added_damage,
+			gun_base.damage_mod,
+			gun_base.added_pierce,
+			gun_base.projectile_velocity_mod,
+			Game.get_player().player_stats.attack_damage_multiplier,
+		)
+		proj.init(dir, Game.get_player(), data)
+		proj.top_level = true
+		proj.global_position = bullet_spawn_position.global_position
+		add_child(proj)
+	_play_attack_sfx()
+
 func _play_attack_sfx() -> void:
 	# Randomly pitch the sound effect up/down to add variety.
 	attack_sfx.pitch_scale = randf_range(0.5, 2)
 	attack_sfx.play()
+
+## Evaluates the direction for the provided projectile.
+## total_projectiles -> The total number of projectiles fired in a single shot.
+## angle -> The angle of the gun's spread.
+## n -> When iterating, n is the value of the iterator (nth projectile fired).
+func _calculate_projectile_direction(total_projectiles: int, angle: float, n: int) -> Vector2:
+	var point_angle := -angle / 2.0 + n * (angle / (total_projectiles - 1))
+	var dir := Vector2(cos(point_angle), sin(point_angle))
+	return dir.rotated(gun_base.rotation)

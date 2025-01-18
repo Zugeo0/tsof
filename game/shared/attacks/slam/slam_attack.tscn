@@ -9,29 +9,29 @@ shader_parameter/cone_angle = 1.5708
 shader_parameter/opacity = 1.0
 shader_parameter/speed = 2.0
 shader_parameter/flash = false
-shader_parameter/cutoff_distance = 0.151
+shader_parameter/cutoff_distance = 0.0
 
-[sub_resource type="Gradient" id="Gradient_1fvue"]
+[sub_resource type="Gradient" id="Gradient_03kij"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ae4dv"]
-gradient = SubResource("Gradient_1fvue")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kqlxd"]
+gradient = SubResource("Gradient_03kij")
 width = 100
 height = 100
 
 [node name="SlamAttack" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_ubagr")
+collision_accuracy = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_8yywl")
 scale = Vector2(2, 2)
-texture = SubResource("GradientTexture2D_ae4dv")
+texture = SubResource("GradientTexture2D_kqlxd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(0, 0, 70.7107, -70.7107, 81.9152, -57.3576, 90.6308, -42.2618, 96.5926, -25.8819, 99.6195, -8.71557, 99.6195, 8.71557, 96.5926, 25.8819, 90.6308, 42.2618, 81.9152, 57.3576, 70.7107, 70.7107)
+polygon = PackedVector2Array(0, 0, 70.7107, -70.7107, 92.3879, -38.2683, 100, 0, 92.3879, 38.2683, 70.7107, 70.7107)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(100, 0)

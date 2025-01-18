@@ -5,7 +5,6 @@ class_name Projectile extends Area2D
 @export var added_damage_effectiveness: float = 1.0
 @export var pierce: int = 0
 @export var speed: float = 1.0
-@export var projectile_count: int = 1
 @export var unlimited_pierce: bool = false
 
 var _direction: Vector2 = Vector2.ZERO

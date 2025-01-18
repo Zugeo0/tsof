@@ -19,25 +19,19 @@ class_name GunBase extends WeaponBase
 ## The delay between attacks in a single cycle (e.g. burst-fire).
 @export var delay_between_attacks: float = 0.25
 ## The general accuracy of projectiles fired by this weapon.
-@export var projectile_spread: Curve
+@export_range(0.0, 360.0, 0.1, "radians_as_degrees") var projectile_spread: float = PI / 4
 
 @export_category("Modifiers")
-@export var projectile_type: PackedScene
+@export var projectile_type: ProjectileType
 
 @onready var crosshair: Sprite2D = $Crosshair
 
 var _current_target: Enemy = null
-var _projectile_count: int = 0
-
-func _ready() -> void:
-	set_projectile_type(projectile_type)
 
 ## Changes the projectile spawned by this weapon and reevaluates the number of
 ## projectiles to spawn.
-func set_projectile_type(proj_type: PackedScene) -> void:
+func set_projectile_type(proj_type: ProjectileType) -> void:
 	projectile_type = proj_type
-	# TODO: I don't really like this, but I see no other better way to get this info for forloops...
-	_projectile_count = projectile_type.instantiate().projectile_count
 
 func _process(_delta: float) -> void:
 	_reevaluate_target()
@@ -55,18 +49,7 @@ func get_target() -> Enemy:
 	return _current_target
 
 func total_projectiles() -> int:
-	return _projectile_count + extra_projectiles
-
-func calculate_spread_vector() -> Vector2:
-	var degrees = projectile_spread.sample(randf()) / 2
-	
-	# Give the projectile a 50% chance of having the angle inverted
-	var sign_multiplier = [-1, 1].pick_random()
-	var rad = deg_to_rad(degrees)
-	
-	# Rotate the angle by rad or -rad
-	var angle = global_transform.x.rotated(rad * sign_multiplier)
-	return angle
+	return projectile_type.projectile_count + extra_projectiles
 
 func _reevaluate_target() -> void:
 	var enemies = _weapon_manager.get_closest_enemies()
