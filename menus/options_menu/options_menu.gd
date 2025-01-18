@@ -42,7 +42,7 @@ func _on_music_volume_slider_value_changed(value: float) -> void:
 
 
 func _on_sfx_volume_slider_value_changed(value: float) -> void:
-	settings.music_volume = value
+	settings.sfx_volume = value
 	SaveManager.preview_settings(settings)
 
 
