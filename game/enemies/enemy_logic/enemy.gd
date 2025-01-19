@@ -7,6 +7,7 @@ class_name Enemy extends RigidBody2D
 @export var sprite: Sprite2D
 @export var damage_sfx: AudioStreamPlayer
 @export var death_effect: PackedScene
+@export var threat_level: int
 
 @export_group("Stats")
 

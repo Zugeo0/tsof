@@ -53,14 +53,15 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_4a24m")
 
 [node name="TargetClosest" type="Node2D" parent="." node_paths=PackedStringArray("target_range", "weapon_manager")]
-y_sort_enabled = true
 script = ExtResource("9_hru3q")
 target_range = NodePath("../TargetRange")
 weapon_manager = NodePath("..")
+threat_priority_threshold = 50
 sort_function = "a.global_position.distance_to(player.global_position) < b.global_position.distance_to(player.global_position)"
 
 [node name="TargetFarthest" type="Node2D" parent="." node_paths=PackedStringArray("target_range", "weapon_manager")]
 script = ExtResource("9_hru3q")
 target_range = NodePath("../TargetRange")
 weapon_manager = NodePath("..")
+threat_priority_threshold = 50
 sort_function = "a.global_position.distance_to(weapon_manager.global_position) > b.global_position.distance_to(weapon_manager.global_position)"

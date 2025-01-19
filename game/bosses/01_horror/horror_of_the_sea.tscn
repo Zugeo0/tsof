@@ -39,6 +39,7 @@ enemy_name = "Horror of the Sea"
 sprite = NodePath("Visuals/Sprite")
 damage_sfx = NodePath("DamageSFX")
 death_effect = ExtResource("2_cunya")
+threat_level = 100
 max_health = 500
 health = 500
 
