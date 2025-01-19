@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsu8o0qrejr1"
-path="res://.godot/imported/metal_baseball_bat.png-4bc4c1d8411a6ed15e7b44b7709e444a.ctex"
+uid="uid://d2rvp02n0bp1x"
+path="res://.godot/imported/dynamite.png-116ab90854a3a991a8851026ffbf793b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/weapons/metal_baseball_bat.png"
-dest_files=["res://.godot/imported/metal_baseball_bat.png-4bc4c1d8411a6ed15e7b44b7709e444a.ctex"]
+source_file="res://game/weapons/07_dynamite_bundle/dynamite.png"
+dest_files=["res://.godot/imported/dynamite.png-116ab90854a3a991a8851026ffbf793b.ctex"]
 
 [params]
 

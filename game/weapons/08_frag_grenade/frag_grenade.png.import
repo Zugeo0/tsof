@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2rvp02n0bp1x"
-path="res://.godot/imported/dynamite.png-fe3b8f0f039a319a8aae4046387d6390.ctex"
+uid="uid://bwfgjb18v3m68"
+path="res://.godot/imported/frag_grenade.png-69f483e68ccb50459a1cfbaefa870793.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/weapons/dynamite.png"
-dest_files=["res://.godot/imported/dynamite.png-fe3b8f0f039a319a8aae4046387d6390.ctex"]
+source_file="res://game/weapons/08_frag_grenade/frag_grenade.png"
+dest_files=["res://.godot/imported/frag_grenade.png-69f483e68ccb50459a1cfbaefa870793.ctex"]
 
 [params]
 

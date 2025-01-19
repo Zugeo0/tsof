@@ -6,6 +6,7 @@ class_name Projectile extends Area2D
 @export var pierce: int = 0
 @export var speed: float = 1.0
 @export var unlimited_pierce: bool = false
+@export var face_direction: bool = false
 
 var _direction: Vector2 = Vector2.ZERO
 var _data: ProjectileData = null
@@ -17,6 +18,8 @@ func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 	_data = data
 	_attack = _calculate_attack(attacker)
 	speed *= data.projectile_velocity_mod
+	if face_direction:
+		look_at(_direction)
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtdby8i2l747i"]
+
+[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_vd843"]
+[ext_resource type="Resource" uid="uid://bn6783wcuw21q" path="res://game/projectiles/05_javelin/javelin.tres" id="2_pgji6"]
+[ext_resource type="Texture2D" uid="uid://ctweu4712bxtd" path="res://game/weapons/05_spear_gun/spear_gun.png" id="3_jpgle"]
+[ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_vu5tu"]
+[ext_resource type="AudioStream" uid="uid://4cuy3m5e4lnh" path="res://game/weapons/05_spear_gun/spear_gun.wav" id="5_d1wlh"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_uvak5"]
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_vd843")
+damage_mod = 1.2
+added_pierce = 2
+projectile_velocity_mod = 1.3
+projectile_spread = 0.401426
+projectile_type = ExtResource("2_pgji6")
+weapon_id = "spear_gun"
+weapon_name = "Spear Gun"
+target_priority = 1
+attack_speed = 2.1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_jpgle")
+offset = Vector2(45, 0)
+
+[node name="GunProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource("4_vu5tu")
+
+[node name="AttackTimer" type="Timer" parent="GunProjectileSpawner"]
+one_shot = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
+stream = ExtResource("5_d1wlh")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
+position = Vector2(78, 0)
+
+[node name="AttackCycleTimer" type="Timer" parent="GunProjectileSpawner"]
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+texture = ExtResource("6_uvak5")

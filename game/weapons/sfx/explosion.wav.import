@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cyjb3n1miof6b"
-path="res://.godot/imported/explosion.wav-e6f8eb5122ab683d9bfd81883b09b5a6.sample"
+path="res://.godot/imported/explosion.wav-6a6b50d37470542eee3f2b469156b32c.sample"
 
 [deps]
 
-source_file="res://previous_assets/weapons/explosion.wav"
-dest_files=["res://.godot/imported/explosion.wav-e6f8eb5122ab683d9bfd81883b09b5a6.sample"]
+source_file="res://game/weapons/sfx/explosion.wav"
+dest_files=["res://.godot/imported/explosion.wav-6a6b50d37470542eee3f2b469156b32c.sample"]
 
 [params]
 

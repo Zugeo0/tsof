@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://fmjmod7xcj4q"
-path="res://.godot/imported/strike.wav-6f7ac42586f601f4ec7c0a7ff1136d50.sample"
+path="res://.godot/imported/strike.wav-e76a0e24218b8d09d2289b2c9cad1387.sample"
 
 [deps]
 
-source_file="res://previous_assets/weapons/strike.wav"
-dest_files=["res://.godot/imported/strike.wav-6f7ac42586f601f4ec7c0a7ff1136d50.sample"]
+source_file="res://game/weapons/sfx/strike.wav"
+dest_files=["res://.godot/imported/strike.wav-e76a0e24218b8d09d2289b2c9cad1387.sample"]
 
 [params]
 

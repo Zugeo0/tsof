@@ -13,6 +13,7 @@ func _ready() -> void:
 	attack_timer.timeout.connect(func(): _can_attack = true)
 	Game.get_player().frozen.connect(func(): attack_timer.paused = true)
 	Game.get_player().unfrozen.connect(func(): attack_timer.paused = false)
+	_reset_attack_timer()
 
 func _process(_delta: float) -> void:
 	if _can_attack:

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://4cuy3m5e4lnh"
-path="res://.godot/imported/spear_gun.wav-b121ab0561acc75a0f425f6c024d163a.sample"
+path="res://.godot/imported/spear_gun.wav-36fdc7f2a24e3e56d9dc0c1d19408f3a.sample"
 
 [deps]
 
-source_file="res://previous_assets/weapons/spear_gun.wav"
-dest_files=["res://.godot/imported/spear_gun.wav-b121ab0561acc75a0f425f6c024d163a.sample"]
+source_file="res://game/weapons/05_spear_gun/spear_gun.wav"
+dest_files=["res://.godot/imported/spear_gun.wav-36fdc7f2a24e3e56d9dc0c1d19408f3a.sample"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck2pvuuisga6e"
-path="res://.godot/imported/spear_gun_spear.png-52df8c3e1640d6eda22f67ce08441c28.ctex"
+uid="uid://bsu8o0qrejr1"
+path="res://.godot/imported/metal_baseball_bat.png-72749069e628621aa7cc7c231a175de7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/weapons/spear_gun_spear.png"
-dest_files=["res://.godot/imported/spear_gun_spear.png-52df8c3e1640d6eda22f67ce08441c28.ctex"]
+source_file="res://game/weapons/09_metal_bat/metal_baseball_bat.png"
+dest_files=["res://.godot/imported/metal_baseball_bat.png-72749069e628621aa7cc7c231a175de7.ctex"]
 
 [params]
 

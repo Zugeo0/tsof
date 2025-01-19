@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctweu4712bxtd"
-path="res://.godot/imported/spear_gun.png-eaac71ec4aeebb04558fec1873e1aa57.ctex"
+uid="uid://ck2pvuuisga6e"
+path="res://.godot/imported/javelin.png-1b583bd9adebd7bf7a3453336923b970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/weapons/spear_gun.png"
-dest_files=["res://.godot/imported/spear_gun.png-eaac71ec4aeebb04558fec1873e1aa57.ctex"]
+source_file="res://game/projectiles/05_javelin/javelin.png"
+dest_files=["res://.godot/imported/javelin.png-1b583bd9adebd7bf7a3453336923b970.ctex"]
 
 [params]
 

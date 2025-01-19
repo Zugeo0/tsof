@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmmp5s70l5jk1"]
+[gd_scene load_steps=19 format=3 uid="uid://cmmp5s70l5jk1"]
 
 [ext_resource type="PackedScene" uid="uid://udfbeighyw02" path="res://game/weapons/weapon_manager/weapon_manager.tscn" id="1_74sb1"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_lijdu"]
@@ -6,8 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://d3g85xp75huh7" path="res://game/player/player.png" id="2_oobxn"]
 [ext_resource type="Script" path="res://game/shared/components/health/health_component.gd" id="3_fhwbb"]
 [ext_resource type="Material" uid="uid://c0175ljwq3nwg" path="res://common/materials/entity_material.tres" id="4_0yqo5"]
+[ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="5_hspnr"]
+[ext_resource type="PackedScene" uid="uid://bhsxt5yp8ref6" path="res://game/weapons/02_assault_rifle/assault_rifle.tscn" id="6_adb3p"]
 [ext_resource type="AudioStream" uid="uid://vu5xqfjx4ary" path="res://game/pickups/experience/xp.wav" id="6_cbvat"]
+[ext_resource type="PackedScene" uid="uid://dfcam3k02yyg" path="res://game/weapons/04_rifle/rifle.tscn" id="7_a45bg"]
 [ext_resource type="AudioStream" uid="uid://cjfdn66g8j23e" path="res://game/player/hurt.wav" id="7_k7285"]
+[ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="8_84caw"]
+[ext_resource type="PackedScene" uid="uid://dtdby8i2l747i" path="res://game/weapons/05_spear_gun/spear_gun.tscn" id="9_tt8oo"]
 
 [sub_resource type="Resource" id="Resource_s1xno"]
 script = ExtResource("2_4hmi3")
@@ -50,6 +55,13 @@ script = ExtResource("3_fhwbb")
 
 [node name="WeaponManager" parent="." instance=ExtResource("1_74sb1")]
 position = Vector2(0, -26)
+weapon_pool = {
+"pistol": ExtResource("5_hspnr"),
+"rifle_assault": ExtResource("6_adb3p"),
+"rifle_bolt": ExtResource("7_a45bg"),
+"shotgun_pump": ExtResource("8_84caw"),
+"spear_gun": ExtResource("9_tt8oo")
+}
 max_weapons = 5
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]

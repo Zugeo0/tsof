@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://cqyqc13euska6"]
+
+[ext_resource type="Texture2D" uid="uid://ctweu4712bxtd" path="res://game/weapons/05_spear_gun/spear_gun.png" id="1_tee0b"]
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_d620e"]
+
+[resource]
+script = ExtResource("2_d620e")
+player_class_name = "Spearfisher"
+player_class_description = "Start with a spear gun"
+player_class_icon = ExtResource("1_tee0b")
+starting_weapons = Array[String](["spear_gun"])
