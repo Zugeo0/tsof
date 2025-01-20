@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvj5jnfpu5h8b"
-path="res://.godot/imported/grenade_launcher_grenade.png-0437e48c21b6b05952eb75e391b070b9.ctex"
+path="res://.godot/imported/impact_grenade.png-b7225461e3337bde00e273d868387d7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/weapons/grenade_launcher_grenade.png"
-dest_files=["res://.godot/imported/grenade_launcher_grenade.png-0437e48c21b6b05952eb75e391b070b9.ctex"]
+source_file="res://game/projectiles/06_impact_grenade/impact_grenade.png"
+dest_files=["res://.godot/imported/impact_grenade.png-b7225461e3337bde00e273d868387d7c.ctex"]
 
 [params]
 

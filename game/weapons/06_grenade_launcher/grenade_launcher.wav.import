@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c2arama7m54uu"
-path="res://.godot/imported/grenade_launcher.wav-86773bb06932d0fc46ffc53bf4f18e72.sample"
+path="res://.godot/imported/grenade_launcher.wav-8dd6c393b2e5584a18afa7013a618e84.sample"
 
 [deps]
 
-source_file="res://previous_assets/weapons/grenade_launcher.wav"
-dest_files=["res://.godot/imported/grenade_launcher.wav-86773bb06932d0fc46ffc53bf4f18e72.sample"]
+source_file="res://game/weapons/06_grenade_launcher/grenade_launcher.wav"
+dest_files=["res://.godot/imported/grenade_launcher.wav-8dd6c393b2e5584a18afa7013a618e84.sample"]
 
 [params]
 
