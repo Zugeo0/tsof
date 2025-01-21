@@ -1,32 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://udfbeighyw02"]
+[gd_scene load_steps=8 format=3 uid="uid://udfbeighyw02"]
 
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
 [ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="3_0pde6"]
 [ext_resource type="PackedScene" uid="uid://bhsxt5yp8ref6" path="res://game/weapons/02_assault_rifle/assault_rifle.tscn" id="4_m4kxo"]
 [ext_resource type="PackedScene" uid="uid://dfcam3k02yyg" path="res://game/weapons/04_rifle/rifle.tscn" id="5_51s3a"]
-[ext_resource type="Script" path="res://game/weapons/weapon_type/ranged/ranged_weapon_stats.gd" id="6_nybtt"]
-[ext_resource type="Script" path="res://game/weapons/weapon_type/explosive/explosive_weapon_stats.gd" id="7_g80rb"]
-[ext_resource type="Script" path="res://game/weapons/weapon_type/melee/melee_weapon_stats.gd" id="8_i5jfj"]
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/targeting_logic.gd" id="9_hru3q"]
 [ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="17_d00o8"]
-
-[sub_resource type="Resource" id="Resource_13co1"]
-script = ExtResource("6_nybtt")
-added_projectile_damage = 0
-projectile_damage_multiplier = 1.0
-projectile_speed_multiplier = 1.0
-extra_projectiles = 0
-added_pierce = 0
-attack_speed_mod = 1.0
-
-[sub_resource type="Resource" id="Resource_bhr2f"]
-script = ExtResource("7_g80rb")
-explosion_range_multiplier = 1.0
-
-[sub_resource type="Resource" id="Resource_m2x3t"]
-script = ExtResource("8_i5jfj")
-added_melee_strike_count = 0
-melee_strike_delay_multiplier = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a24m"]
 radius = 630.134
@@ -40,9 +19,6 @@ weapon_pool = {
 "rifle_bolt": ExtResource("5_51s3a"),
 "shotgun_pump": ExtResource("3_0pde6")
 }
-ranged_weapon_stats = SubResource("Resource_13co1")
-explosive_weapon_stats = SubResource("Resource_bhr2f")
-melee_weapon_stats = SubResource("Resource_m2x3t")
 
 [node name="TargetRange" type="Area2D" parent="."]
 visible = false

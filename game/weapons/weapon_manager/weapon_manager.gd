@@ -6,11 +6,6 @@ class_name WeaponManager extends Node2D
 ## Value = the PackedScene that instantiates to said weapon.
 @export var weapon_pool: Dictionary
 
-@export_group("Global Stats")
-@export var ranged_weapon_stats: RangedWeaponStats
-@export var explosive_weapon_stats: ExplosiveWeaponStats
-@export var melee_weapon_stats: MeleeWeaponStats
-
 @export_group("Config")
 @export var max_weapons: int
 

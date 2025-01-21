@@ -17,25 +17,26 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if _can_attack:
-		_attack()
+		_handle_attack()
 
 func _reset_attack_timer() -> void:
 	attack_timer.wait_time = gun_base.attack_speed / gun_base.attack_speed_mod
 	attack_timer.start()
 
-func _attack() -> void:
+func _handle_attack() -> void:
 	var target = gun_base.get_target()
 	if target != null:
 		_can_attack = false
 		for i in gun_base.attacks_per_cycle:
-			_fire_gun()
+			_attack()
 			if i != gun_base.attacks_per_cycle:
 				attack_cycle_timer.start()
 				await attack_cycle_timer.timeout
 		attack_timer.start()
 
-func _fire_gun() -> void:
+func _attack() -> void:
 	var projectile_count: int = gun_base.total_projectiles()
+	var player_stats = Game.get_player().player_stats
 	for j in projectile_count:
 		var dir: Vector2 = _calculate_projectile_direction(
 			projectile_count,
@@ -43,13 +44,7 @@ func _fire_gun() -> void:
 			j,
 		)
 		var proj: Projectile = gun_base.projectile_type.projectile_scene.instantiate()
-		var data = ProjectileData.new(
-			gun_base.added_damage,
-			gun_base.damage_mod,
-			gun_base.added_pierce,
-			gun_base.projectile_velocity_mod,
-			Game.get_player().player_stats.attack_damage_multiplier,
-		)
+		var data = ProjectileData.from_weapon(gun_base, player_stats)
 		proj.init(dir, Game.get_player(), data)
 		proj.top_level = true
 		proj.global_position = bullet_spawn_position.global_position

@@ -13,8 +13,4 @@ class_name PlayerClass extends Resource
 ## The stats the player should start with
 @export var player_stats: PlayerStats
 
-@export var global_ranged_weapon_stats: RangedWeaponStats
-@export var global_explosive_weapon_stats: ExplosiveWeaponStats
-@export var global_melee_weapon_stats: MeleeWeaponStats
-
 @export var starting_weapons: Array[String]
