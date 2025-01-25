@@ -19,7 +19,9 @@ weapon_name = "Spear Gun"
 target_priority = 1
 attack_speed = 2.1
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="WeaponPivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="WeaponPivot"]
 texture = ExtResource("3_jpgle")
 offset = Vector2(45, 0)
 

@@ -7,13 +7,13 @@
 [ext_resource type="Material" uid="uid://c0175ljwq3nwg" path="res://common/materials/entity_material.tres" id="5_gfor7"]
 [ext_resource type="Texture2D" uid="uid://dfy0kd65xlslv" path="res://game/enemies/03_tentacle/tentacle.png" id="6_qipu4"]
 [ext_resource type="Script" path="res://game/enemies/enemy_logic/enemy_logic_controller.gd" id="7_t6e7f"]
+[ext_resource type="PackedScene" uid="uid://knfyy36mjc22" path="res://game/shared/attacks/01_slam/skill_melee_slam.tscn" id="8_lfvk7"]
 [ext_resource type="Script" path="res://game/enemies/enemy_logic/components/contact_damage.gd" id="10_fqp0u"]
 [ext_resource type="Script" path="res://game/enemies/enemy_logic/components/look_at_player.gd" id="10_j83ox"]
 [ext_resource type="Script" path="res://game/enemies/enemy_logic/components/condition.gd" id="11_d315x"]
 [ext_resource type="AudioStream" uid="uid://dxh44hbo07u5" path="res://game/enemies/03_tentacle/hit.wav" id="11_kcer8"]
 [ext_resource type="PackedScene" uid="uid://buyfgyypet0ff" path="res://game/enemies/enemy_health_bar/enemy_health_bar.tscn" id="12_8git4"]
 [ext_resource type="Script" path="res://game/enemies/enemy_logic/components/node_enable.gd" id="12_uursw"]
-[ext_resource type="PackedScene" uid="uid://eu0hw0cd0bbp" path="res://game/shared/attacks/slam/slam_attack.tscn" id="13_wrg4b"]
 
 [sub_resource type="Resource" id="Resource_d1io7"]
 script = ExtResource("2_gi5fc")
@@ -61,13 +61,15 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_r26q2")
 
-[node name="SlamAttack" parent="." instance=ExtResource("13_wrg4b")]
+[node name="MeleeSlam" parent="." node_paths=PackedStringArray("primary_timer") instance=ExtResource("8_lfvk7")]
 z_index = -1
 cutoff_distance = 0.151
-attack_time = 2.0
+collision_accuracy = 5
+windup_time = 1.0
 size = 250.0
-wave_color_1 = Color(0.600146, 0.000309096, 0.613, 1)
-wave_color_2 = Color(0.35077, 0.00251589, 0.284764, 1)
+wave_color_1 = Color(0.6, 0, 0.611765, 1)
+wave_color_2 = Color(0.34902, 0.00392157, 0.286275, 1)
+primary_timer = NodePath("WindupTimer")
 
 [node name="EnemyLogicController" type="Node" parent="." node_paths=PackedStringArray("enemy")]
 script = ExtResource("7_t6e7f")
@@ -78,18 +80,16 @@ script = ExtResource("10_fqp0u")
 contact_damage = 6
 hitbox = NodePath("../../HitBox")
 
-[node name="SlamLookAtPlayer" type="Node" parent="EnemyLogicController" node_paths=PackedStringArray("object")]
+[node name="SlamLookAtPlayer" type="Node" parent="EnemyLogicController"]
 script = ExtResource("10_j83ox")
-object = NodePath("../../SlamAttack")
 instant = false
 
 [node name="PlayerProximity" type="Node" parent="EnemyLogicController"]
 script = ExtResource("11_d315x")
 condition = "enemy.global_position.distance_to(Game.get_player().global_position) < 250.0"
 
-[node name="EnableDisableSlam" type="Node" parent="EnemyLogicController/PlayerProximity" node_paths=PackedStringArray("object")]
+[node name="EnableDisableSlam" type="Node" parent="EnemyLogicController/PlayerProximity"]
 script = ExtResource("12_uursw")
-object = NodePath("../../../SlamAttack")
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_kcer8")
@@ -100,5 +100,5 @@ offset_top = 26.0
 offset_bottom = 29.0
 enemy = NodePath("..")
 
-[connection signal="disable" from="EnemyLogicController/PlayerProximity/EnableDisableSlam" to="SlamAttack" method="stop"]
-[connection signal="enable" from="EnemyLogicController/PlayerProximity/EnableDisableSlam" to="SlamAttack" method="start"]
+[connection signal="disable" from="EnemyLogicController/PlayerProximity/EnableDisableSlam" to="MeleeSlam" method="stop_windup"]
+[connection signal="enable" from="EnemyLogicController/PlayerProximity/EnableDisableSlam" to="MeleeSlam" method="start_windup"]

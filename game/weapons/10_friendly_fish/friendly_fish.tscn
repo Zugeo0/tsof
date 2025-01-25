@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwsx4obp21exm"]
+
+[ext_resource type="Script" path="res://game/weapons/orbital_weapon_logic.gd" id="1_rh88e"]
+[ext_resource type="PackedScene" uid="uid://55ydlfgcsaw1" path="res://game/weapons/10_friendly_fish/friendly_fish_weapon.tscn" id="2_utyud"]
+
+[node name="OrbitalWeaponLogic" type="Node2D"]
+rotation = 9168.25
+script = ExtResource("1_rh88e")
+weapon = ExtResource("2_utyud")
+rotation_speed = 5.0
+radius = 95.0
+weapon_id = "fish_friendly"
+weapon_name = "Friendly Fish"
+weapon_type = 2
+target_priority = 4

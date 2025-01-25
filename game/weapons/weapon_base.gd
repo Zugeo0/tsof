@@ -12,6 +12,7 @@ enum TargetPriority {
 	FARTHEST,
 	WEAKEST,
 	STRONGEST,
+	NOTHING,
 }
 
 @export_category("Config")
@@ -22,8 +23,6 @@ enum TargetPriority {
 
 @export_category("Stats")
 @export var attack_speed: float = 1.0
-
-@onready var sprite: Sprite2D = $Sprite
 
 var _weapon_manager: WeaponManager = null
 

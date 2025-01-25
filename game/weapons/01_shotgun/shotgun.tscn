@@ -14,7 +14,9 @@ projectile_type = ExtResource("2_1aoq7")
 weapon_id = "shotgun"
 weapon_name = "Shotgun"
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="WeaponPivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="WeaponPivot"]
 texture = ExtResource("3_1uie4")
 offset = Vector2(45, 0)
 

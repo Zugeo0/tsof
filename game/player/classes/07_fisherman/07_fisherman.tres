@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://yi6w501skhuv"]
+
+[ext_resource type="Texture2D" uid="uid://babv3r8kxymd6" path="res://game/weapons/10_friendly_fish/friendly_fish.png" id="1_08ynt"]
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_ntu1f"]
+
+[resource]
+script = ExtResource("2_ntu1f")
+player_class_name = "Fisherman"
+player_class_description = "Start with a school of friendly fish"
+player_class_icon = ExtResource("1_08ynt")
+starting_weapons = Array[String](["fish_friendly"])

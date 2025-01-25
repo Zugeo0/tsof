@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://udfbeighyw02"]
+[gd_scene load_steps=10 format=3 uid="uid://udfbeighyw02"]
 
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
 [ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="3_0pde6"]
 [ext_resource type="PackedScene" uid="uid://bhsxt5yp8ref6" path="res://game/weapons/02_assault_rifle/assault_rifle.tscn" id="4_m4kxo"]
 [ext_resource type="PackedScene" uid="uid://dfcam3k02yyg" path="res://game/weapons/04_rifle/rifle.tscn" id="5_51s3a"]
+[ext_resource type="PackedScene" uid="uid://dtdby8i2l747i" path="res://game/weapons/05_spear_gun/spear_gun.tscn" id="6_g0au5"]
+[ext_resource type="PackedScene" uid="uid://bwsx4obp21exm" path="res://game/weapons/10_friendly_fish/friendly_fish.tscn" id="7_fwxvs"]
 [ext_resource type="Script" path="res://game/weapons/weapon_manager/targeting_logic.gd" id="9_hru3q"]
 [ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="17_d00o8"]
 
@@ -14,11 +16,14 @@ radius = 630.134
 y_sort_enabled = true
 script = ExtResource("1_iyymo")
 weapon_pool = {
+"fish_friendly": ExtResource("7_fwxvs"),
 "pistol": ExtResource("17_d00o8"),
 "rifle_assault": ExtResource("4_m4kxo"),
 "rifle_bolt": ExtResource("5_51s3a"),
-"shotgun_pump": ExtResource("3_0pde6")
+"shotgun_pump": ExtResource("3_0pde6"),
+"spear_gun": ExtResource("6_g0au5")
 }
+max_weapons = null
 
 [node name="TargetRange" type="Area2D" parent="."]
 visible = false
@@ -41,3 +46,5 @@ target_range = NodePath("../TargetRange")
 weapon_manager = NodePath("..")
 threat_priority_threshold = 50
 sort_function = "a.global_position.distance_to(weapon_manager.global_position) > b.global_position.distance_to(weapon_manager.global_position)"
+
+[node name="TargetNothing" type="Node2D" parent="."]

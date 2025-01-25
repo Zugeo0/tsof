@@ -16,7 +16,9 @@ weapon_id = "rifle_assault"
 weapon_name = "Assault Rifle"
 attack_speed = 1.2
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="WeaponPivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="WeaponPivot"]
 texture = ExtResource("3_5uvdw")
 offset = Vector2(45, 0)
 

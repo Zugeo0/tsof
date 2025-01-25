@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://babv3r8kxymd6"
-path="res://.godot/imported/friendly_fish.png-88c33a91fb6225ff5b0b9931047e1a9a.ctex"
+path="res://.godot/imported/friendly_fish.png-bd13bb5262f454488c6c0c6cd5ecacc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://previous_assets/weapons/friendly_fish.png"
-dest_files=["res://.godot/imported/friendly_fish.png-88c33a91fb6225ff5b0b9931047e1a9a.ctex"]
+source_file="res://game/weapons/10_friendly_fish/friendly_fish.png"
+dest_files=["res://.godot/imported/friendly_fish.png-bd13bb5262f454488c6c0c6cd5ecacc6.ctex"]
 
 [params]
 

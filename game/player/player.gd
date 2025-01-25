@@ -33,7 +33,7 @@ func _ready() -> void:
 		for weapon in current_class.starting_weapons:
 			weapon_manager.add_weapon(weapon)
 	
-	health = floor(player_stats.max_health * player_stats.max_health_multiplier)
+	health = floor(player_stats.max_health * player_stats.max_health_mod)
 
 func _physics_process(_delta: float) -> void:
 	if _freeze:

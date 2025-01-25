@@ -12,7 +12,7 @@ var _pulse_timer: float = 0.0
 func _process(delta: float) -> void:
 	_pulse_timer += delta
 	
-	var percentage = float(player.health) / (player.player_stats.max_health * player.player_stats.max_health_multiplier)
+	var percentage = float(player.health) / (player.player_stats.max_health * player.player_stats.max_health_mod)
 	var pulse_offset = pow(abs(sin(_pulse_timer * pulse_speed)), 4.0) * pulse_strength
 	
 	percentage = 1 - clamp(percentage + pulse_offset, 0.0, 1.0)

@@ -14,6 +14,7 @@ var _weapons: Array[WeaponBase]
 @onready var target_range: Area2D = $TargetRange
 @onready var target_closest: Node2D = $TargetClosest
 @onready var target_farthest: Node2D = $TargetFarthest
+@onready var target_nothing: Node2D = $TargetNothing
 
 func add_weapon(id: String) -> void:
 	if id not in weapon_pool.keys():
@@ -32,6 +33,8 @@ func add_weapon(id: String) -> void:
 			target_closest.add_child(weapon_type)
 		WeaponBase.TargetPriority.FARTHEST:
 			target_farthest.add_child(weapon_type)
+		WeaponBase.TargetPriority.NOTHING:
+			target_nothing.add_child(weapon_type)
 	
 func can_add_weapon() -> bool:
 	return len(_weapons) < max_weapons

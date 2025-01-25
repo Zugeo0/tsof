@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://knfyy36mjc22"]
+
+[ext_resource type="Script" path="res://game/shared/attacks/melee_skill_base.gd" id="1_kon5b"]
+[ext_resource type="Shader" path="res://common/materials/arc.gdshader" id="2_r5kpg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0yt1"]
+shader = ExtResource("2_r5kpg")
+shader_parameter/cone_angle = 0.45
+shader_parameter/opacity = 1.0
+shader_parameter/speed = 2.0
+shader_parameter/flash = false
+shader_parameter/cutoff_distance = 0.115
+
+[sub_resource type="Gradient" id="Gradient_0v5gt"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_axyx0"]
+gradient = SubResource("Gradient_0v5gt")
+width = 100
+height = 100
+
+[node name="MeleeSlam" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_kon5b")
+cutoff_distance = 0.167
+windup_time = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_q0yt1")
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_axyx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 70.7107, -70.7107, 81.9152, -57.3576, 90.6308, -42.2618, 96.5926, -25.8819, 99.6195, -8.71557, 99.6195, 8.71557, 96.5926, 25.8819, 90.6308, 42.2618, 81.9152, 57.3576, 70.7107, 70.7107)
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="WindupTimer" type="Timer" parent="."]
