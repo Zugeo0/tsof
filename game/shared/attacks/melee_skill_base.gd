@@ -87,9 +87,11 @@ func _setup_collision() -> void:
 	collision_polygon_2d.polygon = points
 
 
-func activate(atk: Attack) -> void:
+func activate(atk: Attack, origin: Vector2, knockback_amount: int = 0) -> void:
 	for object in get_overlapping_bodies():
 		if object.has_method("take_damage"):
+			if knockback_amount > 0:
+				atk.knockback = origin.direction_to(object.global_position) * knockback_amount * 100
 			object.take_damage(atk)
 	
 	_flash_sprite()

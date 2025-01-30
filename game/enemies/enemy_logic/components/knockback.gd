@@ -23,4 +23,5 @@ func _apply_knockback(atk: Attack) -> void:
 	if knockback_duration > 0.0:
 		knockback_duration_timer.start()
 		await knockback_duration_timer.timeout
+
 	chase_logic.chase = true

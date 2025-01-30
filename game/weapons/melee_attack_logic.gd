@@ -13,10 +13,12 @@ class_name MeleeAttackLogic extends Node2D
 @onready var attack_animation: AnimationPlayer = $AttackAnimation
 
 var _can_attack: bool = false
+var _player: Player = null
 var _player_stats: PlayerStats = null
 
 func _ready() -> void:
-	_player_stats = Game.get_player().player_stats
+	_player = Game.get_player()
+	_player_stats = _player.player_stats
 	skill.cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
 	_start_skill_cooldown()
 
@@ -34,7 +36,7 @@ func _attack() -> void:
 	attack_animation.queue("RESET")
 	for i in range(atk_count):
 		var atk = _get_attack_obj()
-		skill.activate(atk)
+		skill.activate(atk, _player.global_position, melee_base.knockback * _player_stats.knockback_mod)
 		if i != atk_count - 1:
 			attack_cycle_timer.start(melee_base.delay_between_attacks)
 			await attack_cycle_timer.timeout

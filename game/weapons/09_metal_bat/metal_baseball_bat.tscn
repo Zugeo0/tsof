@@ -46,6 +46,7 @@ _data = {
 
 [node name="MetalBaseballBat" type="Node2D"]
 script = ExtResource("1_6lj4s")
+knockback = 8
 weapon_id = "bat_metal"
 weapon_name = "Metal Baseball Bat"
 weapon_type = 2
