@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://bxebul0xxiftu"]
+
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="1_7s224"]
+[ext_resource type="Texture2D" uid="uid://ckbod6ryjirug" path="res://game/weapons/06_grenade_launcher/grenade_launcher.png" id="1_lybua"]
+
+[resource]
+script = ExtResource("1_7s224")
+player_class_name = "Demoman"
+player_class_description = "Start with a grenade launcher"
+player_class_icon = ExtResource("1_lybua")
+starting_weapons = Array[String](["grenade_launcher"])

@@ -36,7 +36,7 @@ func _attack() -> void:
 	attack_animation.queue("RESET")
 	for i in range(atk_count):
 		var atk = _get_attack_obj()
-		skill.activate(atk, _player.global_position, melee_base.knockback * _player_stats.knockback_mod)
+		skill.activate(atk, _player.global_position, int(melee_base.knockback * _player_stats.knockback_mod))
 		if i != atk_count - 1:
 			attack_cycle_timer.start(melee_base.delay_between_attacks)
 			await attack_cycle_timer.timeout

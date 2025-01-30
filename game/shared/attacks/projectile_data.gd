@@ -36,7 +36,7 @@ static func _from_gun(weapon: GunBase, stats: PlayerStats) -> ProjectileData:
 		weapon.projectile_velocity_mod * stats.projectile_velocity_mod,
 		stats.damage_mod,
 		stats.crit_chance + stats.crit_chance_gun,
-		stats.crit_damage_mod + stats.crit_damage_mod_gun,
+		stats.crit_damage_mod + stats.crit_damage_mod_gun_added,
 	)
 
 static func from_weapon(weapon: WeaponBase, stats: PlayerStats) -> ProjectileData:

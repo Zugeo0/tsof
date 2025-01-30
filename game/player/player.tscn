@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmmp5s70l5jk1"]
+[gd_scene load_steps=22 format=3 uid="uid://cmmp5s70l5jk1"]
 
 [ext_resource type="PackedScene" uid="uid://udfbeighyw02" path="res://game/weapons/weapon_manager/weapon_manager.tscn" id="1_74sb1"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_lijdu"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dtdby8i2l747i" path="res://game/weapons/05_spear_gun/spear_gun.tscn" id="9_tt8oo"]
 [ext_resource type="PackedScene" uid="uid://tf016exhsnt6" path="res://game/weapons/09_metal_bat/metal_baseball_bat.tscn" id="10_gm1vb"]
 [ext_resource type="PackedScene" uid="uid://bwsx4obp21exm" path="res://game/weapons/10_friendly_fish/friendly_fish.tscn" id="11_wplxy"]
+[ext_resource type="PackedScene" uid="uid://dg6da7covjlh1" path="res://game/weapons/06_grenade_launcher/grenade_launcher.tscn" id="12_tic4w"]
 
 [sub_resource type="Resource" id="Resource_8aec4"]
 script = ExtResource("2_4hmi3")
@@ -82,6 +83,7 @@ position = Vector2(0, -26)
 weapon_pool = {
 "bat_metal": ExtResource("10_gm1vb"),
 "fish_friendly": ExtResource("11_wplxy"),
+"grenade_launcher": ExtResource("12_tic4w"),
 "pistol": ExtResource("5_hspnr"),
 "rifle_assault": ExtResource("6_adb3p"),
 "rifle_bolt": ExtResource("7_a45bg"),

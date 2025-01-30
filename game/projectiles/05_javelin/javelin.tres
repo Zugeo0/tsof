@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://bn6783wcuw21q"]
 
-[ext_resource type="PackedScene" uid="uid://8wg542shh4yf" path="res://game/projectiles/05_javelin/javelin.tscn" id="1_paay5"]
+[ext_resource type="PackedScene" uid="uid://c38q6bjd2nftu" path="res://game/projectiles/06_impact_grenade/impact_grenade.tscn" id="1_dr0sf"]
 [ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="2_7loxp"]
 
 [resource]
 script = ExtResource("2_7loxp")
-projectile_scene = ExtResource("1_paay5")
+projectile_scene = ExtResource("1_dr0sf")
 projectile_count = 1
 compatible_weapons = Array[String](["spear_gun"])
