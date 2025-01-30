@@ -20,10 +20,8 @@ class_name Enemy extends RigidBody2D
 ## The entity's current health
 @export var health: int
 
-## A multiplier to all knockback received by this entity. Higher values cause in higher knockback received.
-@export_range(0.0, 2.0, 0.01) var self_knockback_mod: float = 1.0
-
 signal death
+signal damage_taken(atk: Attack)
 
 var _dead: bool = false
 
@@ -33,6 +31,7 @@ func take_damage(attack: Attack) -> void:
 	if _dead:
 		return
 	
+	damage_taken.emit(attack)
 	health -= attack.damage
 	
 	if health <= 0:
@@ -48,7 +47,7 @@ func take_damage(attack: Attack) -> void:
 func _physics_process(_delta: float) -> void:
 	var player_pos = Game.get_player().global_position
 	var dist_from_player = global_position.distance_to(player_pos)
-	
+
 	if dist_from_player > MAX_DIST_FROM_PLAYER:
 		var offset_from_player = Vector2.from_angle(randf() * 2 * PI) * MAX_DIST_FROM_PLAYER * randf_range(0.8, 1.0)
 		global_position = player_pos + offset_from_player

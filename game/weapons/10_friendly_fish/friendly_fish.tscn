@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://55ydlfgcsaw1" path="res://game/weapons/10_friendly_fish/friendly_fish_weapon.tscn" id="2_utyud"]
 
 [node name="OrbitalWeaponLogic" type="Node2D"]
-rotation = 9168.25
+rotation = 9399.83
 script = ExtResource("1_rh88e")
 weapon = ExtResource("2_utyud")
 rotation_speed = 5.0

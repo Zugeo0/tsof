@@ -4,7 +4,7 @@ class_name EnemyLogic extends Node
 var enemy: Enemy
 
 var _last_processed: bool = true
-var _should_process: bool = false
+var should_process: bool = false
 
 func _setup(active_enemy: Enemy) -> void:
 	enemy = active_enemy
@@ -15,7 +15,7 @@ func _setup(active_enemy: Enemy) -> void:
 			child._setup(active_enemy)
 
 func _logic_process(delta: float) -> void:
-	if not _should_process:
+	if not should_process:
 		return
 	
 	process(delta)
@@ -25,7 +25,7 @@ func _logic_process(delta: float) -> void:
 			child._logic_process(delta)
 
 func _logic_physics_process(delta: float) -> void:
-	if not _should_process:
+	if not should_process:
 		return
 	
 	physics_process(delta)
@@ -35,9 +35,9 @@ func _logic_physics_process(delta: float) -> void:
 			child._logic_physics_process(delta)
 
 func _evaluate_process() -> void:
-	_should_process = evaluate()
+	should_process = evaluate()
 	
-	if not _should_process:
+	if not should_process:
 		_disable_process()
 		return
 	
@@ -51,7 +51,7 @@ func _evaluate_process() -> void:
 			child._evaluate_process()
 
 func _disable_process() -> void:
-	_should_process = false
+	should_process = false
 	
 	if _last_processed:
 		disabled()

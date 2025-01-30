@@ -36,8 +36,9 @@ func _setup_children() -> void:
 	_resize_children()
 
 func add_weapon() -> void:
-	var wpn = weapon.instantiate()
+	var wpn: OrbitalWeaponBase = weapon.instantiate()
 	add_child(wpn)
+	wpn.set_logic(self)
 
 func _reevaluate_children(wpn_delta: int) -> void:
 	if wpn_delta == 0:
