@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj1413vxvh3to"]
+[gd_scene load_steps=11 format=3 uid="uid://cj1413vxvh3to"]
 
 [ext_resource type="Script" path="res://game/shared/attacks/explosion.gd" id="1_ja5g5"]
+[ext_resource type="Script" path="res://game/shared/attacks/normal_explosion.gd" id="2_yeagx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8kd6q"]
+radius = 0.0
 
 [sub_resource type="Gradient" id="Gradient_dach4"]
 offsets = PackedFloat32Array(0.0785908, 0.208672, 0.392954, 0.97832)
@@ -84,21 +86,21 @@ _data = {
 }
 
 [node name="Explosion" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_ja5g5")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
-autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8kd6q")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_otjuf")
-one_shot = true
 explosiveness = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -107,5 +109,9 @@ libraries = {
 }
 
 [node name="ExplosionSoundEffect" type="AudioStreamPlayer" parent="."]
+
+[node name="ExplosionLogic" type="Node2D" parent="." node_paths=PackedStringArray("explosion")]
+script = ExtResource("2_yeagx")
+explosion = NodePath("..")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

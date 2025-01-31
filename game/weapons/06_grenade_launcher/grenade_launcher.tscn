@@ -16,7 +16,6 @@ projectile_spread = 0.401426
 projectile_type = ExtResource("2_ia2s8")
 weapon_id = "spear_gun"
 weapon_name = "Spear Gun"
-target_priority = 1
 attack_speed = 2.1
 
 [node name="WeaponPivot" type="Node2D" parent="."]

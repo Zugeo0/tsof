@@ -38,7 +38,7 @@ func set_projectile_type(proj_type: ProjectileType) -> void:
 func _process(_delta: float) -> void:
 	sprite.flip_v = global_transform.x.x < 0
 	crosshair.visible = _current_target != null
-	
+
 	if _current_target != null:
 		crosshair.global_position = _current_target.global_position
 		look_at(_current_target.global_position)

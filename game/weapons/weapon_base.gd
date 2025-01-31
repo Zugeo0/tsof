@@ -7,6 +7,12 @@ enum WeaponType {
 	MELEE,
 }
 
+enum WeaponScaling {
+	GUN,
+	MELEE,
+	EXPLOSIVE
+}
+
 enum TargetPriority {
 	CLOSEST,
 	FARTHEST,
