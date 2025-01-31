@@ -1,3 +1,4 @@
+@tool
 @icon("res://game/weapons/weapon_base.svg")
 class_name OrbitalWeaponBase extends WeaponBase
 
@@ -11,8 +12,9 @@ var _player_stats: PlayerStats = null
 var _player: Player = null
 
 func _ready() -> void:
-	_player = Game.get_player()
-	_player_stats = _player.player_stats
+	if !Engine.is_editor_hint():
+		_player = Game.get_player()
+		_player_stats = _player.player_stats
 
 func set_logic(lgc: OrbitalWeaponLogic) -> void:
 	_logic = lgc

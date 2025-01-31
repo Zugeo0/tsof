@@ -13,7 +13,7 @@ var _data: ProjectileData = null
 
 var _attack: Attack
 
-signal impacted(body: Node2D)
+signal impacted(body: Node2D, attack: Attack)
 
 func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 	_direction = direction
@@ -28,7 +28,7 @@ func _ready() -> void:
 	_create_despawn_timer()
 
 func _on_body_entered(body: Node2D) -> void:
-	impacted.emit(body)
+	impacted.emit(body, _attack)
 	#if body.has_method("take_damage"):
 		#body.take_damage(_attack)
 #
@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 	global_position += _direction * speed * delta * 100.0
 
 func _calculate_attack(attacker: Node2D) -> Attack:
-	var attack_pierce = pierce + _data.pierce
 	var attack_damage = roundi(
 		damage
 		+ (_data.added_damage * added_damage_effectiveness)
@@ -49,7 +48,7 @@ func _calculate_attack(attacker: Node2D) -> Attack:
 	var attack := Attack.new()
 	attack.attacker = attacker
 	attack.damage = attack_damage
-	attack.pierce = attack_pierce
+	attack.pierce = _data.pierce
 
 	return attack
 
@@ -61,3 +60,6 @@ func _create_despawn_timer() -> void:
 	despawn_timer.one_shot = true
 	despawn_timer.autostart = true
 	add_child(despawn_timer)
+
+func get_attack_obj() -> Attack:
+	return _attack

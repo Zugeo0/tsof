@@ -6,10 +6,16 @@ class_name GunBase extends WeaponBase
 @export var added_damage: int = 0
 ## A multiplier to damage dealt by this weapon.
 @export var damage_mod: float = 1.0
+## A flat addition to crit chance for attacks made by this weapon
+@export var crit_chance_added: float = 0.0
+## A flat addition to the crit multiplier for attacks made by this weapon.
+@export var crit_damage_mod_added: float = 0.0
 ## A multiplier to this weapon's attack speed.
 @export var attack_speed_mod: float = 1.0
 ## A flat amount of added pierce for this weapon.
 @export var added_pierce: int = 0
+## A flat amount of added knockback for this weapon
+@export var knockback: float = 0.0
 ## Extra projectiles per attack.
 @export var extra_projectiles: int = 0
 ## Total attacks per attack trigger.

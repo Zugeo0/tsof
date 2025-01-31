@@ -25,6 +25,7 @@ enum TargetPriority {
 @export var weapon_id: String
 @export var weapon_name: String
 @export var weapon_type: WeaponType
+@export var weapon_scaling: WeaponScaling
 @export var target_priority: TargetPriority
 
 @export_category("Stats")

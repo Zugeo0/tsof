@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://game/shared/attacks/normal_explosion.gd" id="2_yeagx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8kd6q"]
-radius = 0.0
+radius = 100.0
 
 [sub_resource type="Gradient" id="Gradient_dach4"]
 offsets = PackedFloat32Array(0.0785908, 0.208672, 0.392954, 0.97832)
@@ -94,6 +94,7 @@ script = ExtResource("1_ja5g5")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
+autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8kd6q")

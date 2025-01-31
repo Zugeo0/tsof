@@ -50,6 +50,7 @@ knockback = 8
 weapon_id = "bat_metal"
 weapon_name = "Metal Baseball Bat"
 weapon_type = 2
+weapon_scaling = 1
 attack_speed = 1.8
 
 [node name="MeleeAttackLogic" type="Node2D" parent="." node_paths=PackedStringArray("skill")]

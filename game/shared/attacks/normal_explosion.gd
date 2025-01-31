@@ -1,5 +1,8 @@
 class_name NormalExplosionLogic extends ExplosionLogic
 
+func _ready() -> void:
+	super()
+
 func _explode(atk: Attack) -> void:
 	var nearby_targets = explosion.get_overlapping_bodies()
 	# Randomly pitch the sound effect up/down to add variety.
