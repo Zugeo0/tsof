@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmnykjv53j1g7"]
+
+[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_nwd10"]
+[ext_resource type="Texture2D" uid="uid://bwfgjb18v3m68" path="res://game/weapons/08_frag_grenade/frag_grenade.png" id="2_jn78l"]
+[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="3_pem1e"]
+[ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_rx2yo"]
+[ext_resource type="Script" path="res://game/projectiles/logic/stop_on_impact.gd" id="5_n883i"]
+[ext_resource type="Script" path="res://game/projectiles/08_frag_grenade/spawn_uniform_nodes_logic.gd" id="6_isack"]
+[ext_resource type="Resource" uid="uid://dnmukvvrkx8h3" path="res://game/projectiles/08_frag_grenade/frag_grenade_shrapnel.tres" id="7_tshsi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
+radius = 6.0
+
+[node name="FragGrenade" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_nwd10")
+damage = 8
+speed = 3.0
+face_direction = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jn78l")
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bdf7d")
+
+[node name="ExplosionSpawner" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
+script = ExtResource("3_pem1e")
+projectile = NodePath("..")
+explosion_scene = ExtResource("4_rx2yo")
+base_radius = 150.0
+
+[node name="StopOnImpactProjectileLogic" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
+script = ExtResource("5_n883i")
+projectile = NodePath("..")
+
+[node name="ShrapnelSpawner" type="Node" parent="."]
+script = ExtResource("6_isack")
+projectile_type = ExtResource("7_tshsi")
+
+[connection signal="despawned" from="." to="ShrapnelSpawner" method="_spawn_uniform_nodes"]
+[connection signal="timeout" from="ExplosionTimer" to="." method="despawn"]

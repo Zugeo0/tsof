@@ -7,7 +7,6 @@ class_name Projectile extends Area2D
 @export var speed: float = 1.0
 @export var unlimited_pierce: bool = false
 @export var face_direction: bool = false
-@export var despawn_time: float = 5.0
 
 var _direction: Vector2 = Vector2.ZERO
 var _data: ProjectileData = null
@@ -27,6 +26,7 @@ func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 
 func despawn() -> void:
 	despawned.emit(global_position, _attack, _data)
+	print("proj despawned!")
 	queue_free()
 
 func _ready() -> void:

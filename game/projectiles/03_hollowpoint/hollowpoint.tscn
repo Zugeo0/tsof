@@ -18,9 +18,17 @@ speed = 6.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_eemiq")
 
+[node name="DespawnTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bdf7d")
 
 [node name="NormalProjectileImpactLogic" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
 script = ExtResource("3_0f5y7")
 projectile = NodePath("..")
+
+[connection signal="timeout" from="DespawnTimer" to="." method="despawn"]

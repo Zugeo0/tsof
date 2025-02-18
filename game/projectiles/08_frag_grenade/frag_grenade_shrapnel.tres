@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://dnmukvvrkx8h3"]
+
+[ext_resource type="PackedScene" uid="uid://dbehaob17qona" path="res://game/projectiles/08_frag_grenade/frag_grenade_shrapnel.tscn" id="1_k1t7w"]
+[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="2_wx1y0"]
+
+[resource]
+script = ExtResource("2_wx1y0")
+projectile_scene = ExtResource("1_k1t7w")
+projectile_count = 10
+compatible_weapons = Array[String]([])

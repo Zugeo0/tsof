@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmmp5s70l5jk1"]
+[gd_scene load_steps=24 format=3 uid="uid://cmmp5s70l5jk1"]
 
 [ext_resource type="PackedScene" uid="uid://udfbeighyw02" path="res://game/weapons/weapon_manager/weapon_manager.tscn" id="1_74sb1"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_lijdu"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bwsx4obp21exm" path="res://game/weapons/10_friendly_fish/friendly_fish.tscn" id="11_wplxy"]
 [ext_resource type="PackedScene" uid="uid://b4v2ivpwj8wek" path="res://game/weapons/06_grenade_launcher/grenade_launcher.tscn" id="12_tic4w"]
 [ext_resource type="PackedScene" uid="uid://cvd2vqvq5m8bj" path="res://game/weapons/07_dynamite_bundle/dynamite_bundle.tscn" id="13_eftar"]
+[ext_resource type="PackedScene" uid="uid://3eneko28ltuh" path="res://game/weapons/08_frag_grenade/frag_grenade.tscn" id="14_builu"]
 
 [sub_resource type="Resource" id="Resource_8aec4"]
 script = ExtResource("2_4hmi3")
@@ -86,6 +87,7 @@ weapon_pool = {
 "dynamite_thrower": ExtResource("13_eftar"),
 "fish_friendly": ExtResource("11_wplxy"),
 "grenade_launcher": ExtResource("12_tic4w"),
+"grenade_thrower": ExtResource("14_builu"),
 "pistol": ExtResource("5_hspnr"),
 "rifle_assault": ExtResource("6_adb3p"),
 "rifle_bolt": ExtResource("7_a45bg"),

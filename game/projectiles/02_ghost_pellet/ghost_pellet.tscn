@@ -27,6 +27,12 @@ unlimited_pierce = true
 modulate = Color(0.45098, 0.721569, 0.933333, 0.356863)
 texture = SubResource("GradientTexture2D_sll6i")
 
+[node name="DespawnTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.655699, 0.847142, 0.897477, 0.752941)
 texture = ExtResource("2_rl4hx")
@@ -34,3 +40,5 @@ texture = ExtResource("2_rl4hx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_bdf7d")
+
+[connection signal="timeout" from="DespawnTimer" to="." method="despawn"]

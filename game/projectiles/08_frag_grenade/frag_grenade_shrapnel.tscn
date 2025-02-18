@@ -1,25 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://8wg542shh4yf"]
+[gd_scene load_steps=5 format=3 uid="uid://dbehaob17qona"]
 
-[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_dnqn4"]
-[ext_resource type="Texture2D" uid="uid://ck2pvuuisga6e" path="res://game/projectiles/05_javelin/javelin.png" id="2_3pneu"]
-[ext_resource type="Script" path="res://game/projectiles/logic/normal_projectile_impact_logic.gd" id="3_o6cle"]
+[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_15vg7"]
+[ext_resource type="Texture2D" uid="uid://h3ognmxgyfrs" path="res://game/projectiles/08_frag_grenade/frag_grenade_shrapnel.png" id="2_ocgrj"]
+[ext_resource type="Script" path="res://game/projectiles/logic/normal_projectile_impact_logic.gd" id="3_7geub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
 radius = 6.0
 
-[node name="Javelin" type="Area2D"]
+[node name="Shrapnel" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_dnqn4")
-damage = 14
-added_damage_effectiveness = 1.7
-pierce = 3
-speed = 7.0
-unlimited_pierce = true
+script = ExtResource("1_15vg7")
+damage = 8
+speed = 3.0
 face_direction = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3pneu")
+texture = ExtResource("2_ocgrj")
 
 [node name="DespawnTimer" type="Timer" parent="."]
 process_mode = 1
@@ -31,7 +28,7 @@ autostart = true
 shape = SubResource("CircleShape2D_bdf7d")
 
 [node name="NormalProjectileImpactLogic" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
-script = ExtResource("3_o6cle")
+script = ExtResource("3_7geub")
 projectile = NodePath("..")
 
 [connection signal="timeout" from="DespawnTimer" to="." method="despawn"]

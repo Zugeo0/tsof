@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://ohnkwm6tn6cu" path="res://game/projectiles/07_dynamite_bundle/dynamite_bundle.tres" id="2_24o4y"]
 [ext_resource type="Texture2D" uid="uid://d2rvp02n0bp1x" path="res://game/weapons/07_dynamite_bundle/dynamite.png" id="3_xqlc5"]
 [ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_xxoa8"]
-[ext_resource type="AudioStream" uid="uid://4cuy3m5e4lnh" path="res://game/weapons/05_spear_gun/spear_gun.wav" id="5_pus4r"]
+[ext_resource type="AudioStream" uid="uid://m3o5jxn5bw3b" path="res://game/weapons/sfx/throw.wav" id="5_p5wm8"]
 [ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_xvprn"]
 
 [node name="GunBase" type="Node2D"]
@@ -31,7 +31,7 @@ script = ExtResource("4_xxoa8")
 one_shot = true
 
 [node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
-stream = ExtResource("5_pus4r")
+stream = ExtResource("5_p5wm8")
 
 [node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
 position = Vector2(78, 0)

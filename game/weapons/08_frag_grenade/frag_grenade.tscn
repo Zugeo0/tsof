@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://3eneko28ltuh"]
+
+[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_vgjd3"]
+[ext_resource type="Resource" uid="uid://c0hnisi7ywm3a" path="res://game/projectiles/08_frag_grenade/frag_grenade.tres" id="2_fbxpq"]
+[ext_resource type="Texture2D" uid="uid://bwfgjb18v3m68" path="res://game/weapons/08_frag_grenade/frag_grenade.png" id="3_ppfv4"]
+[ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_f06kk"]
+[ext_resource type="AudioStream" uid="uid://m3o5jxn5bw3b" path="res://game/weapons/sfx/throw.wav" id="5_g31xt"]
+[ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_1h13e"]
+
+[node name="GunBase" type="Node2D"]
+script = ExtResource("1_vgjd3")
+damage_mod = 1.5
+projectile_spread = 0.401426
+projectile_type = ExtResource("2_fbxpq")
+weapon_id = "grenade_thrower"
+weapon_name = "Frag Grenades"
+weapon_type = 1
+weapon_scaling = 2
+attack_speed = 3.5
+
+[node name="WeaponPivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="WeaponPivot"]
+texture = ExtResource("3_ppfv4")
+offset = Vector2(45, 0)
+
+[node name="GunProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource("4_f06kk")
+
+[node name="AttackTimer" type="Timer" parent="GunProjectileSpawner"]
+one_shot = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="GunProjectileSpawner"]
+stream = ExtResource("5_g31xt")
+
+[node name="BulletSpawnPosition" type="Marker2D" parent="GunProjectileSpawner"]
+position = Vector2(78, 0)
+
+[node name="AttackCycleTimer" type="Timer" parent="GunProjectileSpawner"]
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+texture = ExtResource("6_1h13e")

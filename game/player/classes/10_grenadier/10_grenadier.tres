@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://ds5u717j4gbn4"]
+
+[ext_resource type="Texture2D" uid="uid://bwfgjb18v3m68" path="res://game/weapons/08_frag_grenade/frag_grenade.png" id="1_lm3bq"]
+[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_vrgoi"]
+
+[resource]
+script = ExtResource("2_vrgoi")
+player_class_name = "Grenadier"
+player_class_description = "Start with a pile of frag grenades"
+player_class_icon = ExtResource("1_lm3bq")
+starting_weapons = Array[String](["grenade_thrower"])
