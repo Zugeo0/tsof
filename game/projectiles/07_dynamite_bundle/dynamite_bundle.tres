@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://ohnkwm6tn6cu"]
+
+[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="1_altqg"]
+[ext_resource type="PackedScene" uid="uid://crc75a7gu304h" path="res://game/projectiles/07_dynamite_bundle/dynamite_bundle.tscn" id="1_jf0br"]
+
+[resource]
+script = ExtResource("1_altqg")
+projectile_scene = ExtResource("1_jf0br")
+projectile_count = 1
+compatible_weapons = Array[String]([])

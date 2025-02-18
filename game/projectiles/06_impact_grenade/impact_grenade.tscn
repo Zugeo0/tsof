@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_eejr0"]
 [ext_resource type="Texture2D" uid="uid://dvj5jnfpu5h8b" path="res://game/projectiles/06_impact_grenade/impact_grenade.png" id="2_dknth"]
-[ext_resource type="Script" path="res://game/projectiles/logic/spawn_explosion_on_impact_logic.gd" id="3_4okek"]
 [ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_ox2es"]
+[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="5_r64j5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
 radius = 6.0
@@ -13,16 +13,25 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_eejr0")
 damage = 8
-speed = 5.0
+speed = 3.0
 face_direction = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dknth")
 
+[node name="ExplosionTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bdf7d")
 
-[node name="SpawnExplosionOnImpactLogic" type="Node2D" parent="." node_paths=PackedStringArray("spawned_by")]
-script = ExtResource("3_4okek")
-scene_to_spawn = ExtResource("4_ox2es")
-spawned_by = NodePath("..")
+[node name="ExplosionSpawner" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
+script = ExtResource("5_r64j5")
+projectile = NodePath("..")
+explosion_scene = ExtResource("4_ox2es")
+
+[connection signal="impacted" from="." to="." method="despawn" unbinds=3]
+[connection signal="timeout" from="ExplosionTimer" to="." method="despawn"]

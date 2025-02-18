@@ -7,6 +7,7 @@ class_name Projectile extends Area2D
 @export var speed: float = 1.0
 @export var unlimited_pierce: bool = false
 @export var face_direction: bool = false
+@export var despawn_time: float = 5.0
 
 var _direction: Vector2 = Vector2.ZERO
 var _data: ProjectileData = null
@@ -14,6 +15,7 @@ var _data: ProjectileData = null
 var _attack: Attack
 
 signal impacted(body: Node2D, attack: Attack, data: ProjectileData)
+signal despawned(at: Vector2, atk: Attack, data: ProjectileData)
 
 func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 	_direction = direction
@@ -23,12 +25,12 @@ func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 	if face_direction:
 		look_at(_direction)
 
-func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	_create_despawn_timer()
+func despawn() -> void:
+	despawned.emit(global_position, _attack, _data)
+	queue_free()
 
-func _on_body_entered(body: Node2D) -> void:
-	impacted.emit(body, _attack, _data)
+func _ready() -> void:
+	body_entered.connect(func(body): impacted.emit(body, _attack, _data))
 
 func _physics_process(delta: float) -> void:
 	global_position += _direction * speed * delta * 100.0
@@ -46,15 +48,6 @@ func _calculate_attack(attacker: Node2D) -> Attack:
 	attack.pierce = _data.pierce
 
 	return attack
-
-func _create_despawn_timer() -> void:
-	var despawn_timer = Timer.new()
-	despawn_timer.process_mode = Node.PROCESS_MODE_PAUSABLE
-	despawn_timer.wait_time = 5.0
-	despawn_timer.timeout.connect(queue_free)
-	despawn_timer.one_shot = true
-	despawn_timer.autostart = true
-	add_child(despawn_timer)
 
 func get_attack_obj() -> Attack:
 	return _attack

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://crc75a7gu304h"]
+
+[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_3tnd4"]
+[ext_resource type="Texture2D" uid="uid://d2rvp02n0bp1x" path="res://game/weapons/07_dynamite_bundle/dynamite.png" id="2_k8vqm"]
+[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="3_aqbuj"]
+[ext_resource type="Script" path="res://game/projectiles/logic/stop_on_impact.gd" id="4_4vlpf"]
+[ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_61xmb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
+radius = 6.0
+
+[node name="DynamiteBundle" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3tnd4")
+damage = 8
+speed = 3.0
+face_direction = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_k8vqm")
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bdf7d")
+
+[node name="ExplosionSpawner" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
+script = ExtResource("3_aqbuj")
+projectile = NodePath("..")
+explosion_scene = ExtResource("4_61xmb")
+base_radius = 150.0
+
+[node name="StopOnImpactProjectileLogic" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
+script = ExtResource("4_4vlpf")
+projectile = NodePath("..")
+
+[connection signal="timeout" from="ExplosionTimer" to="." method="despawn"]

@@ -2,6 +2,7 @@ class_name NormalExplosionLogic extends Node2D
 
 @export var explosion: Explosion
 @export var crater_sprite: Texture2D
+@export var base_crater_scale: float = 1.0
 
 func _ready() -> void:
 	explosion.explode.connect(_explode)
@@ -25,6 +26,6 @@ func _play_animation() -> void:
 func _spawn_crater(explosion_scale: float) -> void:
 	var crater := Sprite2D.new()
 	crater.texture = crater_sprite
-	crater.scale = Vector2.ONE * explosion_scale
-	print(crater)
+	crater.scale = Vector2.ONE * base_crater_scale * explosion_scale
+	crater.self_modulate.a *= 0.5
 	Game.get_level_manager().get_current_level().add_object.call_deferred(crater, explosion.global_position)

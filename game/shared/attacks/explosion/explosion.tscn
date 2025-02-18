@@ -118,5 +118,6 @@ stream = ExtResource("2_jgt1j")
 script = ExtResource("2_yeagx")
 explosion = NodePath("..")
 crater_sprite = ExtResource("4_b8rsl")
+base_crater_scale = 4.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
