@@ -26,7 +26,6 @@ func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 
 func despawn() -> void:
 	despawned.emit(global_position, _attack, _data)
-	print("proj despawned!")
 	queue_free()
 
 func _ready() -> void:
