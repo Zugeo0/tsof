@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg6da7covjlh1"]
+[gd_scene load_steps=7 format=3 uid="uid://b4v2ivpwj8wek"]
 
 [ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_il2wv"]
-[ext_resource type="Resource" uid="uid://dsfkccx05ttdo" path="res://game/projectiles/06_impact_grenade/impact_grenade.tres" id="2_mvp7n"]
+[ext_resource type="Resource" uid="uid://dn30wtiyc8lew" path="res://game/projectiles/06_impact_grenade/impact_grenade.tres" id="2_mvp7n"]
 [ext_resource type="Texture2D" uid="uid://ckbod6ryjirug" path="res://game/weapons/06_grenade_launcher/grenade_launcher.png" id="3_70uwi"]
 [ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_myk75"]
 [ext_resource type="AudioStream" uid="uid://4cuy3m5e4lnh" path="res://game/weapons/05_spear_gun/spear_gun.wav" id="5_kdo04"]

@@ -1,4 +1,4 @@
-class_name NormalProjectileImpactLogic extends ProjectileImpactLogic
+class_name NormalProjectileImpactLogic extends Node2D
 
 @export var projectile: Projectile
 
@@ -6,7 +6,7 @@ class_name NormalProjectileImpactLogic extends ProjectileImpactLogic
 func _ready() -> void:
 	projectile.impacted.connect(_on_impact)
 
-func _on_impact(body: Enemy, atk: Attack) -> void:
+func _on_impact(body: Enemy, atk: Attack, _data: ProjectileData) -> void:
 	body.take_damage(atk)
 	if not projectile.unlimited_pierce and atk.pierce_count < atk.pierce:
 		projectile.queue_free()

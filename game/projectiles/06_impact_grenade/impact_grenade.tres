@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://dsfkccx05ttdo"]
+[gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://dn30wtiyc8lew"]
 
 [ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="1_31ta7"]
-[ext_resource type="PackedScene" uid="uid://c38q6bjd2nftu" path="res://game/projectiles/06_impact_grenade/impact_grenade.tscn" id="1_61rg3"]
+[ext_resource type="PackedScene" uid="uid://4sm1bv6c5tkv" path="res://game/projectiles/06_impact_grenade/impact_grenade.tscn" id="1_61rg3"]
 
 [resource]
 script = ExtResource("1_31ta7")

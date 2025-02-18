@@ -11,6 +11,7 @@ var total_damage_mod: float = 1.0
 var crit_chance: float = 0.0
 var crit_mod: float = 0.0
 var knockback: float = 0.0
+var area_of_effect_mod: float = 1.0
 
 func _apply_gun(weapon: GunBase, stats: PlayerStats) -> void:
 	damage_mod *= stats.damage_mod_gun
@@ -22,12 +23,14 @@ func _apply_gun(weapon: GunBase, stats: PlayerStats) -> void:
 func _apply_explosive(weapon: GunBase, stats: PlayerStats) -> void:
 	damage_mod *= stats.damage_mod_explosive
 	knockback = weapon.knockback * stats.knockback_mod
+	area_of_effect_mod = stats.area_of_effect_mod
 
 func _apply_melee(weapon: MeleeBase, stats: PlayerStats) -> void:
 	damage_mod *= stats.damage_mod_melee
 	crit_chance = stats.crit_chance + weapon.crit_chance_added + stats.crit_chance_melee
 	crit_mod = stats.crit_damage_mod + stats.crit_damage_mod_melee_added + weapon.crit_damage_mod_added
 	knockback = weapon.knockback * stats.knockback_mod
+	area_of_effect_mod = stats.area_of_effect_mod
 
 static func from_weapon(weapon: WeaponBase, stats: PlayerStats) -> ProjectileData:
 	var data := ProjectileData.new()

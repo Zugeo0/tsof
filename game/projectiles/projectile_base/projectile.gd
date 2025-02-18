@@ -13,7 +13,7 @@ var _data: ProjectileData = null
 
 var _attack: Attack
 
-signal impacted(body: Node2D, attack: Attack)
+signal impacted(body: Node2D, attack: Attack, data: ProjectileData)
 
 func init(direction: Vector2, attacker: Node, data: ProjectileData) -> void:
 	_direction = direction
@@ -28,12 +28,7 @@ func _ready() -> void:
 	_create_despawn_timer()
 
 func _on_body_entered(body: Node2D) -> void:
-	impacted.emit(body, _attack)
-	#if body.has_method("take_damage"):
-		#body.take_damage(_attack)
-#
-	#if not unlimited_pierce and _attack.pierce_count >= _attack.pierce:
-		#queue_free()
+	impacted.emit(body, _attack, _data)
 
 func _physics_process(delta: float) -> void:
 	global_position += _direction * speed * delta * 100.0

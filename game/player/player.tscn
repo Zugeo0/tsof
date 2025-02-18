@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dtdby8i2l747i" path="res://game/weapons/05_spear_gun/spear_gun.tscn" id="9_tt8oo"]
 [ext_resource type="PackedScene" uid="uid://tf016exhsnt6" path="res://game/weapons/09_metal_bat/metal_baseball_bat.tscn" id="10_gm1vb"]
 [ext_resource type="PackedScene" uid="uid://bwsx4obp21exm" path="res://game/weapons/10_friendly_fish/friendly_fish.tscn" id="11_wplxy"]
-[ext_resource type="PackedScene" uid="uid://dg6da7covjlh1" path="res://game/weapons/06_grenade_launcher/grenade_launcher.tscn" id="12_tic4w"]
+[ext_resource type="PackedScene" uid="uid://b4v2ivpwj8wek" path="res://game/weapons/06_grenade_launcher/grenade_launcher.tscn" id="12_tic4w"]
 
 [sub_resource type="Resource" id="Resource_8aec4"]
 script = ExtResource("2_4hmi3")

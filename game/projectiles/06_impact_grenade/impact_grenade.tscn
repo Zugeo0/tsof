@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c38q6bjd2nftu"]
+[gd_scene load_steps=6 format=3 uid="uid://4sm1bv6c5tkv"]
 
 [ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_eejr0"]
 [ext_resource type="Texture2D" uid="uid://dvj5jnfpu5h8b" path="res://game/projectiles/06_impact_grenade/impact_grenade.png" id="2_dknth"]
-[ext_resource type="Script" path="res://game/projectiles/logic/spawn_scene_on_impact.gd" id="3_vyj1x"]
-[ext_resource type="PackedScene" uid="uid://cj1413vxvh3to" path="res://game/shared/attacks/explosion.tscn" id="4_ox2es"]
+[ext_resource type="Script" path="res://game/projectiles/logic/spawn_explosion_on_impact_logic.gd" id="3_4okek"]
+[ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_ox2es"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
 radius = 6.0
@@ -22,7 +22,7 @@ texture = ExtResource("2_dknth")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bdf7d")
 
-[node name="ProjectileImpactLogic" type="Node2D" parent="." node_paths=PackedStringArray("projectile")]
-script = ExtResource("3_vyj1x")
+[node name="SpawnExplosionOnImpactLogic" type="Node2D" parent="." node_paths=PackedStringArray("spawned_by")]
+script = ExtResource("3_4okek")
 scene_to_spawn = ExtResource("4_ox2es")
-projectile = NodePath("..")
+spawned_by = NodePath("..")
