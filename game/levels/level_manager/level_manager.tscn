@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://0c1h7kryiqx8"]
 
-[ext_resource type="Script" path="res://game/levels/level_manager/level_manager.gd" id="1_0gtly"]
+[ext_resource type="Script" uid="uid://confcberihij5" path="res://game/levels/level_manager/level_manager.gd" id="1_0gtly"]
 [ext_resource type="Resource" uid="uid://cq7kx0yhre6dg" path="res://game/levels/01_underwater/01_underwater.tres" id="2_4272c"]
-[ext_resource type="Script" path="res://game/levels/level_manager/level_details.gd" id="2_bpuib"]
+[ext_resource type="Script" uid="uid://cmmu0sfeqtqj2" path="res://game/levels/level_manager/level_details.gd" id="2_bpuib"]
 [ext_resource type="Resource" uid="uid://b7w1q8vqgup0i" path="res://game/levels/02_depths/02_depths.tres" id="4_g1bku"]
 [ext_resource type="Resource" uid="uid://be3ui4kmfows8" path="res://game/levels/03_crust/03_crust.tres" id="5_8841u"]
 [ext_resource type="Resource" uid="uid://cmv85t8ydb5se" path="res://game/levels/04_nest/04_nest.tres" id="6_opx5l"]
@@ -57,9 +57,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jfmpj"]
 _data = {
-"RESET": SubResource("Animation_xdrnu"),
-"level_transition_in": SubResource("Animation_8gt42"),
-"level_transition_out": SubResource("Animation_eky5y")
+&"RESET": SubResource("Animation_xdrnu"),
+&"level_transition_in": SubResource("Animation_8gt42"),
+&"level_transition_out": SubResource("Animation_eky5y")
 }
 
 [node name="LevelManager" type="Node2D"]

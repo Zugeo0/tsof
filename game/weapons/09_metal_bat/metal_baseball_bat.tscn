@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://tf016exhsnt6"]
 
-[ext_resource type="Script" path="res://game/weapons/melee_base.gd" id="1_6lj4s"]
+[ext_resource type="Script" uid="uid://bnw3xaav16c46" path="res://game/weapons/melee_base.gd" id="1_6lj4s"]
 [ext_resource type="Texture2D" uid="uid://bsu8o0qrejr1" path="res://game/weapons/09_metal_bat/metal_baseball_bat.png" id="2_3hjlh"]
-[ext_resource type="Script" path="res://game/weapons/melee_attack_logic.gd" id="3_kvbeu"]
+[ext_resource type="Script" uid="uid://e3w0w3yre0xl" path="res://game/weapons/melee_attack_logic.gd" id="3_kvbeu"]
 [ext_resource type="AudioStream" uid="uid://cbxmvmkxh2fsk" path="res://game/weapons/04_rifle/rifle.wav" id="3_siove"]
 [ext_resource type="Texture2D" uid="uid://p438nvqxk48v" path="res://game/weapons/weapon_crosshairs/B_Crosshair.png" id="4_bbpfx"]
 [ext_resource type="PackedScene" uid="uid://knfyy36mjc22" path="res://game/shared/attacks/01_slam/skill_melee_slam.tscn" id="4_rq6lg"]
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0a8q5"]
 _data = {
-"RESET": SubResource("Animation_01dsh"),
-"Slam": SubResource("Animation_s87gc")
+&"RESET": SubResource("Animation_01dsh"),
+&"Slam": SubResource("Animation_s87gc")
 }
 
 [node name="MetalBaseballBat" type="Node2D"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://rlrweitqe4db"]
 
 [ext_resource type="Texture2D" uid="uid://dojf8w5sqdg6m" path="res://game/hud/hud_base.png" id="1_o7otf"]
-[ext_resource type="Script" path="res://game/hud/status_display/status_display.gd" id="2_llh06"]
+[ext_resource type="Script" uid="uid://dnwsh6hbj3vwa" path="res://game/hud/status_display/status_display.gd" id="2_llh06"]
 [ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="3_k6fqm"]
 [ext_resource type="Theme" uid="uid://ktk1krg71yc7" path="res://game/hud/status_display/status_bar_theme.tres" id="4_nlvit"]
-[ext_resource type="Script" path="res://game/hud/status_display/health_bar.gd" id="5_vllul"]
-[ext_resource type="Script" path="res://game/hud/status_display/experience_bar.gd" id="6_ovm5q"]
-[ext_resource type="Script" path="res://game/hud/status_display/level_clock.gd" id="7_to3xn"]
+[ext_resource type="Script" uid="uid://d2dusvud1pmc0" path="res://game/hud/status_display/health_bar.gd" id="5_vllul"]
+[ext_resource type="Script" uid="uid://kyj1vl1btscx" path="res://game/hud/status_display/experience_bar.gd" id="6_ovm5q"]
+[ext_resource type="Script" uid="uid://d3ht52dmog77l" path="res://game/hud/status_display/level_clock.gd" id="7_to3xn"]
 [ext_resource type="FontFile" uid="uid://ojgiiuipy7q5" path="res://common/fonts/fonts-DSEG_v046/DSEG7Classic-Bold.ttf" id="8_i317r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bijug"]

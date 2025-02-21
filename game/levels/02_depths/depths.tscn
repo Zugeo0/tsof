@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://8dh0p35bidda"]
 
-[ext_resource type="Script" path="res://game/levels/level_manager/level.gd" id="1_d6niu"]
+[ext_resource type="Script" uid="uid://d2re5ipdd3ecf" path="res://game/levels/level_manager/level.gd" id="1_d6niu"]
 [ext_resource type="PackedScene" uid="uid://dfhcd32jrkgjs" path="res://game/enemies/enemy_manager/enemy_manager.tscn" id="3_56ggs"]
-[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="3_t76if"]
+[ext_resource type="Script" uid="uid://4hl6405wtlcf" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="3_t76if"]
 [ext_resource type="Resource" uid="uid://dfyw6qt1jc83k" path="res://game/levels/02_depths/02_spawn_regular.tres" id="4_aq8w3"]
 [ext_resource type="Texture2D" uid="uid://dfs8vnr01jiwe" path="res://game/levels/02_depths/depths_background.png" id="5_0738x"]
 [ext_resource type="PackedScene" uid="uid://brqniyn8yf1i7" path="res://game/levels/02_depths/stalagmite/stalagmite.tscn" id="6_27yc0"]
 [ext_resource type="PackedScene" uid="uid://baohxl6tgtjfs" path="res://game/bosses/01_horror/horror_of_the_sea.tscn" id="6_jgexl"]
-[ext_resource type="Script" path="res://util/player_follow.gd" id="7_v1w4c"]
+[ext_resource type="Script" uid="uid://dctp0h68aade0" path="res://util/player_follow.gd" id="7_v1w4c"]
 [ext_resource type="Texture2D" uid="uid://baikluojr3aed" path="res://common/textures/glow.tres" id="8_bk1dy"]
-[ext_resource type="Script" path="res://util/object_scatter.gd" id="10_lrswx"]
+[ext_resource type="Script" uid="uid://ctphickjeg2c4" path="res://util/object_scatter.gd" id="10_lrswx"]
 
 [sub_resource type="Gradient" id="Gradient_b7csq"]
 colors = PackedColorArray(0, 0, 0, 0, 0.19672, 0.188182, 0.561371, 0.254902)

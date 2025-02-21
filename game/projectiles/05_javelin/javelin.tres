@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://bn6783wcuw21q"]
 
 [ext_resource type="PackedScene" uid="uid://8wg542shh4yf" path="res://game/projectiles/05_javelin/javelin.tscn" id="1_mdl6q"]
-[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="2_7loxp"]
+[ext_resource type="Script" uid="uid://bwxtptcyvlo5i" path="res://game/projectiles/projectile_type.gd" id="2_7loxp"]
 
 [resource]
 script = ExtResource("2_7loxp")

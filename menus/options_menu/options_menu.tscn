@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwg5stvmsacin"]
 
 [ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="1_jasrp"]
-[ext_resource type="Script" path="res://menus/options_menu/options_menu.gd" id="2_3d5h6"]
+[ext_resource type="Script" uid="uid://c428aaligdq5n" path="res://menus/options_menu/options_menu.gd" id="2_3d5h6"]
 
 [node name="OptionsMenu" type="Panel"]
 offset_left = 32.0

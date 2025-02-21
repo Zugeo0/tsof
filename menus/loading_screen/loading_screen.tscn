@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b36cm8qwjiiso"]
 
 [ext_resource type="Texture2D" uid="uid://crju8lwm1dwrl" path="res://menus/loading_screen/loading_screen.png" id="1_h3ris"]
-[ext_resource type="Script" path="res://menus/loading_screen/scene_loader.gd" id="2_l2sil"]
+[ext_resource type="Script" uid="uid://b8scxk1afha4n" path="res://menus/loading_screen/scene_loader.gd" id="2_l2sil"]
 
 [node name="LoadingScreen" type="TextureRect"]
 anchors_preset = 15

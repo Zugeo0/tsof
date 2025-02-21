@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bbsiioc3l5os6"]
 
-[ext_resource type="Script" path="res://menus/class_selection/class_selection.gd" id="1_n42yp"]
-[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_3v5ir"]
+[ext_resource type="Script" uid="uid://baotdcvfgipkm" path="res://menus/class_selection/class_selection.gd" id="1_n42yp"]
+[ext_resource type="Script" uid="uid://5q7ck1ghjhdp" path="res://game/player/classes/player_class.gd" id="2_3v5ir"]
 [ext_resource type="Resource" uid="uid://clpoubrrc5lsn" path="res://game/player/classes/01_shotgunner/01_shotgunner.tres" id="3_iptwg"]
 [ext_resource type="Resource" uid="uid://bkkq4b7oqxsqk" path="res://game/player/classes/02_gunner/02_gunner.tres" id="4_abi4m"]
 [ext_resource type="Resource" uid="uid://cf31etu4q7y4v" path="res://game/player/classes/03_gunslinger/03_gunslinger.tres" id="5_l44w5"]
@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://dor6c0mb10ppj" path="res://game/player/classes/06_slugger/06_slugger.tres" id="8_a5xlm"]
 [ext_resource type="Resource" uid="uid://yi6w501skhuv" path="res://game/player/classes/07_fisherman/07_fisherman.tres" id="9_l7efp"]
 [ext_resource type="Resource" uid="uid://bxebul0xxiftu" path="res://game/player/classes/08_demoman/08_demoman.tres" id="10_d3b5q"]
-[ext_resource type="Resource" uid="uid://ds5ky8e4cic7m" path="res://game/player/classes/09_blaster/09_blaster.tres" id="11_3egqm"]
+[ext_resource type="Resource" uid="uid://ds5ky8e4cic7m" path="res://game/player/classes/09_Blaster/09_blaster.tres" id="11_3egqm"]
 [ext_resource type="Resource" uid="uid://ds5u717j4gbn4" path="res://game/player/classes/10_grenadier/10_grenadier.tres" id="12_jp30x"]
 
 [node name="ClassSelection" type="Control"]

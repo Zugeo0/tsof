@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwilos7xhxwys"]
 
-[ext_resource type="Script" path="res://game/abilities/ability_picker/ability_choice/ability_choice.gd" id="1_aqepj"]
+[ext_resource type="Script" uid="uid://wbanv2ps5a5h" path="res://game/abilities/ability_picker/ability_choice/ability_choice.gd" id="1_aqepj"]
 [ext_resource type="Texture2D" uid="uid://w3hdfcsd73gk" path="res://game/abilities/01_shotgun/ability_shotgun.png" id="1_cu30q"]
 [ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="2_u7b02"]
 

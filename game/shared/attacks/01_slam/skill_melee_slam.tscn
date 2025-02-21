@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://knfyy36mjc22"]
 
-[ext_resource type="Script" path="res://game/shared/attacks/melee_skill_base.gd" id="1_kon5b"]
-[ext_resource type="Shader" path="res://common/materials/arc.gdshader" id="2_r5kpg"]
+[ext_resource type="Script" uid="uid://dyq5o7n3tkipo" path="res://game/shared/attacks/melee_skill_base.gd" id="1_kon5b"]
+[ext_resource type="Shader" uid="uid://dsp72aow2vk65" path="res://common/materials/arc.gdshader" id="2_r5kpg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q0yt1"]
 shader = ExtResource("2_r5kpg")

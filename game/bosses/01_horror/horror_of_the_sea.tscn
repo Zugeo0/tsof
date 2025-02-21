@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://baohxl6tgtjfs"]
 
-[ext_resource type="Script" path="res://game/bosses/boss.gd" id="1_ayeh1"]
+[ext_resource type="Script" uid="uid://b0d58w7h8jaa6" path="res://game/bosses/boss.gd" id="1_ayeh1"]
 [ext_resource type="PackedScene" uid="uid://miqkmd2h51cm" path="res://game/bosses/boss_death_effect/boss_death_effect.tscn" id="2_cunya"]
 [ext_resource type="Material" uid="uid://c0175ljwq3nwg" path="res://common/materials/entity_material.tres" id="3_urku6"]
 [ext_resource type="Texture2D" uid="uid://7j2x4nq45jjr" path="res://game/bosses/01_horror/horror_of_the_sea.png" id="4_k5lpm"]
-[ext_resource type="Script" path="res://game/enemies/enemy_logic/enemy_logic_controller.gd" id="5_jgvv6"]
-[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/move_flip_sprite.gd" id="6_bgovd"]
-[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/chase.gd" id="7_aetli"]
-[ext_resource type="Script" path="res://game/enemies/enemy_logic/components/contact_damage.gd" id="8_sw54u"]
+[ext_resource type="Script" uid="uid://bsjhrpbkacdbk" path="res://game/enemies/enemy_logic/enemy_logic_controller.gd" id="5_jgvv6"]
+[ext_resource type="Script" uid="uid://bicd2ngtwiscb" path="res://game/enemies/enemy_logic/components/move_flip_sprite.gd" id="6_bgovd"]
+[ext_resource type="Script" uid="uid://rp5nl0xhvclu" path="res://game/enemies/enemy_logic/components/chase.gd" id="7_aetli"]
+[ext_resource type="Script" uid="uid://csbetkhcxke0r" path="res://game/enemies/enemy_logic/components/contact_damage.gd" id="8_sw54u"]
 [ext_resource type="AudioStream" uid="uid://cfii503p25gbg" path="res://game/enemies/01_cultist/hit.wav" id="9_1hrkc"]
 
 [sub_resource type="Gradient" id="Gradient_hxpqo"]

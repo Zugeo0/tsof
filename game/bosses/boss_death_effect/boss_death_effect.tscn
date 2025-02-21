@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://miqkmd2h51cm"]
 
-[ext_resource type="Script" path="res://game/bosses/boss_death_effect/boss_death_effect.gd" id="1_ntme2"]
+[ext_resource type="Script" uid="uid://5wnq6ga1m72s" path="res://game/bosses/boss_death_effect/boss_death_effect.gd" id="1_ntme2"]
 [ext_resource type="AudioStream" uid="uid://dqmqo7v6b0kxm" path="res://game/enemies/enemy_death_effect/death.wav" id="2_6kqql"]
 
 [sub_resource type="Gradient" id="Gradient_j2jv0"]

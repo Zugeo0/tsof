@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_4sstg"]
 [ext_resource type="Theme" uid="uid://up11cs5tn8xo" path="res://menus/menu_theme.tres" id="1_07ksl"]
-[ext_resource type="Script" path="res://game/abilities/ability_picker/ability_picker.gd" id="1_53h7p"]
+[ext_resource type="Script" uid="uid://fminjqlh4xyr" path="res://game/abilities/ability_picker/ability_picker.gd" id="1_53h7p"]
 [ext_resource type="PackedScene" uid="uid://bwilos7xhxwys" path="res://game/abilities/ability_picker/ability_choice/ability_choice.tscn" id="3_jo083"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymbpp"]

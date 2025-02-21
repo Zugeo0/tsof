@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://cf65ejukc6sh8"]
 
 [ext_resource type="PackedScene" uid="uid://dcdpvv7s1s3si" path="res://game/projectiles/01_pellet/pellet.tscn" id="1_mvkrh"]
-[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="1_r5w1m"]
+[ext_resource type="Script" uid="uid://bwxtptcyvlo5i" path="res://game/projectiles/projectile_type.gd" id="1_r5w1m"]
 
 [resource]
 script = ExtResource("1_r5w1m")

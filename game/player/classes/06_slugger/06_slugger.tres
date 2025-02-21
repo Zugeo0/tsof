@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://dor6c0mb10ppj"]
 
 [ext_resource type="Texture2D" uid="uid://bsu8o0qrejr1" path="res://game/weapons/09_metal_bat/metal_baseball_bat.png" id="1_xt0n7"]
-[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_8vlk7"]
+[ext_resource type="Script" uid="uid://5q7ck1ghjhdp" path="res://game/player/classes/player_class.gd" id="2_8vlk7"]
 
 [resource]
 script = ExtResource("2_8vlk7")

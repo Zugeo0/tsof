@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://eu0hw0cd0bbp"]
 
-[ext_resource type="Script" path="res://game/shared/attacks/slam/slam_attack.gd" id="1_ubagr"]
-[ext_resource type="Shader" path="res://common/materials/arc.gdshader" id="2_db3ya"]
+[ext_resource type="Script" uid="uid://bnlcndscqove" path="res://game/shared/attacks/slam/slam_attack.gd" id="1_ubagr"]
+[ext_resource type="Shader" uid="uid://dsp72aow2vk65" path="res://common/materials/arc.gdshader" id="2_db3ya"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8yywl"]
 shader = ExtResource("2_db3ya")

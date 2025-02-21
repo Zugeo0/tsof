@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bggrx162b6v88" path="res://game/hud/boss_bar/boss_bar_theme.tres" id="1_lpein"]
 [ext_resource type="Texture2D" uid="uid://dtr1imna2ag0p" path="res://game/hud/boss_base.png" id="1_x0ejk"]
-[ext_resource type="Script" path="res://game/hud/boss_bar/boss_bar.gd" id="2_b67tm"]
+[ext_resource type="Script" uid="uid://dqngxutjl77uw" path="res://game/hud/boss_bar/boss_bar.gd" id="2_b67tm"]
 [ext_resource type="FontFile" uid="uid://due1hf7ysjp84" path="res://common/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="4_fxaa6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lyt3e"]

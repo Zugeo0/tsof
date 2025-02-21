@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dmnykjv53j1g7"]
 
-[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_nwd10"]
+[ext_resource type="Script" uid="uid://jjy176fd1fit" path="res://game/projectiles/projectile_base/projectile.gd" id="1_nwd10"]
 [ext_resource type="Texture2D" uid="uid://bwfgjb18v3m68" path="res://game/weapons/08_frag_grenade/frag_grenade.png" id="2_jn78l"]
-[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="3_pem1e"]
+[ext_resource type="Script" uid="uid://bwcmdwxuebfgl" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="3_pem1e"]
 [ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_rx2yo"]
-[ext_resource type="Script" path="res://game/projectiles/logic/stop_on_impact.gd" id="5_n883i"]
-[ext_resource type="Script" path="res://game/projectiles/08_frag_grenade/spawn_uniform_nodes_logic.gd" id="6_isack"]
+[ext_resource type="Script" uid="uid://bcdom2m1lxtlh" path="res://game/projectiles/logic/stop_on_impact.gd" id="5_n883i"]
+[ext_resource type="Script" uid="uid://b73aeselo4eqf" path="res://game/projectiles/08_frag_grenade/spawn_uniform_nodes_logic.gd" id="6_isack"]
 [ext_resource type="Resource" uid="uid://dnmukvvrkx8h3" path="res://game/projectiles/08_frag_grenade/frag_grenade_shrapnel.tres" id="7_tshsi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]

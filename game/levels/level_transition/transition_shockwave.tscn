@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://byjeamjlnn6sp"]
 
-[ext_resource type="Script" path="res://game/levels/level_transition/transition_shockwave.gd" id="1_ccdj3"]
-[ext_resource type="Shader" path="res://game/levels/level_transition/transition_shockwave.gdshader" id="1_yoh5y"]
+[ext_resource type="Script" uid="uid://dbe4whup74li5" path="res://game/levels/level_transition/transition_shockwave.gd" id="1_ccdj3"]
+[ext_resource type="Shader" uid="uid://dtf1u4emriquu" path="res://game/levels/level_transition/transition_shockwave.gdshader" id="1_yoh5y"]
 [ext_resource type="AudioStream" uid="uid://buhmgb1bn8ss1" path="res://game/levels/level_transition/transition_shockwave.wav" id="3_nonew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrl4x"]

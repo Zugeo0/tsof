@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://ds5ky8e4cic7m"]
 
 [ext_resource type="Texture2D" uid="uid://d2rvp02n0bp1x" path="res://game/weapons/07_dynamite_bundle/dynamite.png" id="1_sh7ct"]
-[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="2_vtbqn"]
+[ext_resource type="Script" uid="uid://5q7ck1ghjhdp" path="res://game/player/classes/player_class.gd" id="2_vtbqn"]
 
 [resource]
 script = ExtResource("2_vtbqn")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvmngvyyyb0cc"]
 
-[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_ymh6t"]
+[ext_resource type="Script" uid="uid://jjy176fd1fit" path="res://game/projectiles/projectile_base/projectile.gd" id="1_ymh6t"]
 [ext_resource type="Texture2D" uid="uid://ccubl2aoqkve8" path="res://game/projectiles/01_pellet/pellet.png" id="2_eemiq"]
-[ext_resource type="Script" path="res://game/projectiles/logic/normal_projectile_impact_logic.gd" id="3_0f5y7"]
+[ext_resource type="Script" uid="uid://cdg85jfycdikw" path="res://game/projectiles/logic/normal_projectile_impact_logic.gd" id="3_0f5y7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
 radius = 6.0

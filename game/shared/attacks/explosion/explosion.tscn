@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dqivh2vd6i5ei"]
 
-[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion.gd" id="1_ja5g5"]
+[ext_resource type="Script" uid="uid://c0jwy06wm3w33" path="res://game/shared/attacks/explosion/explosion.gd" id="1_ja5g5"]
 [ext_resource type="AudioStream" uid="uid://cyjb3n1miof6b" path="res://game/weapons/sfx/explosion.wav" id="2_jgt1j"]
-[ext_resource type="Script" path="res://game/shared/attacks/explosion/normal_explosion.gd" id="2_yeagx"]
+[ext_resource type="Script" uid="uid://d3ni0g5uxj0po" path="res://game/shared/attacks/explosion/normal_explosion.gd" id="2_yeagx"]
 [ext_resource type="Texture2D" uid="uid://mh30doafh67c" path="res://game/shared/attacks/explosion/crater.png" id="4_b8rsl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8kd6q"]
@@ -84,7 +84,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5touy"]
 _data = {
-"explode": SubResource("Animation_gg23v")
+&"explode": SubResource("Animation_gg23v")
 }
 
 [node name="Explosion" type="Area2D"]

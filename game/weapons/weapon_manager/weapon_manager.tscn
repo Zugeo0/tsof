@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://udfbeighyw02"]
 
-[ext_resource type="Script" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
+[ext_resource type="Script" uid="uid://c3egpwx6og6qk" path="res://game/weapons/weapon_manager/weapon_manager.gd" id="1_iyymo"]
 [ext_resource type="PackedScene" uid="uid://gjg3p6e850qv" path="res://game/weapons/01_shotgun/shotgun.tscn" id="3_0pde6"]
 [ext_resource type="PackedScene" uid="uid://bhsxt5yp8ref6" path="res://game/weapons/02_assault_rifle/assault_rifle.tscn" id="4_m4kxo"]
 [ext_resource type="PackedScene" uid="uid://dfcam3k02yyg" path="res://game/weapons/04_rifle/rifle.tscn" id="5_51s3a"]
 [ext_resource type="PackedScene" uid="uid://dtdby8i2l747i" path="res://game/weapons/05_spear_gun/spear_gun.tscn" id="6_g0au5"]
 [ext_resource type="PackedScene" uid="uid://bwsx4obp21exm" path="res://game/weapons/10_friendly_fish/friendly_fish.tscn" id="7_fwxvs"]
-[ext_resource type="Script" path="res://game/weapons/weapon_manager/targeting_logic.gd" id="9_hru3q"]
+[ext_resource type="Script" uid="uid://c7wh7ul4ju73r" path="res://game/weapons/weapon_manager/targeting_logic.gd" id="9_hru3q"]
 [ext_resource type="PackedScene" uid="uid://308gnb3avrh" path="res://game/weapons/03_pistol/pistol.tscn" id="17_d00o8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a24m"]

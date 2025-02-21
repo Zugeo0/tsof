@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfhcd32jrkgjs"]
 
-[ext_resource type="Script" path="res://game/enemies/enemy_manager/enemy_manager.gd" id="1_qaxcs"]
+[ext_resource type="Script" uid="uid://bmmkx8yvv5kbd" path="res://game/enemies/enemy_manager/enemy_manager.gd" id="1_qaxcs"]
 
 [node name="EnemyManager" type="Node2D"]
 y_sort_enabled = true

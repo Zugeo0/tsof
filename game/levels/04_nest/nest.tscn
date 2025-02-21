@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://6iasngwre5sv"]
 
-[ext_resource type="Script" path="res://game/levels/level_manager/level.gd" id="1_xauwu"]
+[ext_resource type="Script" uid="uid://d2re5ipdd3ecf" path="res://game/levels/level_manager/level.gd" id="1_xauwu"]
 [ext_resource type="PackedScene" uid="uid://dfhcd32jrkgjs" path="res://game/enemies/enemy_manager/enemy_manager.tscn" id="2_neqa2"]
-[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="3_vkkp5"]
+[ext_resource type="Script" uid="uid://4hl6405wtlcf" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="3_vkkp5"]
 [ext_resource type="Resource" uid="uid://cyc40eo61ege8" path="res://game/levels/03_crust/03_spawn_ultra.tres" id="4_idj6c"]
 [ext_resource type="Texture2D" uid="uid://b6yortv3b1nyc" path="res://game/levels/04_nest/nest_background.png" id="5_62h8u"]
 

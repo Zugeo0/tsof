@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ProjectileType" load_steps=3 format=3 uid="uid://davg3slu5ssnd"]
 
 [ext_resource type="PackedScene" uid="uid://ble240q1u2piu" path="res://game/projectiles/04_full_metal_jacket/full_metal_jacket.tscn" id="1_rfuty"]
-[ext_resource type="Script" path="res://game/projectiles/projectile_type.gd" id="2_hccp5"]
+[ext_resource type="Script" uid="uid://bwxtptcyvlo5i" path="res://game/projectiles/projectile_type.gd" id="2_hccp5"]
 
 [resource]
 script = ExtResource("2_hccp5")

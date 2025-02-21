@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelDetails" load_steps=4 format=3 uid="uid://b7w1q8vqgup0i"]
 
 [ext_resource type="AudioStream" uid="uid://sr8kscnd2kil" path="res://game/levels/02_depths/deadite-ash-vs-evil-dead-song-8688.mp3" id="1_0kcvk"]
-[ext_resource type="Script" path="res://game/levels/level_manager/level_details.gd" id="1_x0tmm"]
+[ext_resource type="Script" uid="uid://cmmu0sfeqtqj2" path="res://game/levels/level_manager/level_details.gd" id="1_x0tmm"]
 [ext_resource type="PackedScene" uid="uid://8dh0p35bidda" path="res://game/levels/02_depths/depths.tscn" id="2_qi5hq"]
 
 [resource]

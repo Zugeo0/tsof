@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AbilityInfo" load_steps=4 format=3 uid="uid://bqy8bcqfjj8fl"]
 
-[ext_resource type="Script" path="res://game/abilities/ability_manager/ability_info.gd" id="1_ki525"]
-[ext_resource type="Script" path="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.gd" id="1_rwn86"]
+[ext_resource type="Script" uid="uid://bq5bt0kfpmxqq" path="res://game/abilities/ability_manager/ability_info.gd" id="1_ki525"]
+[ext_resource type="Script" uid="uid://7xtghea5fvao" path="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.gd" id="1_rwn86"]
 [ext_resource type="Texture2D" uid="uid://ce58ajv63arhp" path="res://game/abilities/02_spectral_shotgun/ability_spectral_shotgun.png" id="2_pjm8a"]
 
 [resource]

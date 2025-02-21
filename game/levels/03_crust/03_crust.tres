@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelDetails" load_steps=4 format=3 uid="uid://be3ui4kmfows8"]
 
-[ext_resource type="Script" path="res://game/levels/level_manager/level_details.gd" id="1_er3pc"]
+[ext_resource type="Script" uid="uid://cmmu0sfeqtqj2" path="res://game/levels/level_manager/level_details.gd" id="1_er3pc"]
 [ext_resource type="AudioStream" uid="uid://bm7ptgr5gpbxu" path="res://game/levels/03_crust/the-unkillable-155342.mp3" id="1_p37wr"]
 [ext_resource type="PackedScene" uid="uid://18goxp1adjiv" path="res://game/levels/03_crust/crust.tscn" id="2_1fi1f"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://7bmr1g0nispq"]
 
 [ext_resource type="Texture2D" uid="uid://csif15v3361dn" path="res://game/levels/01_underwater/underwater_background.png" id="1_di285"]
-[ext_resource type="Script" path="res://game/levels/level_manager/level.gd" id="1_h2bvv"]
+[ext_resource type="Script" uid="uid://d2re5ipdd3ecf" path="res://game/levels/level_manager/level.gd" id="1_h2bvv"]
 [ext_resource type="PackedScene" uid="uid://dfhcd32jrkgjs" path="res://game/enemies/enemy_manager/enemy_manager.tscn" id="2_ylucu"]
-[ext_resource type="Script" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="4_gwutn"]
+[ext_resource type="Script" uid="uid://4hl6405wtlcf" path="res://game/enemies/enemy_spawner/enemy_spawn_settings.gd" id="4_gwutn"]
 [ext_resource type="Resource" uid="uid://copyfr7prhobg" path="res://game/levels/01_underwater/01_spawn_tutorial.tres" id="5_qi78a"]
 [ext_resource type="Resource" uid="uid://bsssv7l0ndf8q" path="res://game/levels/01_underwater/01_spawn_cultists.tres" id="7_lcbg2"]
 [ext_resource type="Resource" uid="uid://b8xkj5ytjgtdy" path="res://game/levels/01_underwater/01_spawn_carptists.tres" id="7_n4bmw"]

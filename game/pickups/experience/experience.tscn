@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4356iy4ua03x"]
 
-[ext_resource type="Script" path="res://game/pickups/experience/experience.gd" id="1_m7yyw"]
+[ext_resource type="Script" uid="uid://dxahnkjmo6h5p" path="res://game/pickups/experience/experience.gd" id="1_m7yyw"]
 [ext_resource type="Texture2D" uid="uid://04n3d63d6nf3" path="res://game/pickups/experience/cans.png" id="2_ngb4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtc75"]

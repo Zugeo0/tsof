@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerClass" load_steps=3 format=3 uid="uid://clpoubrrc5lsn"]
 
-[ext_resource type="Script" path="res://game/player/classes/player_class.gd" id="1_3mmnt"]
+[ext_resource type="Script" uid="uid://5q7ck1ghjhdp" path="res://game/player/classes/player_class.gd" id="1_3mmnt"]
 [ext_resource type="Texture2D" uid="uid://ch4qb0d2leqr6" path="res://game/player/classes/01_shotgunner/01_shotgunner.png" id="1_m3qix"]
 
 [resource]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtdby8i2l747i"]
 
-[ext_resource type="Script" path="res://game/weapons/gun_base.gd" id="1_vd843"]
+[ext_resource type="Script" uid="uid://ff0rtni2kban" path="res://game/weapons/gun_base.gd" id="1_vd843"]
 [ext_resource type="Resource" uid="uid://bn6783wcuw21q" path="res://game/projectiles/05_javelin/javelin.tres" id="2_pgji6"]
 [ext_resource type="Texture2D" uid="uid://ctweu4712bxtd" path="res://game/weapons/05_spear_gun/spear_gun.png" id="3_jpgle"]
-[ext_resource type="Script" path="res://game/weapons/gun_projectile_spawner.gd" id="4_vu5tu"]
+[ext_resource type="Script" uid="uid://du71lgkkcvf7t" path="res://game/weapons/gun_projectile_spawner.gd" id="4_vu5tu"]
 [ext_resource type="AudioStream" uid="uid://4cuy3m5e4lnh" path="res://game/weapons/05_spear_gun/spear_gun.wav" id="5_d1wlh"]
 [ext_resource type="Texture2D" uid="uid://bpbfpj6dqwxvu" path="res://game/weapons/weapon_crosshairs/R_Crosshair.png" id="6_uvak5"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dip13cxogx0yd"]
 
-[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_4lfev"]
+[ext_resource type="Script" uid="uid://jjy176fd1fit" path="res://game/projectiles/projectile_base/projectile.gd" id="1_4lfev"]
 [ext_resource type="Texture2D" uid="uid://b6f5vdl4teees" path="res://game/projectiles/02_ghost_pellet/ghost_pellet.png" id="2_rl4hx"]
 
 [sub_resource type="Gradient" id="Gradient_g18ut"]

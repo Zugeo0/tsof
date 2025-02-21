@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://4sm1bv6c5tkv"]
 
-[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_eejr0"]
+[ext_resource type="Script" uid="uid://jjy176fd1fit" path="res://game/projectiles/projectile_base/projectile.gd" id="1_eejr0"]
 [ext_resource type="Texture2D" uid="uid://dvj5jnfpu5h8b" path="res://game/projectiles/06_impact_grenade/impact_grenade.png" id="2_dknth"]
 [ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_ox2es"]
-[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="5_r64j5"]
+[ext_resource type="Script" uid="uid://bwcmdwxuebfgl" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="5_r64j5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]
 radius = 6.0

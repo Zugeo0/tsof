@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://crc75a7gu304h"]
 
-[ext_resource type="Script" path="res://game/projectiles/projectile_base/projectile.gd" id="1_3tnd4"]
+[ext_resource type="Script" uid="uid://jjy176fd1fit" path="res://game/projectiles/projectile_base/projectile.gd" id="1_3tnd4"]
 [ext_resource type="Texture2D" uid="uid://d2rvp02n0bp1x" path="res://game/weapons/07_dynamite_bundle/dynamite.png" id="2_k8vqm"]
-[ext_resource type="Script" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="3_aqbuj"]
-[ext_resource type="Script" path="res://game/projectiles/logic/stop_on_impact.gd" id="4_4vlpf"]
+[ext_resource type="Script" uid="uid://bwcmdwxuebfgl" path="res://game/shared/attacks/explosion/explosion_spawner.gd" id="3_aqbuj"]
+[ext_resource type="Script" uid="uid://bcdom2m1lxtlh" path="res://game/projectiles/logic/stop_on_impact.gd" id="4_4vlpf"]
 [ext_resource type="PackedScene" uid="uid://dqivh2vd6i5ei" path="res://game/shared/attacks/explosion/explosion.tscn" id="4_61xmb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdf7d"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://skcsxlw4fqak"]
 
-[ext_resource type="Script" path="res://game/shared/attacks/shockwave/shockwave.gd" id="1_6t3o3"]
-[ext_resource type="Shader" path="res://game/shared/attacks/shockwave/shockwave.gdshader" id="2_1pb5i"]
+[ext_resource type="Script" uid="uid://d4j7pkqc1ir16" path="res://game/shared/attacks/shockwave/shockwave.gd" id="1_6t3o3"]
+[ext_resource type="Shader" uid="uid://bn7gc26exyiwm" path="res://game/shared/attacks/shockwave/shockwave.gdshader" id="2_1pb5i"]
 [ext_resource type="AudioStream" uid="uid://bo06ksnfkgxvs" path="res://game/shared/attacks/shockwave/shockwave.wav" id="3_bnyhd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrl4x"]

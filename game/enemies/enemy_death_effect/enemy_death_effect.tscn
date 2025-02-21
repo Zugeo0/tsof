@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://db7ap4yxqbpew"]
 
-[ext_resource type="Script" path="res://game/enemies/enemy_death_effect/enemy_death_effect.gd" id="1_4hstl"]
+[ext_resource type="Script" uid="uid://xd7ymidckcco" path="res://game/enemies/enemy_death_effect/enemy_death_effect.gd" id="1_4hstl"]
 [ext_resource type="AudioStream" uid="uid://dqmqo7v6b0kxm" path="res://game/enemies/enemy_death_effect/death.wav" id="2_xu7rw"]
 
 [sub_resource type="Gradient" id="Gradient_nj6xi"]
